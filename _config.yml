@@ -18,7 +18,7 @@ avatar: http://channgo2203.github.io/images/logo.png
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  facebook:
+  facebook: https://www.facebook.com/channgo123
   flickr:
   github: channgo2203
   instagram:
@@ -29,7 +29,7 @@ footer-links:
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
-  email: channgo@cmu.edu
+  email: 
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
