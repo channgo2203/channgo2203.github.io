@@ -1,5 +1,6 @@
 ---
 layout: default
+published: true
 ---
 
 <article class="post">
@@ -12,6 +13,10 @@ layout: default
   <div class="date">
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
-
+  
+  {% inlcude mathjax for supporint latex %}
+  <script type="text/javascript"
+  	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   {% include disqus.html %}
 </article>
