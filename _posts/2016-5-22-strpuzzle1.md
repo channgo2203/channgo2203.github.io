@@ -31,7 +31,7 @@ The complexity depends on the number of substrings which is \\(O(n^2)\\), where 
 The complexity is \\(nm\\) where \\(m\\) is number of substrings containing all strings in lstr such that its leftmost and rightmost substrings are strings in lstr, and \\(n\\) is the length of str. In the worst-case, it is \\(O(n^2)\\) when str is string of same characters and lstr is list of this single character strings. 
 
 In the following, I show how to implement the algorithm above in the functional language OCaml. All other utility functions can be 
-downloaded on Github at 
+downloaded on my [Github](https://github.com/channgo2203/puzzleset/tree/master/string/prob1). 
 
 {% highlight ocaml %}
 (*
