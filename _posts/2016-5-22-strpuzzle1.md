@@ -31,7 +31,7 @@ The complexity depends on the number of substrings which is \\(O(n^2)\\), where 
 The complexity is \\(nm\\) where \\(m\\) is number of substrings containing all strings in lstr such that its leftmost and rightmost substrings are strings in lstr, and \\(n\\) is the length of str. In the worst-case, it is \\(O(n^2)\\) when str is string of same characters and lstr is list of this single character strings. 
 
 In the following, I show how to implement the algorithm above in the functional language OCaml. First, we define some utilities functions. 
-{% highlight ocaml .lineno %}
+{% highlight ocaml %}
 (* 
  * find substring sub in string str forward from pos 
  *)
@@ -40,7 +40,7 @@ let find_sub str pos sub =
   Str.search_forward r str pos 
 {% endhighlight %}
 
-{% highlight ocaml .lineno %}
+{% highlight ocaml %}
 (* 
  * find substring sub in string str backward from pos 
  *)
@@ -49,7 +49,7 @@ let rfind_sub str pos sub =
   Str.search_backward r str pos 
 {% endhighlight %}
 
-{% highlight ocaml .lineno %}
+{% highlight ocaml %}
 (*
  * get the substring from findex to lindex inclding characters at findex and lindex
  *)
@@ -62,7 +62,7 @@ let get_substring str findex lindex =
 
 {% endhighlight %}
 
-{% highlight ocaml .lineno %}
+{% highlight ocaml %}
 (*
  * min element in a list
  *)
@@ -82,7 +82,7 @@ let max_element l =
   | Some i -> List.fold_left l ~init:i ~f:(fun a b -> if a >= b then a else b)
 {% endhighlight %}
 
-{% highlight ocaml .lineno %}
+{% highlight ocaml %}
 (*
  * compare two pair of indices 
  *)
@@ -94,7 +94,7 @@ let index_compare x y =
   else 1
 {% endhighlight %}
 
-{% highlight ocaml .lineno %}
+{% highlight ocaml %}
 (*
  * update the set shortest substrings
  * if new_sub is not longer, then add it to the set
