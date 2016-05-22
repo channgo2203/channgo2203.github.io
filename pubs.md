@@ -9,3 +9,7 @@ published: true
 - V.C. Ngo and A. Legay. [Formal Verification of Probabilistic SystemC Models with Statistical Model Checking](http://channgo2203.github.io/pdfs/jsep16.pdf). _In Journal of Software: Evolution and Process_ (**JSEP**'16). Wiley, 2016 (Under review).
 - V.C. Ngo, A. Legay, and V. Joloboff. [PSCV: A Runtime Verification Tools for Probabilistic SystemC Models](http://channgo2203.github.io/pdfs/cav16.pdf). _In Proceedings of 28th International Conference on Computer Aided Verification_ (**CAV**'16). Springer, Toronto, Ontario, Canada, July 2016 (To be appeared).
 - V.C. Ngo, A. Legay, and J. Quilbeuf. [Statistical Model Checking for SystemC Models](http://channgo2203.github.io/pdfs/hase16.pdf). _In Proceedings of 17th High Assurance Systems Engineering Symposium_ (**HASE**'16). IEEE, Orlando, Florida, USA, January 2016.
+
+### 2015
+- V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic. [Modular Translation Validation of a Full-sized Synchronous Compiler using Off-the-shelf Verification Tools](http://channgo2203.github.io/pdfs/jar15.pdf). _In Journal of Automated Reasoning_ (**JAR**'15). Springer, 2015 (Under review).
+- V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic. [Modular Translation Validation of a Full-sized Synchronous Compiler using Off-the-shelf Verification Tools](http://channgo2203.github.io/pdfs/scopes15.pdf). _In Proceedings of International Workshop on Software and Compilers for Embedded Systems_ (**SCOPES**'15), Invited Presentation. ACM, St. Goar, Germany, June 2015.
