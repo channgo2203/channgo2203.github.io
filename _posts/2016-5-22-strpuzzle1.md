@@ -18,3 +18,14 @@ For example, given str = “this is a test string this a” and lstr = [“is”
 ### Complexity
 
 The complexity depends on the number of substrings which is \\(O(n^2)\\), where \\(n\\) is the length of str (since the number of substring with the length \\(m\\) is \\((n - m) + 1)\\). If finding each substring is \\(O(n)\\). Then, the complexity is \\(O(n^3).\\) 
+
+### Efficient Solution
+
+- Find the first occurence of a substring of str containing all strings in lstr
+- If there exists one, called substr, then store its length as the indices of the its first and last characters in str in a list. 
+- Create a new string from str from the index of the character after the first character of substr,called str1. If it is empty, return the list. Otherwise find the first occurence of a substring of str1 that contains all strings in lstr
+- Repeat the steps above
+
+### Complexity
+
+The complexity is \\(nm\\) where \\(m\\) is number of substrings containing all strings in lstr such that its leftmost and rightmost substrings are strings in lstr, and \\(n\\) is the length of str. In the worst-case, it is \\(O(n^2)\\) when str is string of same characters and lstr is list of this single character strings. 
