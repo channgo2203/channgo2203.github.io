@@ -36,24 +36,24 @@ In the following, I show how to implement the algorithm above in the functional 
  * find substring sub in string str forward from pos 
  *)
 let find_sub str pos sub = 
-	let r = Str.regexp_string sub in
-	Str.search_forward r str pos 
+  let r = Str.regexp_string sub in
+  Str.search_forward r str pos 
 
 (* 
  * find substring sub in string str backward from pos 
  *)
 let rfind_sub str pos sub = 
-	let r = Str.regexp_string sub in
-	Str.search_backward r str pos 
+  let r = Str.regexp_string sub in
+  Str.search_backward r str pos 
 
 (*
  * get the substring from findex to lindex inclding characters at findex and lindex
  *)
 let get_substring str findex lindex = 
-	try 
-		let sub = String.sub str findex (lindex - findex + 1) in
-		Some sub
-	with 
-		Invalid_argument e -> None
+  try 
+    let sub = String.sub str findex (lindex - findex + 1) in
+    Some sub
+  with 
+    Invalid_argument e -> None
 
 {% endhighlight %}
