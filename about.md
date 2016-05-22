@@ -24,6 +24,13 @@ Chan is interested in design, implementation of systems-level programming langua
 
 - **Mobile Apps**: Mobile applications: RATP, Turnstone, Saigon Places, A86, PhotoEnc,...on [Apple AppStore](https://itunes.apple.com/us/genre/ios/id36?mt=8)
 
+### Development
+- Embedded software in Assembly, C/C++, and Ada for AVR, ARM, and Arduino Development Boards
+
+- Mobile embedded applications on iOS and Android
+
+- Software development in C/C++, C Sharp, Java, OCaml, and Python
+
 ### Contact Me
 
 [channgo(at)cmu.edu](mailto:channgo@cmu.edu)
