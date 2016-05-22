@@ -17,4 +17,4 @@ For example, given str = “this is a test string this a” and lstr = [“is”
 
 2. Complexity 
 
-The complexity depends on the number of substrings which is \\(O(n^2)\\), where \\(n\\) is the length of str (since the number of substring with the length \\(m\\) is \\((n - m) + 1)\\), then if finding each substring is \\(O(n)\\). Hence, the complexity is \\(O(n^3)\\). 
+The complexity depends on the number of substrings which is \\(O(n^2)\\), where \\(n\\) is the length of str (since the number of substring with the length \\(m\\) is \\((n - m) + 1)\\), then if finding each substring is \\(O(n)\\). Hence, the complexity is \\(O(n^3).\\) 
