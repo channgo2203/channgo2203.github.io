@@ -61,3 +61,54 @@ let get_substring str findex lindex =
     Invalid_argument e -> None
 
 {% endhighlight %}
+
+{% highlight ocaml .lineno %}
+(*
+ * min element in a list
+ *)
+let min_element l = 
+  let h = List.hd l in
+  match h with
+  | None -> -1
+  | Some i -> List.fold_left l ~init:i ~f:(fun a b -> if a <= b then a else b)
+
+(*
+ * max element in a list
+ *)
+let max_element l = 
+  let h = List.hd l in 
+  match h with 
+  | None -> -1
+  | Some i -> List.fold_left l ~init:i ~f:(fun a b -> if a >= b then a else b)
+{% endhighlight %}
+
+{% highlight ocaml .lineno %}
+(*
+ * compare two pair of indices 
+ *)
+let index_compare x y = 
+  let x1, x2 = x in 
+  let y1, y2 = y in
+  if (x1 = y1 && x2 = y2) then 0 
+  else if ((x1 < y1) || (x1 = y1 && x2 <= y2)) then -1 
+  else 1
+{% endhighlight %}
+
+{% highlight ocaml .lineno %}
+(*
+ * update the set shortest substrings
+ * if new_sub is not longer, then add it to the set
+ *)
+let update_lshortest_substr l i = 
+  let a_opt = List.hd l in
+  match a_opt with
+  | None -> [ i ]
+  | Some a -> 
+    let i1, i2 = i in 
+    let a1, a2 = a in 
+    if ((i2 - i1) = (a2 - a1)) then
+      i :: l
+    else if ((i2 - i1) < (a2 - a1)) then 
+      [ i ]
+    else l
+{% endhighlight %}
