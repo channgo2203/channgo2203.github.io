@@ -38,14 +38,18 @@ In the following, I show how to implement the algorithm above in the functional 
 let find_sub str pos sub = 
   let r = Str.regexp_string sub in
   Str.search_forward r str pos 
+{% endhighlight %}
 
+{% highlight ocaml linenos %}
 (* 
  * find substring sub in string str backward from pos 
  *)
 let rfind_sub str pos sub = 
   let r = Str.regexp_string sub in
   Str.search_backward r str pos 
+{% endhighlight %}
 
+{% highlight ocaml linenos %}
 (*
  * get the substring from findex to lindex inclding characters at findex and lindex
  *)
