@@ -1,6 +1,6 @@
 ---
 published: false
 ---
-## A New Post
+## Some Usefull Functions for OCaml List Standard Library
 
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+
