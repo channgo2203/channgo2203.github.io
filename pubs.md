@@ -33,19 +33,6 @@ published: true
 ## Technical Reports
 - V.C. Ngo and A. Legay. [Dependability Analysis of Embedded Control Systems Using SystemC and Statistical Model Checking](https://hal.archives-ouvertes.fr/hal-01180996). _In HAL-INRIA_, **Technical Report RR-8762**, July 2015.
 - V.C. Ngo, A. Legay, and J. Quilbeuf. [Dynamic Verification of SystemC Specification with Statistical Model Checking](https://hal.inria.fr/hal-01089742). _In HAL-INRIA_, **Technical Report RR-8644**, October 2014.
-		
-	<!-- Authors: V.C. Ngo, J-P. Talpin, P. Le Guernic -->
-	<LI><A NAME="RR-8508">V.C.&nbsp;Ngo, J-P.&nbsp;Talpin, T.&nbsp;Gautier, and P.&nbsp;Le Guernic.</A>
-	<A HREF= "http://hal.inria.fr/hal-00962430">Evaluating SDVG Translation Validation: from Signal to C</A>.
-	In <EM>HAL - INRIA</EM>, <b>Technical Report</b> RR-8508, March 2014.
-		
-	<!-- Authors: V.C. Ngo, J-P. Talpin, P. Le Guernic -->
-	<LI><A NAME="RR-8064">V.C.&nbsp;Ngo, J-P.&nbsp;Talpin, and P.&nbsp;Le Guernic.</A>
-	<A HREF= "http://hal.inria.fr/hal-00730926">Formal Verification of Transformations on Abstract Clocks in Synchronous Compilers</A>.
-	In <EM>HAL - INRIA</EM>, <b>Technical Report</b> RR-8064, September 2012.
-		
-	<!-- Authors: V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, L. Besnard -->
-	<LI><A NAME=" RR-7921">V.C.&nbsp;Ngo, J-P.&nbsp;Talpin, T.&nbsp;Gautier, P.&nbsp;Le Guernic,  and L.&nbsp;Besnard.</A>
-	<A HREF= "http://hal.inria.fr/hal-00685633">Formal Verification of Synchronous Data-flow Compilers</A>.
-	In <EM>HAL - INRIA</EM>, <b>Technical Report</b> RR-7921, April 2012.
-
+- V.C. Ngo, J-P. Talpin, T.Gautier, and P. Le Guernic. [Evaluating SDVG Translation Validation: from Signal to C](http://hal.inria.fr/hal-00962430). _In HAL-INRIA_, **Technical Report RR-8508**, March 2014.
+- V.C. Ngo, J-P. Talpin, and P. Le Guernic. [Formal Verification of Transformations on Abstract Clocks in Synchronous Compilers](http://hal.inria.fr/hal-00730926). _In HAL-INRIA_, **Technical Report RR-8064**, September 2012.
+- V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard. [Formal Verification of Synchronous Data-flow Compilers](http://hal.inria.fr/hal-00685633). _In HAL-INRIA_, **Technical Report RR-7921**, April 2012.
