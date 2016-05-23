@@ -1,4 +1,12 @@
-.highlight {
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.highlight pre {
   background-color: #f8f8f8;
   border: 1px solid #cccccc;
   font-size: 13px;
@@ -8,8 +16,19 @@
   border-radius: 3px;
 }
 
-code {
-  font-size: 1.1rem;
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
 }
 
 .highlight .c { color: #586E75 } /* Comment */
