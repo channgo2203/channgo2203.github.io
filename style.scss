@@ -36,17 +36,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
-  color: $darkerGray;
-  font-weight: bold;
-
-  line-height: 1.7;
-  margin: 1em 0 15px;
+  margin: 20px 0 10px;
   padding: 0;
-
-  @include mobile {
-    line-height: 1.4;
-  }
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative;
 }
 
 h1 {
