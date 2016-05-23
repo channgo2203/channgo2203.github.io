@@ -30,13 +30,13 @@ published: true
 - C. Ene, Y. Lakhnech, and V.C. Ngo. [Formal Indistinguishability Extended to the Random Oracle Model](http://channgo2203.github.io/pdfs/esorics09.pdf). _In Proceedings of 14th European Symposium on Research in Computer Security_ (**ESORICS**'09). Springer, Saint-Malo, France, September 2009 (Authors by alphabetical order).
 - C. Ene, Y. Lakhnech, and V.C. Ngo. [Formal Indistinguishability Extended to the ROM](http://channgo2203.github.io/pdfs/fcc09.pdf). _In Proceedings of Workshop on Formal and Computational Cryptography_ (**FCC**'09), New York, USA, July 2009 (Authors by alphabetical order).
 
-## Technical Reports
+### Technical Reports
 - V.C. Ngo and A. Legay. [Dependability Analysis of Embedded Control Systems Using SystemC and Statistical Model Checking](https://hal.archives-ouvertes.fr/hal-01180996). _In HAL-INRIA_, **Technical Report RR-8762**, July 2015.
 - V.C. Ngo, A. Legay, and J. Quilbeuf. [Dynamic Verification of SystemC Specification with Statistical Model Checking](https://hal.inria.fr/hal-01089742). _In HAL-INRIA_, **Technical Report RR-8644**, October 2014.
 - V.C. Ngo, J-P. Talpin, T.Gautier, and P. Le Guernic. [Evaluating SDVG Translation Validation: from Signal to C](http://hal.inria.fr/hal-00962430). _In HAL-INRIA_, **Technical Report RR-8508**, March 2014.
 - V.C. Ngo, J-P. Talpin, and P. Le Guernic. [Formal Verification of Transformations on Abstract Clocks in Synchronous Compilers](http://hal.inria.fr/hal-00730926). _In HAL-INRIA_, **Technical Report RR-8064**, September 2012.
 - V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard. [Formal Verification of Synchronous Data-flow Compilers](http://hal.inria.fr/hal-00685633). _In HAL-INRIA_, **Technical Report RR-7921**, April 2012.
 
-## Thesis
+### Thesis
 - V.C. Ngo. [Formal Verification of a Synchronous Data-flow Compiler: from Signal to C](https://ecm.univ-rennes1.fr/nuxeo/site/esupversions/e10492b5-206a-42fa-b643-e752dac5a750). Supervisor: [Jean-Pierre Talpin](http://www.irisa.fr/prive/talpin/), Jury: [Sandrine Blazy](http://www.irisa.fr/celtique/blazy/), [Jean-Paul Bodeveix](https://www.irit.fr/~Jean-Paul.Bodeveix/), [Laure Gonnord](http://laure.gonnord.org/pro/), [Abdoulaye Gamatie](http://www.lirmm.fr/~gamatie/), and [Dumitru Potop-Butucaru](https://who.rocq.inria.fr/Dumitru.Potop_Butucaru/). **In Ph.D Thesis in Computer Science**, [INRIA](http://www.inria.fr/en/), [University of Rennes 1](https://www.univ-rennes1.fr/english/), France, July 2014.
 - V.C. Ngo. [Automated Verification of Asymmetric Encryption](http://channgo2203.github.io/pdfs/ujf.pdf). Supervisors: Cristian Ene and Yasine Lakhnech. **In M.Sc Thesis in Computer Science and Applied Mathematics**, [IMAG-VERIMAG](http://www-verimag.imag.fr), [University of Grenoble](https://www.ujf-grenoble.fr/?language=en), France, June 2008.
