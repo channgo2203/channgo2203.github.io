@@ -68,13 +68,29 @@ p {
   margin: 15px 0;
 }
 
-a {
-  color: $blue;
-  text-decoration: none;
-	cursor: pointer;
-  &:hover, &:active {
-    color: $blue;
-  }
+a:link  {
+    text-decoration: none;
+/*    border-bottom: 1px dashed #88f;*/
+    border-bottom: 1px solid #88f;
+}
+
+a:link img {
+    border-bottom: 1px solid #88f;
+    padding: 0.5em;
+}
+
+a:visited {
+    text-decoration: none;
+/*    border-bottom: 1px dashed #f8a;*/
+    border-bottom: 1px solid #f8a;
+}
+
+a:link:hover, a:link:hover img {
+    background-color: #ddf;
+}
+
+a.noborder {
+    border: 0;
 }
 
 ul, ol {
