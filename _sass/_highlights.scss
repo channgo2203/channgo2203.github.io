@@ -8,9 +8,13 @@
   border-radius: 3px;
 }
 
-code {
-  font-family:'hack';
-  font-size: 1.1rem;
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
 }
 
 .highlight .c { color: #586E75 } /* Comment */
