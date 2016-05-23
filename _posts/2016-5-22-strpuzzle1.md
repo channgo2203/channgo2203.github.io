@@ -11,9 +11,9 @@ For example, given str = “this is a test string this a” and lstr = [“is”
 
 ### Simple Solution
 
-- Generate all substrings of str
-- For each substring, check that it contains all strings in lstr
-- Print out the smallest one
+- Generate all substrings of str.
+- For each substring, check that it contains all strings in lstr.
+- Print out the smallest one.
 
 ### Complexity
 
@@ -21,10 +21,10 @@ The complexity depends on the number of substrings which is \\(O(n^2)\\), where 
 
 ### Efficient Solution
 
-- Find the first occurence of a substring of str containing all strings in lstr
-- If there exists one, called substr, then store its length as the indices of the its first and last characters in str in a list. 
-- Create a new string from str from the index of the character after the first character of substr,called str1. If it is empty, return the list. Otherwise find the first occurence of a substring of str1 that contains all strings in lstr
-- Repeat the steps above
+- Find the first occurence of a substring of str containing all strings in lstr.
+- If there exists one, called substr, then store its length as the indices of its first and last characters in str in a list. 
+- Create a new string from str from the index of the character after the first character of substr,called str1. If it is empty, return the list. Otherwise find the first occurence of a substring of str1 that contains all strings in lstr. Compare its length with the store value in the list, if it is smaller or equal, then add the string indices in the list.
+- Repeat the steps above.
 
 ### Complexity
 
