@@ -6,7 +6,7 @@ published: true
 ---
 
 ### 2016
-- [[JSEP'16](http://channgo2203.github.io/pdfs/jsep16.pdf)] V.C. Ngo and A. Legay.   
+- [[JSEP](http://channgo2203.github.io/pdfs/jsep16.pdf)] V.C. Ngo and A. Legay.   
 [Formal Verification of Probabilistic SystemC Models with Statistical Model Checking](http://channgo2203.github.io/pdfs/jsep16.pdf).  
 _In Journal of Software: Evolution and Process_. Wiley, 2016 (Under review).
 - V.C. Ngo, A. Legay, and V. Joloboff.  
