@@ -5,7 +5,7 @@ permalink: /about/
 published: true
 ---
 
-Chan received his Engineer degree from [Hanoi University of Technology](http://en.hust.edu.vn/home) with excellent ranking, his Master degree in Computer Science (under a French government scholarship, Evariste Galois program) from [Joseph Fourier University](https://www.ujf-grenoble.fr/?language=en)(University of Grenoble 1), and his Doctorate degree from [Inria](http://www.inria.fr/en/), France.
+Chan received his Engineer degree from [Hanoi University of Technology](http://en.hust.edu.vn/home) with excellent ranking, his MS in Computer Science (under a French government scholarship, Evariste Galois program) from [Joseph Fourier University](https://www.ujf-grenoble.fr/?language=en)(University of Grenoble 1), and his Ph.D from [Inria](http://www.inria.fr/en/), France.
 
 ### Research
 
