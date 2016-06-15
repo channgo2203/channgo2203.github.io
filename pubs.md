@@ -17,9 +17,6 @@ In Proceedings of 28th International Conference on Computer Aided Verification. 
 In Proceedings of 17th High Assurance Systems Engineering Symposium. IEEE, Orlando, Florida, USA, January 2016.
 
 ### 2015
-- [[**JAR**](http://channgo2203.github.io/pdfs/jar15.pdf)] V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
-[_Modular Translation Validation of a Full-sized Synchronous Compiler using Off-the-shelf Verification Tools_](http://channgo2203.github.io/pdfs/jar15.pdf).  
-In Journal of Automated Reasoning. Springer, 2015 (Under review).
 - [[**SCOPES**](http://channgo2203.github.io/pdfs/scopes15.pdf)] V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
 [_Modular Translation Validation of a Full-sized Synchronous Compiler using Off-the-shelf Verification Tools_](http://channgo2203.github.io/pdfs/scopes15.pdf).  
 In Proceedings of International Workshop on Software and Compilers for Embedded Systems, Invited Presentation. ACM, St. Goar, Germany, June 2015.
