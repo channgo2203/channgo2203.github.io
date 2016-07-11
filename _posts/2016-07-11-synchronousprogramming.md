@@ -4,7 +4,7 @@ title: Synchronous Programming of Reactive Embedded Systems
 published: true
 ---
 
-1. Some important design issues
+### Some important design issues
 - Hard versus soft real-time
 - Safety criticality: e.g. DO-178B/C defines 5 levels of safety:
 A- the most critical level, a fault leads to catastrophic consequences, 
