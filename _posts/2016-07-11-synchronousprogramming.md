@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Synchronous Programming of Reactive Embedded Systems
 
