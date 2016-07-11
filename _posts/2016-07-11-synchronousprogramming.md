@@ -27,24 +27,34 @@ The real-time programming models include:
 
 -  Synchronous
 
-2. Reactive systems 
+### Reactive systems
 Reactive systems are systems that continuously react to their environment at a speed determined by this environment. Most industrial real-time systems are reactive. The main features of these systems are the following:
+
 - Involve concurrency
+
 - Submitted to strict time requirements: concern both their input rate and their inout/output response time
+
 - Generally deterministic
+
 - Reliability is an especially important goal
+
 - Mix of software and hardware
 
-3. Approaches
+### Approaches
 
 Classical approaches: Models include automata or Petri-net based models, task-based models, and communicating processes
+
 - Deterministic automata: Automata are often used to implement the control kernel of a reactive system. A reaction is a block of code (neither loop nor recursive, no interrupt, no overhead due to process management), whose maximal execution time can be accurately bounded. Moreover, automata are well-known mathematical objects for which verification techniques are available (evaluation of temporal logic formulas, reduction and observation). However, automata are "flat" objects, without any hierarchical or parallel structure. As results, they are very difficult to use to design complex systems.
+
 - Petri-net-based models: These models are mainly used to program industrial controllers, the inherent concurrency of these models reduces the complexity of system description. However, because of the lack of hierarchy, they are hard to apply to big systems. In addition, their semantics, especially concerning time aspects, is often unclear (or ambiguous).
+
 - Task-based models: The approach consisting in designing a system as made of a set of sequential tasks, activated and controlled by a real-time operating system.
+
 - Classical concurrent and real-time programming languages: Concurrent and real-time
 programming languages such as ADA or OCCAM take concurrency as a primary
 concern and support modularity. Communication and synchronization mechanisms use
 rendez-vous, and fifo queues. However, they are essentially asynchronous and nondeterministic.
+
 - The synchronous approach: The synchronous approach naturally expresses concurrency. It is deterministic and hierarchical, and possible to use automatic verification tools.
 
 In the synchronous approach, time is abstracted by a partial order relation.
