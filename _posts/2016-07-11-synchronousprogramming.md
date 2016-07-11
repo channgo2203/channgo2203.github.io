@@ -21,8 +21,10 @@ A real issue in real-time programming is how to deal with timing information. Th
 
 The real-time programming models include: 
 - Asynchronous
+
 - Pre-estimated time
-- Synchronous
+
+-  Synchronous
 
 2. Reactive systems 
 Reactive systems are systems that continuously react to their environment at a speed determined by this environment. Most industrial real-time systems are reactive. The main features of these systems are the following:
