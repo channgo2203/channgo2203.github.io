@@ -64,12 +64,18 @@ this abstraction, computation is considered to take zero time. A synchronous pro
 supposed to instantly and deterministically react to the events from its environment. To
 illustrate the basic idea of synchronous approach, we consider an example in which
 requires the two following constraints:
+
 	- “The train must stop within 10 seconds”
+    
 	- “The train must stop within 100 meters”
+    
 These constraints can be expressed in completely different ways if the physical time is
 considered. In the synchronous model, they will be expressed by the following constraints:
+
 	- “The event stop must precede the 10th next occurrence of the event second”
+    
 	- “The event stop must precede the 100th next occurrence of the event meter”
+    
 The notion of instant is understood as a logical instant: the history of a system is a totally
 ordered sequence of logical instants. At each instant, there are zero, one, or several events
 that can occur. Events which occur at the same instants are considered as simultaneous. In
