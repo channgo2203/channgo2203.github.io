@@ -1,7 +1,8 @@
 ---
+layout: post
+title: Synchronous Programming of Reactive Embedded Systems
 published: true
 ---
-## Synchronous Programming of Reactive Embedded Systems
 
 1. Some important design issues:
 -Hard versus soft real-time
