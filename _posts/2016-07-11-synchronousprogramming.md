@@ -20,6 +20,7 @@ E- leads to consequences without andy effect on the system.
 A real issue in real-time programming is how to deal with timing information. The form of timing information is based on the abstraction level adopted. The logical time is related to the physical time only at instants t1 (input event occurs) and t2 (output event of the system). 
 
 The real-time programming models include: 
+
 - Asynchronous
 
 - Pre-estimated time
