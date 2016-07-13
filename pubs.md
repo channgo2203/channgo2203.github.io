@@ -11,7 +11,7 @@ published: true
 In Journal of Software: Evolution and Process. Wiley, 2016 (Under review).
 - [[**CAV**](http://channgo2203.github.io/pdfs/cav16.pdf)] V.C. Ngo, A. Legay, and V. Joloboff.  
 [_PSCV: A Runtime Verification Tools for Probabilistic SystemC Models_](http://channgo2203.github.io/pdfs/cav16.pdf).  
-In Proceedings of 28th International Conference on Computer Aided Verification. Springer, Toronto, Ontario, Canada, July 2016 (To be appeared).
+In Proceedings of 28th International Conference on Computer Aided Verification. Springer, Toronto, Ontario, Canada, July 2016.
 - [[**HASE**](http://channgo2203.github.io/pdfs/hase16.pdf)] V.C. Ngo, A. Legay, and J. Quilbeuf.  
 [_Statistical Model Checking for SystemC Models_](http://channgo2203.github.io/pdfs/hase16.pdf).  
 In Proceedings of 17th High Assurance Systems Engineering Symposium. IEEE, Orlando, Florida, USA, January 2016.
