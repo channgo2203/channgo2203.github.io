@@ -8,7 +8,7 @@ published: true
 ### 2016
 - [[**JSEP**](http://channgo2203.github.io/pdfs/jsep16.pdf)] V.C. Ngo and A. Legay.   
 [_Formal Verification of Probabilistic SystemC Models with Statistical Model Checking_](http://channgo2203.github.io/pdfs/jsep16.pdf).  
-In Journal of Software: Evolution and Process. Wiley, 2016 (Under review).
+In Journal of Software: Evolution and Process. Wiley, 2016 (Submitted).
 - [[**CAV**](http://channgo2203.github.io/pdfs/cav16.pdf)] V.C. Ngo, A. Legay, and V. Joloboff.  
 [_PSCV: A Runtime Verification Tools for Probabilistic SystemC Models_](http://channgo2203.github.io/pdfs/cav16.pdf).  
 In Proceedings of 28th International Conference on Computer Aided Verification. Springer, Toronto, Ontario, Canada, July 2016.
