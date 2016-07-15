@@ -5,7 +5,7 @@ permalink: /talks/
 published: true
 ---
 
-- _[Statistical Model Checking for SystemC Models](http://channgo2203.github.io/pdfs/hase16_slide.pdf)_. Talk at HASE 2016, Orlando, FL, USA, January 2016.
+- _[Statistical Model Checking for SystemC Models](http://channgo2203.github.io/pdfs/hase16_slides.pdf)_. Talk at HASE 2016, Orlando, FL, USA, January 2016.
 
 - _Translation Validation for Synchronous Data-flow Specification in the SIGNAL Compiler_. Talk at FORTE-DisCoTec 2015, Grenoble, France, June 2015.
 
