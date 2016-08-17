@@ -11,7 +11,7 @@ published: true
 
 [Chan](http://channgo2203.github.io/about/) is interested in design, implementation of system-level programming languages, compilers, and formal verification for building reliable, certified software and hardware systems. A common theme is constructing correct embedded systems (i.e., control software in safety-critical systems, embedded system hardware designs) by applying formal verification including static analysis, model checking and correctness proof on the source code implementation, or mathematical models of these systems producing by model-based design toolchains, and formally certifying the correctness of the compilers and code generators in the model-based design toolchains.
 
-**Research Projects**: [DANSE](http://www.danse-ip.eu/home/), [DALI](http://www.ict-dali.eu/dali/), [VERISYNC](http://www.irit.fr/~Martin.Strecker/Proj/Old/Verisync/), [SCALP](http://scalp.gforge.inria.fr/), [AVOTE](http://scalp.gforge.inria.fr/)
+**Research Projects**: [RAML](http://www.raml.co/ "RAML"), [DANSE](http://www.danse-ip.eu/home/), [DALI](http://www.ict-dali.eu/dali/), [VERISYNC](http://www.irit.fr/~Martin.Strecker/Proj/Old/Verisync/), [SCALP](http://scalp.gforge.inria.fr/), [AVOTE](http://scalp.gforge.inria.fr/)
 
 ### Softwares
 - **PSCV**: A runtime verification tool for probabilistic SystemC models. It consists of two components: the plugin for Plasma Lab in Java and tool for generating C++ monitor and aspect advices in C++, [PSCV](https://project.inria.fr/pscv/)
