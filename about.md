@@ -14,6 +14,7 @@ published: true
 **Research Projects**: [RAML](http://www.raml.co/ "RAML"), [DANSE](http://www.danse-ip.eu/home/), [DALI](http://www.ict-dali.eu/dali/), [VERISYNC](http://www.irit.fr/~Martin.Strecker/Proj/Old/Verisync/), [SCALP](http://scalp.gforge.inria.fr/), [AVOTE](http://scalp.gforge.inria.fr/)
 
 ### Softwares
+- **RAML**: Resource Aware ML (RAML) is a tool that automatically and statically computes resource-use bounds (lower and upper) for OCaml programs. It also can check the constant resource-use programs used in preventing timming side-channel attacks, [RAML](http://www.raml.co/) 
 - **PSCV**: A runtime verification tool for probabilistic SystemC models. It consists of two components: the plugin for Plasma Lab in Java and tool for generating C++ monitor and aspect advices in C++, [PSCV](https://project.inria.fr/pscv/)
 - **Plasma Lab**: Plasma Lab is a compact, efficient and flexible platform for statistical model checking of stochastic models, [Plasma Lab](https://project.inria.fr/plasma-lab/)
 - **Polychrony**: The Polychrony toolset developed in C++ and Java, based on Signal, provides a formal framework to design, develop and validate critical systems, from abstract specification until deployment on distributed systems, [Polychrony](http://www.irisa.fr/espresso/Polychrony/)
