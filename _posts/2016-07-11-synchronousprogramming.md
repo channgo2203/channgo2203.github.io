@@ -7,19 +7,19 @@ published: true
 ### Some important design issues
 - Hard versus soft real-time
 - Safety criticality: e.g. DO-178B/C defines 5 levels of safety:
-A- the most critical level, a fault leads to catastrophic consequences, 
-B- leads to severe consequences, 
-C- leads to major consequences, 
-D- leads to minor consequences, and 
-E- leads to consequences without andy effect on the system.
+A- the most critical level, a fault leads to catastrophic consequences,
+B- leads to severe consequences,
+C- leads to major consequences,
+D- leads to minor consequences, and
+E- leads to consequences without any effect on the system.
 - Determinism: very important property of embedded systems. It ensures that the system will always behave in the same manner, with respect to its expected functional requirements.
 - Predictability: beyond the functional requirements, one must be able to predict at least the critical nonfunctional behavior of system, e.g. the timing constraints are always satisfied (response time or latency constraints, rate constraints, which rely on the number of events processed by a system during a time period)
 - Distribution and heterogeneity
 - Complexity and modularity
 
-A real issue in real-time programming is how to deal with timing information. The form of timing information is based on the abstraction level adopted. The logical time is related to the physical time only at instants t1 (input event occurs) and t2 (output event of the system). 
+A real issue in real-time programming is how to deal with timing information. The form of timing information is based on the abstraction level adopted. The logical time is related to the physical time only at instants t1 (input event occurs) and t2 (output event of the system).
 
-The real-time programming models include: 
+The real-time programming models include:
 
 - Asynchronous
 
@@ -66,19 +66,19 @@ illustrate the basic idea of synchronous approach, we consider an example in whi
 requires the two following constraints:
 
 	- “The train must stop within 10 seconds”
-    
+
 	- “The train must stop within 100 meters”
-    
+
 These constraints can be expressed in completely different ways if the physical time is
 considered. In the synchronous model, they will be expressed by the following constraints:
 
 	- “The event stop must precede the 10th next occurrence of the event second”
-    
+
 	- “The event stop must precede the 100th next occurrence of the event meter”
-    
+
 The notion of instant is understood as a logical instant: the history of a system is a totally
 ordered sequence of logical instants. At each instant, there are zero, one, or several events
 that can occur. Events which occur at the same instants are considered as simultaneous. In
 the duration between two instants, nothing happens either in the system or its environment.
 Finally, all the processes of the system have the same knowledge of the events occurring at
-a given instant. 
+a given instant.
