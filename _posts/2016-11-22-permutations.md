@@ -20,5 +20,10 @@ Therefore, with 6 previous permutations we have totally 4 * 6 = 24 new permutati
 
 [<img src="{{ site.baseurl }}/images/permutations_2.jpg" alt="Insert a new element" style="width: 400px;"/>]({{ site.baseurl }}/)
 
+## Code
+
+The implementation can be done by two function. The insert_all_positions function inserts a new element given a set of permutations. The permutations recursively generates all permuations. Here is the [Gist](https://gist.github.com/channgo2203/fc0d4453ec1ac99633526cc1225eaa5b#file-recursive_permutation-ml).
+
+<script src="https://gist.github.com/channgo2203/fc0d4453ec1ac99633526cc1225eaa5b.js"></script>
 
 
