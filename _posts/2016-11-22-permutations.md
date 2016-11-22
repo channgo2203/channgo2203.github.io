@@ -8,7 +8,7 @@ In this post, I will talk about a common approach for generating all permutation
 
 ## The insert-into-all-positions solution
 
-Let assume that we have a set of all permutations for a set of 3 elements (thus totally there are 6 permutations). For example, let 3 elements are [1;2;3], then 6 permutations should be [1;2;3], [2;1;3], [2;3;1], [1;3;2], [3;1;2], [3;2;1].
+Let's assume that we have a set of all permutations for a set of 3 elements (thus totally there are 6 permutations). For example, let 3 elements are [1;2;3], then 6 permutations should be [1;2;3], [2;1;3], [2;3;1], [1;3;2], [3;1;2], [3;2;1].
 
 So now what if we put a new element, say 4, into the set of 4 elements [1;2;3;4]? What we need to do is combining the new element 4 into the previous set of permutations to generate a new set of permutations.
 
@@ -22,18 +22,17 @@ Therefore, with 6 previous permutations we have totally 4 * 6 = 24 new permutati
 
 ## Code
 
-The implementation can be done by two function. The insert_all_positions function inserts a new element given a set of permutations. The permutations recursively generates all permuations. Here is the [Gist](https://gist.github.com/channgo2203/fc0d4453ec1ac99633526cc1225eaa5b#file-recursive_permutation-ml).
+The implementation can be done by the following two functions. The insert_all_positions function inserts a new element given a set of permutations. The permutations function recursively generates all permuations. If the number of elements is 0 or 1, then there is only 1 permutation. Here is the [Gist](https://gist.github.com/channgo2203/fc0d4453ec1ac99633526cc1225eaa5b#file-recursive_permutation-ml).
 
 <script src="https://gist.github.com/channgo2203/fc0d4453ec1ac99633526cc1225eaa5b.js"></script>
 
 ## Complexity
 
-The complexity depends on the number of permuations which is n! (n is the number of elements). Assume that the complexity of insert a new element to a permuation takes 1 time unit, thus for a permuation consisting of m elements, it takes (m + 1) time units. Therefore for each recursive call, we have the complexity T(m)
-T(m) = m * T(m - 1)
+The complexity depends on the number of permuations which is n! (n is the number of elements). Assume that the complexity of insert a new element to a permuation takes 1 time unit, thus for a permuation consisting of m elements, it takes (m + 1) time units. Therefore for each recursive call, we have the complexity T(m) = m * T(m - 1)
 
 The complexity of the alorithm should be
 T(n) = n * T(n - 1)
-     = n * (n - 1) * T(n - 2) = ... = n * (n-1) * (n - 2) * ... * 1 * T(0) = n!
+     = n * (n - 1) * T(n - 2) = ... = n * (n-1) * (n - 2) * ... * 2 * T(1) = n!
 
 ## Stack overflow
 
