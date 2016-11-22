@@ -26,4 +26,12 @@ The implementation can be done by two function. The insert_all_positions functio
 
 <script src="https://gist.github.com/channgo2203/fc0d4453ec1ac99633526cc1225eaa5b.js"></script>
 
+## Complexity
+
+The complexity depends on the number of permuations which is n! (n is the number of elements). Assume that the complexity of insert a new element to a permuation takes 1 time unit, thus for a permuation consisting of m elements, it takes (m + 1) time units. Therefore for each recursive call, we have
+
+T(n) = n * T(n - 1)
+     = n * (n - 1) * T(n - 2) = ... = n * (n-1) * (n - 2) * ... * 1 * T(0) = n!
+
+
 
