@@ -4,7 +4,9 @@ title: Synchronous Programming of Reactive Embedded Systems
 published: true
 ---
 
-### Some important design issues
+In this post, I would like to introduce about synchronous programming for reactive embedded system. This is a very high-level introduction. I also discuss about the meaning of the synchronous assumption about zero execution time.
+
+## Some important design issues
 - Hard versus soft real-time
 - Safety criticality: e.g. DO-178B/C defines 5 levels of safety:
 A- the most critical level, a fault leads to catastrophic consequences,
@@ -27,7 +29,7 @@ The real-time programming models include:
 
 -  Synchronous
 
-### Reactive systems
+## Reactive systems
 Reactive systems are systems that continuously react to their environment at a speed determined by this environment. Most industrial real-time systems are reactive. The main features of these systems are the following:
 
 - Involve concurrency
@@ -40,7 +42,7 @@ Reactive systems are systems that continuously react to their environment at a s
 
 - Mix of software and hardware
 
-### Approaches
+## Approaches
 
 Classical approaches: Models include automata or Petri-net based models, task-based models, and communicating processes
 
