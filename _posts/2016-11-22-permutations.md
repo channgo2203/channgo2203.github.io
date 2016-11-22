@@ -16,5 +16,9 @@ Let's see how a new element is inserted into a permutation. Consider a permutati
 
 [<img src="{{ site.baseurl }}/images/permutations_1.jpg" alt="Insert a new element" style="width: 400px;"/>]({{ site.baseurl }}/)
 
+Therefore, with 6 previous permutations we have totally 4 * 6 = 24 new permutations if we insert a new element 4.
+
+[<img src="{{ site.baseurl }}/images/permutations_2.jpg" alt="Insert a new element" style="width: 400px;"/>]({{ site.baseurl }}/)
+
 
 
