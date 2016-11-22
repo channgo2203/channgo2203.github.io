@@ -14,6 +14,6 @@ So now what if we put a new element, say 4, into the set of 4 elements [1;2;3;4]
 
 Let's see how a new element is inserted into a permutation. Consider a permutation of 3 elements [1;2;3], there are 4 possible positions (before 1, 2, 3, and after 3) to insert 4 as shown in the figure.
 
-[<img src="{{ site.baseurl }}/images/permutations_1.jpg" alt="Insert a new element" style="width: 400px;"/>]({{ site.baseurl }}/)
+[<img src="http://channgo2203.github.io/images/logo.png" alt="Insert a new element" style="width: 400px;"/>]({{ site.baseurl }}/)
 
 
