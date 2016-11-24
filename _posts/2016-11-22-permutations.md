@@ -40,4 +40,6 @@ When I run the code above with OCaml version 4.02.1, stack overflow occurs likel
 
 <script src="https://gist.github.com/channgo2203/b808f5af6903a294a42f06e46224c16c.js"></script>
 
+## Dynamic permutations
 
+One interesting way to deal with big number of elements is generating one permutation at each time. One can employ the [Johnson Trotter algorithm](https://en.wikipedia.org/wiki/Steinhaus–Johnson–Trotter_algorithm) to generate a different permutation each time. I will talk about this algorithm in a next post.
