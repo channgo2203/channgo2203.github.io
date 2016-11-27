@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Dutch Partition Problem Implementation in OCaml
+title: Dutch Partition
 published: true
 ---
 

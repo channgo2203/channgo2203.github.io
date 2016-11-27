@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Synchronous Programming of Reactive Embedded Systems
+title: Synchronous Programming
 published: true
 ---
 

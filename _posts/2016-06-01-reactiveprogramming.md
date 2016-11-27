@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ambiguousness between Reactive and Synchronous Reactive Programming
+title: Reactive and Synchronous Reactive Programming
 published: true
 ---
 
