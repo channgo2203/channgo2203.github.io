@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Some Useful Functions for OCaml List Standard Library
+title: Additional Functions for Lists
 published: true
 ---
 
