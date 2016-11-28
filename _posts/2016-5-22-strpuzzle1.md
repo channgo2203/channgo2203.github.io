@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Find a Shortest Substring Contains the Given Strings
+title: Shortest Substring Contains a List of Strings
 published: true
 ---
 
