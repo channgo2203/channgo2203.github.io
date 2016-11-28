@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Permutations
+title: Permutation
 published: true
 ---
 
