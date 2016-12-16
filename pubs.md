@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: post
+permalink: /pubs/index.html
 title: Publications
-permalink: /pubs/
-published: true
+tags: [about, Jekyll, theme, responsive]
+image:
+  feature: typewriter.jpg
 ---
 
 ### 2016

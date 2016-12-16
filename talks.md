@@ -1,8 +1,10 @@
 ---
-layout: page
+layout: post
+permalink: /talks/index.html
 title: Talks
-permalink: /talks/
-published: true
+tags: [about, Jekyll, theme, responsive]
+image:
+  feature: typewriter.jpg
 ---
 
 - _PSCV: A Runtime Verification Tool for Probabilistic SystemC Models_. Talk at CAV 2016, Toronto, Ontario, Canada, July 2016.
