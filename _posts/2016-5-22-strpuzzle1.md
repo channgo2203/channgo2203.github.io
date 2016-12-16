@@ -5,6 +5,7 @@ description: "Given a string str and a list of strings lstr. Find a shortest sub
 contains all strings in a list of strings lstr."
 category: articles
 tags: [sample post, readability, test]
+comments: true
 ---
 
 For example, given str = “this is a test string this a” and lstr = [“is”; "this"; "a"], then the output string is “this a”.
