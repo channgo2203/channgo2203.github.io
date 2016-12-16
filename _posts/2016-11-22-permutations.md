@@ -43,3 +43,13 @@ When I run the code above with OCaml version 4.02.1, stack overflow occurs likel
 ## Dynamic permutations
 
 One interesting way to deal with big number of elements is generating one permutation at each time. One can employ the [Johnson Trotter algorithm](https://en.wikipedia.org/wiki/Steinhaus–Johnson–Trotter_algorithm) to generate a different permutation each time. I will talk about this algorithm in a next post.
+
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
