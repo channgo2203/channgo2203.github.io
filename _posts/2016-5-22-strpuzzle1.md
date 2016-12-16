@@ -33,5 +33,4 @@ The complexity is \\(nm\\) where \\(m\\) is number of substrings containing all 
 
 In the following, I show how to implement the algorithm above in the functional language OCaml. All other utility functions can be 
 downloaded on my [Github](https://github.com/channgo2203/puzzleset/tree/master/string/prob1). 
-
 <script src="https://gist.github.com/channgo2203/be41cd8837f6f28dd0c1417842af8933.js"></script>
