@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-no-feature
 title: Reactive and Synchronous Reactive Programming
 published: true
 ---

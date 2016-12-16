@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-no-feature
 title: Additional Functions for Lists
 published: true
 ---
