@@ -4,7 +4,7 @@ permalink: /research/index.html
 title: Research
 tags: [about, Jekyll, theme, responsive]
 image:
-  feature: typewriter.jpg
+  feature: soft-trees.jpg
 ---
 
 ### Main Research
