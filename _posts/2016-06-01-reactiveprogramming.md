@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
 title: Reactive and Synchronous Reactive Programming
-published: true
+comments: true
 ---
 
 The term _reactive system_ was introduced by David Harel and Amir Pnueli to distingish it from _transformational system_. For example, a compiler and usual programs are considered as transformational systems since they will be terminated and compute outputs from the initial inputs. While an operating system is a reactive system, in which it communicates continously with its environment. However, the communication is determined by the own speed of the operating system and it can synchronize with its environments, for instance when users press a menu from the operatiing system interface, who need to wait until the OS completes the task relating to this menu to see the next screen. The users cannot make the next menu appear at the speed they want. We call this class of reactive systems _interactive systems_. 

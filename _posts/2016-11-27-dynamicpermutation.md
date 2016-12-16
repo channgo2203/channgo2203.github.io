@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
 title: Dynamic Permutation
-published: true
+comments: true
 ---
 
 In the [previous post](http://channgo2203.github.io/permutations), I analyzed a common recursive implementation of permutation generation. Due to its n! complexity, a stack overflow will occurs soon with the number of elements is beyon 9.

@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
 title: Synchronous Programming
-published: true
+comments: true
 ---
 
 In this post, I would like to introduce about synchronous programming for reactive embedded system. This is a very high-level introduction. I also discuss about the meaning of the synchronous assumption about zero execution time.

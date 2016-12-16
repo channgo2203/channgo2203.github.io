@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
 title: Dutch Partition
-published: true
+comments: true
 ---
 
 This post describes the implementation of the "Dutch partition" problem using OCaml such that the memory space complexity is constant.

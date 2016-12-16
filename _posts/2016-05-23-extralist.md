@@ -1,7 +1,7 @@
 ---
 layout: post-no-feature
 title: Additional Functions for Lists
-published: true
+comments: true
 ---
 
 In this post, I will propose the implementation of some extra functions for data structure list in OCaml. The functionality is self-defined in the [source code](https://github.com/channgo2203/Functional-Data-Structures/tree/master/List).
