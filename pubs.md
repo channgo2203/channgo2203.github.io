@@ -72,7 +72,7 @@ In HAL-INRIA, **Technical Report RR-8508**, March 2014.
 [Formal Verification of Transformations on Abstract Clocks in Synchronous Compilers](http://hal.inria.fr/hal-00730926).  
 In HAL-INRIA, **Technical Report RR-8064**, September 2012.
 - V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard.  
-[_Formal Verification of Synchronous Data-flow Compilers_](http://hal.inria.fr/hal-00685633).  
+[Formal Verification of Synchronous Data-flow Compilers](http://hal.inria.fr/hal-00685633).  
 In HAL-INRIA, **Technical Report RR-7921**, April 2012.
 
 ### Thesis

@@ -28,8 +28,6 @@ opengraph:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: About
-    url: /about
   - title: Publications
     url: /pubs
   - title: Talks
@@ -39,6 +37,8 @@ links:
   - title: Github
     url: https://github.com/channgo2203
     external: true
+  - title: About
+    url: /about
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
