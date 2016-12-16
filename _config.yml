@@ -56,6 +56,13 @@ kramdown:
   hard_wrap:      false
   footnote_nr:    1
 
+coderay:
+    coderay_line_numbers:
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 3
+    coderay_bold_every: 10
+    coderay_css: class
+
 sass:
     style: :compressed
 
