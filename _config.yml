@@ -56,7 +56,7 @@ kramdown:
   hard_wrap:      false
   footnote_nr:    1
 
-  coderay:
+coderay:
     coderay_line_numbers:
     coderay_line_numbers_start: 1
     coderay_tab_width: 3
