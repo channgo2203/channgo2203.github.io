@@ -2,6 +2,7 @@
 layout: post
 title: Dynamic Permutation
 category: articles
+tag: [dynamic permutation, OCaml]
 comments: true
 ---
 
