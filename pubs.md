@@ -46,7 +46,7 @@ In Journal of Frontiers of Computer Science. Special Issue on Synchronous Progra
 ### 2012
 [[**HLDVT**](http://channgo2203.github.io/pdfs/hldvt12.pdf)] V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard.  
 [Formal Verification of Automatically Generated C-code from Polychronous Data-flow Equations](http://channgo2203.github.io/pdfs/hldvt12.pdf).  
-Accepted at IEEE International High-Level Design, Validation and Test Workshop. IEEE, California, USA, November 2012.
+Accepted at International High-Level Design, Validation and Test Workshop. IEEE, California, USA, November 2012.
 
 [[**IFM**](http://channgo2203.github.io/pdfs/ifm12.pdf)] V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic,  and L. Besnard.  
 [Formal Verification of Compiler Transformations on Polychronous Equations](http://channgo2203.github.io/pdfs/ifm12.pdf).  
