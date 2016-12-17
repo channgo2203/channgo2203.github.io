@@ -43,9 +43,35 @@ links:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
 future:      true
-highlighter: rouge
-markdown:    kramdown
 
+# Plugins
+whitelist: []
+gems:      []
+
+# Conversion
+markdown:    kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processors
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+kramdown:
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+  hard_wrap:      false
+  footnote_nr:    1
+  
 sass:
     style: :compressed
 
