@@ -28,17 +28,17 @@ opengraph:
 # Links to include in top navigation
 # For external links add external: true
 links:
+  - title: Research
+    url: /research
   - title: Publications
     url: /pubs
   - title: Talks
     url: /talks
-  - title: Research
-    url: /research
+  - title: About
+    url: /about
   - title: Github
     url: https://github.com/channgo2203
     external: true
-  - title: About
-    url: /about
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
