@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Dynamic Permutation
+category: articles
+tags: [dynamic permutation, permutation, OCaml]
 comments: true
 ---
 
