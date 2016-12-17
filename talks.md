@@ -4,7 +4,7 @@ permalink: /talks/index.html
 title: Talks
 tags: [about, Jekyll, theme, responsive]
 image:
-  feature: typewriter.jpg
+  feature: talks.jpg
 ---
 
 ### 2016
