@@ -13,8 +13,9 @@ in which the complexity of this one permutation generation is linear. I show how
 technique can be implemented using OCaml with the 
 [Johnson Trotter algorithm](https://en.wikipedia.org/wiki/Steinhaus–Johnson–Trotter_algorithm). 
 
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+{% highlight html linenos %}
+<figure>
+	<img src="/images/image-filename-1.jpg">
+	<figcaption>Caption describing these two images.</figcaption>
+</figure>
+{% endhighlight %}
