@@ -4,7 +4,7 @@ title: "Shortest Substring Contains a List of Strings"
 description: "Given a string str and a list of strings lstr. Find a shortest substring of str that 
 contains all strings in a list of strings lstr."
 category: articles
-tags: [sample post, readability, test]
+tags: [shortest string, OCaml]
 comments: true
 ---
 
