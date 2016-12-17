@@ -14,19 +14,3 @@ To overcome this, one technique is to generate a different permutation at a time
 in which the complexity of this one permutation generation is linear. I show how this 
 technique can be implemented using OCaml with the 
 [Johnson Trotter algorithm](https://en.wikipedia.org/wiki/Steinhaus–Johnson–Trotter_algorithm). 
-
-{% highlight ocaml linenos %}
-let insert_all_positions x l = 
-let rec aux prev acc l = 
-match l with
-| [] -> (prev @ [x]) :: acc |> List.rev
-| hd::tl as l -> aux (prev @ [hd]) ((prev @ [x] @ l) :: acc) tl 
-in aux [] [] l;;
-
-
-let rec permutation l = 
-match l with 
-| [] -> []
-| hd::[] -> [[hd]]
-| hd::tl -> List.fold_left (fun acc p -> acc @ insert_all_positions hd p) [] (permutation tl);;
-{% endhighlight %}
