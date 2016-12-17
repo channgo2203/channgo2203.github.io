@@ -15,7 +15,7 @@ technique can be implemented using OCaml with the
 
 {% highlight html linenos %}
 <figure>
-	<img src="/images/image-filename-1.jpg">
-	<figcaption>Caption describing these two images.</figcaption>
+  <img src="/images/image-filename-1.jpg">
+  <figcaption>Caption describing these two images.</figcaption>
 </figure>
 {% endhighlight %}
