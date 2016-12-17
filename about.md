@@ -4,7 +4,7 @@ permalink: /about/index.html
 title: About
 tags: [about, Jekyll, theme, responsive]
 image:
-  feature: typewriter.jpg
+  feature: about.jpg
 ---
 
 ### Bio

@@ -4,7 +4,7 @@ permalink: /pubs/index.html
 title: Publications
 tags: [about, Jekyll, theme, responsive]
 image:
-  feature: typewriter.jpg
+  feature: pubs.jpg
 ---
 
 ### 2016
