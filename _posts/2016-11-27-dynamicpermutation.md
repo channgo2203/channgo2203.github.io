@@ -1,5 +1,5 @@
 ---
-layout: post-no-feature
+layout: post
 title: Dynamic Permutation
 comments: true
 ---
