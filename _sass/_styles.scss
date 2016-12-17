@@ -85,11 +85,11 @@ code {
         color: $white;
         font-family: "Monaco", "Courier New", "Courier";
         font-size: .9em;
-        /*.lineno {
+        .lineno {
             margin-right: $lh/2;
             color: $grey-light;
             line-height: 2em;
-        }*/
+        }
         .nt {
             color: #c85b5c;
         }
