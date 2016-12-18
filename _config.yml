@@ -24,7 +24,7 @@ xing_link:
 facebook_link:
 
 # Footer
-footer_left: "Created by <a href=\"mailto:chan.ngo2203@gmail.com\">Van Chan Ngo</a>"
+footer_left: "<i class='fa fa-copyright'></i> 2016 <a href=\"mailto:chan.ngo2203@gmail.com\">Van Chan Ngo</a>, Powered by Carte Noire"
 footer_right: "&lt;/&gt; on <a href=\"https://github.com/channgo2203\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
 
 # Build settings
