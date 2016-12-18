@@ -1,7 +1,8 @@
 ---
 layout: post
-permalink: /about/index.html
 title: About
+category: About
+thumbnail: user-circle-o
 ---
 
 ### Bio
@@ -21,5 +22,4 @@ source code implementation, or mathematical models of these systems producing by
 model-based design toolchains, and formally certifying the correctness of the 
 compilers and code generators in the model-based design toolchains.
 
-### Contact Me
-[chan.ngo2203(at)gmail.com](mailto:chan.ngo2203@gmail.com)
+__Contact me__ at [<i class='fa fa-envelope'></i>](mailto:chan.ngo2203@gmail.com)

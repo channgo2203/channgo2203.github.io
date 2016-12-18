@@ -1,7 +1,8 @@
 ---
 layout: post
-permalink: /pubs/index.html
 title: Publications
+category: Publication
+thumbnail: pencil-square-o
 ---
 
 ### 2016

@@ -2,7 +2,7 @@
 layout: post
 title: Talks
 category: Talks
-thumbnail: cogs
+thumbnail: commenting
 ---
 
 ### 2016

@@ -1,7 +1,8 @@
 ---
 layout: post
-permalink: /research/index.html
 title: Research
+category: Research
+thumbnail: coffee
 ---
 
 ### Main Research
