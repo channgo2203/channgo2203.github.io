@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dutch Partition</title>
+<meta name="description" content="Ngo's personal page and notes on programming">
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/css/jquery.mmenu.all.css" />
+<link rel="stylesheet" href="/css/highlightjs.piperita.css">
+
+<!-- Favicons generated at http://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/favicons/manifest.json">
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<!-- MathJax for LaTeX -->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</head>
+
+
+    <body>
+
+    <nav id="my-menu">
+  <div>
+    <p>Van Chan Ngo</p>
+
+    <ul class="pages">
+      <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="/posts/"><i class="fa fa-archive"></i> All Articles</a></li>
+      <li><a href="/research/"><i class="fa fa-archive"></i> Research</a></li>
+      <li><a href="/pubs/"><i class="fa fa-archive"></i> Publications</a></li>
+      <li><a href="/talks/"><i class="fa fa-archive"></i> Talks</a></li>
+      <li><a href="/about/"><i class="fa fa-archive"></i> About</a></li>
+      <li><a href="/search/"><i class="fa fa-search"></i> Search</a></li>
+    </ul>
+
+    <p class="links">
+  <a href="https://www.twitter.com/channgo2203" target="_new"><i class="fa fa-twitter"></i></a>
+  <a href="https://www.linkedin.com/in/channgo2203" target="_new"><i class="fa fa-linkedin"></i></a>
+  
+  
+  
+  <a href="https://github.com/channgo2203" target="_new"><i class="fa fa-github-alt"></i></a>
+  
+  
+  
+  <a href="/feed.xml" target="_new"><i class="fa fa-rss"></i></a>
+</p>
+
+  </div>
+</nav>
+<div class="menu-button" href="#menu"><i class="fa fa-bars"></i></div>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      
+
+<div class="container-fluid single">
+  <div class="row">
+
+    <div itemscope itemtype="http://schema.org/Article" class="col-md-12 article">
+      
+      <div class="thumb">
+        <i class="fa fa-cogs fa-4x"></i>
+      </div>
+      
+
+      <h1 class="header" itemprop="name">Dutch Partition</h1>
+		
+      <!--<div class="author">
+        <small><i>
+          
+          on <span itemprop="datePublished" content="2014-08-28">October 30, 2016</span>
+           under Programming
+        </i></small>
+      </div>
+	  	
+      <div class="read-time">
+        <small>
+          3 minute read
+        </small>
+      </div>-->
+
+      <div class="content-panel content">
+
+        
+
+        <span itemprop="articleBody"><p>This post describes the implementation of the <strong>Dutch partition</strong> problem using OCaml 
+such that the memory space complexity is constant.</p>
+
+<h2 id="description">Description</h2>
+<p>The Dutch partition arises when we want to optimize the quick sort: given
+an array <code class="highlighter-rouge">A</code> whose elements are comparable and an index <code class="highlighter-rouge">i</code> of an element in the
+array. Reorder the array such that the initial elements are smaller than <code class="highlighter-rouge">A[i]</code>,
+and are followed by elements that equal to <code class="highlighter-rouge">A[i]</code>, the final elements are bigger
+than <code class="highlighter-rouge">A[i]</code>, using constant memory space complexity <script type="math/tex">O(1)</script>.</p>
+
+<p>I implement the problem using OCaml. The main idea is the use of 3 flags to  determine
+the 3 regions above.</p>
+<ul>
+  <li><code class="highlighter-rouge">A[0 .. smaller-1]</code> : smaller region</li>
+  <li><code class="highlighter-rouge">A[smaller .. equivalent-1]</code> : equivalent region</li>
+  <li><code class="highlighter-rouge">A[equivalent .. larger]</code> : unclassified region</li>
+  <li><code class="highlighter-rouge">A[larger+1 .. size-1]</code>: larger region</li>
+</ul>
+
+<p>The “smaller” and “equivalent” flags are initialized 0 and “larger” is
+initialized <code class="highlighter-rouge">(size - 1)</code>. That means at the beginning the whole array is
+unclassified. We use a recursive function to reduce the number of
+elements in unclassified region is 0.</p>
+
+<h2 id="code">Code</h2>
+<p>The <a href="https://gist.github.com/channgo2203/e432f08220a7c0f9bc8827f141c45124#file-dutch_partition-ml">source code</a> is given as follows.</p>
+
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="n">swap</span> <span class="n">i</span> <span class="n">j</span> <span class="n">a</span> <span class="p">=</span>
+  <span class="k">try</span>
+    <span class="k">let</span> <span class="n">tmp</span> <span class="p">=</span> <span class="n">a</span><span class="o">.(</span><span class="n">j</span><span class="p">)</span> <span class="k">in</span>
+    <span class="n">a</span><span class="o">.(</span><span class="n">j</span><span class="p">)</span> <span class="p">&lt;-</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="o">);</span>
+    <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">)</span> <span class="p">&lt;-</span> <span class="n">tmp</span><span class="p">;</span> <span class="n">a</span>
+  <span class="k">with</span>
+    <span class="p">_</span> <span class="p">-&gt;</span> <span class="k">raise</span> <span class="p">(</span><span class="nc">Invalid_argument</span> <span class="s2">"out-of-range"</span><span class="p">)</span>
+               
+<span class="c">(* auxiliary function *)</span>
+<span class="c">(* a[0 .. smaller - 1] : smaller region
+   a[smaller .. equivalent - 1] : equivalent region
+   a[equivalent .. larger] : unclassified region
+   a[larger + 1 ... size - 1] : larger region
+ *)</span>
+<span class="k">let</span> <span class="k">rec</span> <span class="n">partition</span> <span class="n">smaller</span> <span class="n">equivalent</span> <span class="n">larger</span> <span class="n">pivot</span> <span class="n">a</span> <span class="p">=</span>
+  <span class="k">if</span> <span class="n">equivalent</span> <span class="o">&lt;=</span> <span class="n">larger</span> <span class="k">then</span>
+    <span class="k">begin</span>
+      <span class="k">try</span>
+        <span class="k">if</span> <span class="n">a</span><span class="o">.(</span><span class="n">equivalent</span><span class="p">)</span> <span class="p">&lt;</span> <span class="n">pivot</span> <span class="k">then</span>
+          <span class="c">(* put a.(equivalent) to the smaller region *)</span>
+          <span class="n">partition</span> <span class="p">(</span><span class="n">smaller</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="n">equivalent</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="n">larger</span> <span class="n">pivot</span> <span class="p">(</span><span class="n">swap</span> <span class="n">smaller</span> <span class="n">equivalent</span> <span class="n">a</span><span class="p">)</span>
+        <span class="k">else</span>
+          <span class="k">if</span> <span class="n">a</span><span class="o">.(</span><span class="n">equivalent</span><span class="p">)</span> <span class="p">=</span> <span class="n">pivot</span> <span class="k">then</span>
+            <span class="c">(* move to the next element in the unclassified region *)</span>
+            <span class="n">partition</span> <span class="n">smaller</span> <span class="p">(</span><span class="n">equivalent</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="n">larger</span> <span class="n">pivot</span> <span class="n">a</span>
+          <span class="k">else</span>
+            <span class="c">(* move a.(equivalent) to the larger region *)</span>
+            <span class="n">partition</span> <span class="n">smaller</span> <span class="n">equivalent</span> <span class="p">(</span><span class="n">larger</span><span class="p">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">pivot</span> <span class="p">(</span><span class="n">swap</span> <span class="n">equivalent</span> <span class="n">larger</span> <span class="n">a</span><span class="p">)</span>
+      <span class="k">with</span>
+        <span class="p">_</span> <span class="p">-&gt;</span> <span class="k">raise</span> <span class="p">(</span><span class="nc">Invalid_argument</span> <span class="s2">"out-of-range"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">else</span>
+    <span class="n">a</span>
+
+<span class="k">let</span> <span class="n">dutch_partition</span> <span class="n">pivot_index</span> <span class="n">a</span> <span class="p">=</span>
+  <span class="k">try</span>
+    <span class="n">partition</span> <span class="mi">0</span> <span class="mi">0</span> <span class="p">(</span><span class="n">pred</span> <span class="p">(</span><span class="nn">Array</span><span class="p">.</span><span class="n">length</span> <span class="n">a</span><span class="o">))</span> <span class="p">(</span><span class="n">a</span><span class="o">.(</span><span class="n">pivot_index</span><span class="o">))</span> <span class="n">a</span>
+  <span class="k">with</span>
+    <span class="p">_</span> <span class="p">-&gt;</span> <span class="k">raise</span> <span class="p">(</span><span class="nc">Invalid_argument</span> <span class="s2">"out-of-range"</span><span class="p">)</span>
+
+<span class="k">open</span> <span class="nc">Printf</span>               
+<span class="c">(* test *)</span>               
+<span class="k">let</span> <span class="p">_</span> <span class="p">=</span>
+  <span class="nn">Array</span><span class="p">.</span><span class="n">iter</span> <span class="p">(</span><span class="n">printf</span> <span class="s2">"%d; "</span><span class="p">)</span> <span class="p">(</span><span class="n">dutch_partition</span> <span class="mi">3</span> <span class="p">[|</span><span class="mi">0</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="mi">6</span><span class="p">;</span><span class="mi">7</span><span class="p">;</span><span class="mi">8</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">10</span><span class="p">;</span><span class="mi">11</span><span class="p">;</span><span class="mi">12</span><span class="p">;</span><span class="mi">13</span><span class="p">;</span><span class="mi">14</span><span class="p">;</span><span class="mi">15</span><span class="p">;</span><span class="mi">16</span><span class="p">;</span><span class="mi">17</span><span class="p">;</span><span class="mi">18</span><span class="p">;</span><span class="mi">19</span><span class="o">|])</span>
+</code></pre>
+</div>
+
+</span>
+
+        
+
+        
+		
+        
+        <div class="tags">
+          <small>
+          <i class="fa fa-tags"></i>
+            Dutch partition, algorithm, OCaml, programming
+          </small>
+        </div>
+        
+
+      </div>
+
+      <!--
+      <div class="content-panel feedback">
+        I <i class="fa fa-heart"></i> feedback.<br />
+        Let me know what you think of this article on twitter <a href="http://www.twitter.com/channgo2203">@channgo2203</a> or leave a comment below!
+      </div>
+      -->
+
+      
+      <div class="content-panel comments">
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+      
+
+      
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+function disqus_config() { this.experiment.enable_scroll_container = true; }
+var disqus_shortname = "channgo"; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+      </div>
+    </div>
+
+    <div class="footer clearfix">
+  <div class="col-md-6">
+    Created by <a href="mailto:chan.ngo2203@gmail.com">Van Chan Ngo</a>
+  </div>
+  <div class="col-md-6">
+    &lt;/&gt; on <a href="https://github.com/channgo2203">Github</a> &nbsp;<i class="fa fa-github-alt"></i>
+  </div>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mmenu.min.all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+      $("#my-menu").mmenu().on( "closed.mm", function() {
+            $(".menu-button").show();
+         });
+      $(".menu-button").click(function() {
+        $(".menu-button").hide();
+        $("#my-menu").trigger("open.mm");
+      });
+   });
+</script>
+
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-89119753-1']);
+          _gaq.push(['_trackPageview']);
+  (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+    </body>
+</html>

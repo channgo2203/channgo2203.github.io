@@ -1,70 +1,41 @@
-title:            Van Chan Ngo
-tagline:          Static Analysis and Formal Verification
-description:      School of Computer Science, CMU
-canonical:        http://channgo2203.github.io
+# Site settings
+title: "Van Chan Ngo"
+email: chan.ngo2203@gmail.com
+description: "Ngo's personal page and notes on programming"
+baseurl: ""
+url: "http://channgo2203.github.io"
+title_description: "School of Computer Science, CMU"
+title_image: "http://channgo2203.github.io/images/logo.png"
+google_analytics: "UA-89119753-1"
+disqus_account: channgo
+github_repository: https://github.com/channgo2203
+addthis_id:
+post_limit: 5
 
-# Owner/author information
-owner:
-  name:           Van Chan Ngo
-  avatar:         http://channgo2203.github.io/images/logo.png
-  bio:            "Chan received his Engineer degree in Computer Engineering from Hanoi University of Technology with excellent ranking, his M.Sc in Computer Science (under a French government scholarship, Évariste Galois program) from Université de Grenoble 1, and his Ph.D from Inria France"
-  email:          chan.ngo2203@gmail.com
-#  twitter:        twnsndco
-  github:         channgo2203
-#  instagram:      ctrunsthis
-#  dribbble:       coletownsend
-  disqus:         channgo
-  location:       "Pittsburgh, PA"
-  # Plug in your disqus shortname!
+# Social usernames/URLs
+twitter_username: channgo2203
+github_username:  channgo2203
+instagram_username:
+reddit_username:
+linkedin_link: https://www.linkedin.com/in/channgo2203
+google_plus_link:
+stackoverflow_link:
+xing_link:
+facebook_link:
 
-tools:
-  standards:      "HTML, SCSS, Jekyll"
-  software:       "git"
+# Footer
+footer_left: "Created by <a href=\"mailto:chan.ngo2203@gmail.com\">Van Chan Ngo</a>"
+footer_right: "&lt;/&gt; on <a href=\"https://github.com/channgo2203\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
 
-# Open Graph customization
-opengraph:
-  locale:           en_US
-
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Research
-    url: /research
-  - title: Publications
-    url: /pubs
-  - title: Talks
-    url: /talks
-  - title: About
-    url: /about
-  - title: Github
-    url: https://github.com/channgo2203
-    external: true
-
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
-future:      true
-highlighter: rouge
-markdown:    kramdown
+# Build settings
+markdown: kramdown
 
 kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  use_coderay: false
+  input: GFM
+  syntax_highlighter: rouge
 
-coderay:
-  coderay_line_numbers:
-  coderay_line_numbers_start: 1
-  coderay_tab_width: 4
-  coderay_bold_every: 10
-  coderay_css: class
-  
 sass:
-    style: :compressed
+  style: :compressed
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp"]
+permalink: pretty
+exclude: [vendor]

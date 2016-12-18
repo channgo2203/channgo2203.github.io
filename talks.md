@@ -2,9 +2,6 @@
 layout: post
 permalink: /talks/index.html
 title: Talks
-tags: [about, Jekyll, theme, responsive]
-image:
-  feature: talks.jpg
 ---
 
 ### 2016

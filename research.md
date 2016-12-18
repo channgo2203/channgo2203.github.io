@@ -2,9 +2,6 @@
 layout: post
 permalink: /research/index.html
 title: Research
-tags: [about, Jekyll, theme, responsive]
-image:
-  feature: research.jpg
 ---
 
 ### Main Research

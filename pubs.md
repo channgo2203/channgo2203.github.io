@@ -2,9 +2,6 @@
 layout: post
 permalink: /pubs/index.html
 title: Publications
-tags: [about, Jekyll, theme, responsive]
-image:
-  feature: pubs.jpg
 ---
 
 ### 2016
