@@ -24,8 +24,9 @@ xing_link:
 facebook_link:
 
 # Footer
-footer_left: "<i class='fa fa-copyright'></i> 2016 <a href=\"mailto:chan.ngo2203@gmail.com\">Van Chan Ngo</a>, Powered by Carte Noire"
+footer_left: "<i class='fa fa-copyright'></i> 2016 <a href=\"mailto:chan.ngo2203@gmail.com\">Van Chan Ngo</a>"
 footer_right: "&lt;/&gt; on <a href=\"https://github.com/channgo2203\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
+footer_center: "<i class='fa fa-copyright'></i> 2016 <a href=\"mailto:chan.ngo2203@gmail.com\">Van Chan Ngo</a> powered by Carte Noire"
 
 # Build settings
 markdown: kramdown
