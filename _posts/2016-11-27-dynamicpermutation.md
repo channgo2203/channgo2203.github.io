@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dynamic Permutation
-date: {}
+date: 2016-11-27
 summary: Dynamic permutation implementation in OCaml.
 categories: Programming
 thumbnail: cogs
@@ -50,5 +50,5 @@ module IntPair =
 module P = Permutation.Make(IntPair)
 ```
 
-[1]: http://channgo2203.github.io/permutations
+[1]: http://channgo2203.github.io/programming/2016/11/22/permutation/
 [2]: https://en.wikipedia.org/wiki/Steinhaus–Johnson–Trotter_algorithm

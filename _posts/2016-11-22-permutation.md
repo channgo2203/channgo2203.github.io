@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Permutation
-date:       2016-11-27
+date:       2016-11-22
 summary:    Permutation implementation in OCaml.
 categories: Programming
 thumbnail: cogs
