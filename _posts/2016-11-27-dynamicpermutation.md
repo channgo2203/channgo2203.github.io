@@ -22,7 +22,13 @@ in which the complexity of this one permutation generation is linear. I show how
 technique can be implemented using OCaml with the 
 [Johnson Trotter algorithm][2]. 
 
-To make the implementation generic, I implement a functor which generates a Permutation module given a user-provided comparable type. For example, lets say I want to generate permutations over a list of pairs of integer values. I could with the functor to create a Permutation module over integer pairs. However it is possible to do permutation over any other value types as long as you provide an impplementation of that type.
+To make the implementation generic, I implement a functor which generates a 
+Permutation module given a user-provided comparable type. For example, lets say 
+I want to generate permutations over a list of pairs of integer values. I could with 
+the functor to create a Permutation module over integer pairs. However it is possible 
+to do permutation over any other value types as long as you provide an impplementation 
+of that type.
+
 ```ocaml
 module IntPair =
   struct
