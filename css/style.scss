@@ -646,14 +646,14 @@ ul {
 			}
 
 			figure.highlight, div.highlighter-rouge {
-				width: 100%;
+				width: 97%;
 				margin-left: -15px;
 				padding-right: 10px;
 				box-sizing: content-box;
 
 				@media (min-width: $screen-sm-min) {
-					margin-left: 0px;
-					padding-right: 60px;
+					margin-left: -10px;
+					padding-right: -10px;
 				}
 
 				pre {
