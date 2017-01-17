@@ -3,6 +3,7 @@ layout: post
 title: Research
 category: Research
 thumbnail: coffee
+published: true
 ---
 
 ### Main Research
@@ -38,6 +39,8 @@ compilers and code generators in the model-based design toolchains.
 * Software development in C/C++, C Sharp, Java, OCaml, and Python
 
 ### Review Activity
+* The 29th International Conference on Computer Aided Verification (CAV'17), Heidelberg, Germany, July 2017
+* The ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI'17), Barcelona, Spain, June 2017
 * The 26th International Conference on Compiler Construction (CC'17), Austin, Texas, US, February 2017
 * The 16th International Conference on Formal Methods in Computer-Aided Design (FMCAD'16), Mountain View, CA, US, October 2016
 * The 27th International Conference on Concurrency Theory (CONCUR'16), Quebec City, Canada, August 2016
