@@ -5,7 +5,6 @@ category: About
 thumbnail: user-circle-o
 ---
 
-### Bio
 Chan received his Engineer degree (equivalent to Diplôme d'Ingénieur) from 
 [Hanoi University of Technology](http://en.hust.edu.vn/home) with excellent ranking, 
 his M.Sc in Computer Science (under a French government scholarship, Évariste Galois program) 
