@@ -3,12 +3,16 @@ layout: post
 title: Publications
 category: Publication
 thumbnail: pencil-square-o
+published: true
 ---
-
+### 2017
+* [[**Oakland**](http://channgo2203.github.io/pdfs/oakland17.pdf)] V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
+[Verifying and Synthesizing Constant-Resource Implementations with Types](http://channgo2203.github.io/pdfs/oakland17.pdf).  
+To appear in 2017 IEEE Symposium on Security & Privacy (Oakland). IEEE, San Jose, CA, USA, May 2017.
 ### 2016
 * [[**JSEP**](http://channgo2203.github.io/pdfs/jsep16.pdf)] V.C. Ngo and A. Legay.   
 [Formal Verification of Probabilistic SystemC Models with Statistical Model Checking](http://channgo2203.github.io/pdfs/jsep16.pdf).  
-In Journal of Software: Evolution and Process. Wiley, 2016 (Submitted).
+In Journal of Software: Evolution and Process. Wiley, 2016 (Under Review).
 * [[**CAV**](http://channgo2203.github.io/pdfs/cav16.pdf)] V.C. Ngo, A. Legay, and V. Joloboff.  
 [PSCV: A Runtime Verification Tool for Probabilistic SystemC Models](http://channgo2203.github.io/pdfs/cav16.pdf).  
 In Proceedings of 28th International Conference on Computer Aided Verification. Springer, Toronto, Ontario, Canada, July 2016.
