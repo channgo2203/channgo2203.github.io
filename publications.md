@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: page
 title: Publications
-category: [Publication]
+category: [Research,Publication]
 ---
 
 ### 2017
