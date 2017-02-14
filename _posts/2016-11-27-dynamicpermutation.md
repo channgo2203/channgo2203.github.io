@@ -27,7 +27,7 @@ To make the implementation generic, I implement a functor which generates a
 Permutation module given a user-provided comparable type. For example, lets say 
 I want to generate permutations over a list of pairs of integer values. I could with 
 the functor to create a Permutation module over integer pairs. However it is possible 
-to do permutation over any other value types as long as you provide an impplementation 
+to do permutation over any other value types as long as you provide an implementation 
 of that type.
 
 ```ocaml

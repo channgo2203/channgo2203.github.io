@@ -152,7 +152,7 @@
     <p>For example, given a string <code class="highlighter-rouge">str = “this is a test string this a”</code> and a string list 
 <code class="highlighter-rouge">lstr = [“is”; "this"; "a"]</code>, then the output string is <code class="highlighter-rouge">“this a”</code>.</p>
 
-<h3 id="simple-solution">Simple Solution</h3>
+<h2 id="simple-solution">Simple Solution</h2>
 
 <ul>
   <li>Generate all substrings of str.</li>
@@ -160,13 +160,13 @@
   <li>Print out the smallest one.</li>
 </ul>
 
-<h3 id="complexity">Complexity</h3>
+<h2 id="complexity">Complexity</h2>
 
 <p>The complexity depends on the number of substrings which is <script type="math/tex">O(n^2)</script>, where <code class="highlighter-rouge">n</code> is the 
 length of str since the number of substring with the length <code class="highlighter-rouge">m</code> is <script type="math/tex">(n - m) + 1</script>. If 
 finding each substring is <script type="math/tex">O(n)</script>. Then, the complexity is <script type="math/tex">O(n^3)</script>.</p>
 
-<h3 id="efficient-solution">Efficient Solution</h3>
+<h2 id="efficient-solution">Efficient Solution</h2>
 
 <ul>
   <li>Find the first occurence of a substring of str containing all strings in lstr.</li>
@@ -180,7 +180,7 @@ indices in the list.</li>
   <li>Repeat the steps above.</li>
 </ul>
 
-<h3 id="complexity-1">Complexity</h3>
+<h2 id="complexity-1">Complexity</h2>
 
 <p>The complexity is <script type="math/tex">nm</script> where <code class="highlighter-rouge">m</code> is number of substrings containing all strings in 
 <code class="highlighter-rouge">lstr</code> such that its leftmost and rightmost substrings are strings in <code class="highlighter-rouge">lstr</code>, and <code class="highlighter-rouge">n</code> 

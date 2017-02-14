@@ -156,6 +156,8 @@ Finally, I will discuss how heap can be implemented with lists in functional lan
 and show that it does not satisfy the requirements. A tree-based implementation in OCaml 
 will also be given in this post.</p>
 
+<h2 id="heap-data-type">Heap data-type</h2>
+
 <p>A (complete) binary (min) heap is a binary tree that satisfies the following conditions:</p>
 
 <ul>
@@ -173,7 +175,7 @@ the node’s children, according to some total order.</p>
 <p>Figure 1 shows an example of a complete binary min heap, the numbers represent the value 
 of the keys in the nodes.</p>
 
-<p><img src="/images/heap-1.png" alt="Thumper" /></p>
+<p><img src="/img/heap-1.jpg" alt="A heap" /></p>
 
 <p>Heap is known for its efficient algorithms (logarithmic time complexity) of inserting 
 and deleting the smallest element in implementing a priority queue. It is also used in 
@@ -191,8 +193,6 @@ The following will explain how we heaps are implemented in this way, especially 
 node is inserted into and the min node is removed from a heap with <script type="math/tex">O(logn)</script> time 
 complexity.</p>
 
-<h3 id="heap-data-type">Heap data-type</h3>
-
 <p>A complete binary heap is represented by a complete binary tree that satisfies the heap 
 property. A node can be a terminal node, called <code class="highlighter-rouge">Leaf</code> or a non-terminal node, called 
 <code class="highlighter-rouge">Node</code>, that contains 
@@ -209,17 +209,17 @@ the left or right child tree. The heap data-type is given in the following snipp
 </code></pre>
 </div>
 
-<h3 id="insert-a-new-node">Insert a new node</h3>
+<h2 id="insert-a-new-node">Insert a new node</h2>
 
-<p><img src="/images/heap-2.png" alt="Thumper" /></p>
+<p><img src="/img/heap-2.jpg" alt="Insert" /></p>
 
-<h3 id="remove-the-min-node">Remove the min node</h3>
+<h2 id="remove-the-min-node">Remove the min node</h2>
 
-<p><img src="/images/heap-3.png" alt="Thumper" /></p>
+<p><img src="/img/heap-3.jpg" alt="Remove" /></p>
 
-<h3 id="fold-a-heap">Fold a heap</h3>
+<h2 id="fold-a-heap">Fold a heap</h2>
 
-<h3 id="merge-two-heaps">Merge two heaps</h3>
+<h2 id="merge-two-heaps">Merge two heaps</h2>
 
 
   </article>

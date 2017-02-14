@@ -5,15 +5,15 @@
     <description>Van Chan Ngo' homepage</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Feb 2017 23:18:16 +0100</pubDate>
-    <lastBuildDate>Tue, 14 Feb 2017 23:18:16 +0100</lastBuildDate>
+    <pubDate>Wed, 15 Feb 2017 00:01:13 +0100</pubDate>
+    <lastBuildDate>Wed, 15 Feb 2017 00:01:13 +0100</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
         <title>Variable-length Arguments in OCaml with the Concept of &quot;Folding&quot;</title>
         <description>&lt;p&gt;I will continue to discuss about the essential data structures and how they are implemented in a functional programming language, OCaml. In this post, I will talk about &lt;a href=&quot;https://en.wikipedia.org/wiki/Red–black_tree&quot;&gt;Red-Black tree&lt;/a&gt; and how it can be implemented in OCaml.&lt;/p&gt;
 
-&lt;h3 id=&quot;definition&quot;&gt;Definition&lt;/h3&gt;
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
 
 &lt;p&gt;These color bits are used to ensure the tree remains approximately balanced during insertions and deletions.&lt;/p&gt;
 
@@ -39,7 +39,7 @@
         <title>B-Tree</title>
         <description>&lt;p&gt;I will continue to dicuss about the essential data structures and how they are implemented in a functional programming language, OCaml. In this post, I will talk about &lt;a href=&quot;https://en.wikipedia.org/wiki/Red–black_tree&quot;&gt;Red-Black tree&lt;/a&gt; and how it can be implemented in OCaml.&lt;/p&gt;
 
-&lt;h3 id=&quot;definition&quot;&gt;Definition&lt;/h3&gt;
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
 
 &lt;p&gt;These color bits are used to ensure the tree remains approximately balanced during insertions and deletions.&lt;/p&gt;
 
@@ -67,7 +67,7 @@
         <title>Red-Black Tree</title>
         <description>&lt;p&gt;I will continue to dicuss about the essential data structures and how they are implemented in a functional programming language, OCaml. In this post, I will talk about &lt;a href=&quot;https://en.wikipedia.org/wiki/Red–black_tree&quot;&gt;Red-Black tree&lt;/a&gt; and how it can be implemented in OCaml.&lt;/p&gt;
 
-&lt;h3 id=&quot;definition&quot;&gt;Definition&lt;/h3&gt;
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
 
 &lt;p&gt;These color bits are used to ensure the tree remains approximately balanced during insertions and deletions.&lt;/p&gt;
 
@@ -95,11 +95,11 @@
 in OCaml. This post will discuss how it is used to implement the &lt;a href=&quot;https://en.wikipedia.org/wiki/Heapsort&quot;&gt;heap sort algorithm&lt;/a&gt;. 
 This sorting algorithm has &lt;script type=&quot;math/tex&quot;&gt;O(nlogn)&lt;/script&gt; worst-case time complexity.&lt;/p&gt;
 
-&lt;h3 id=&quot;algorithm&quot;&gt;Algorithm&lt;/h3&gt;
+&lt;h2 id=&quot;algorithm&quot;&gt;Algorithm&lt;/h2&gt;
 
 &lt;p&gt;Assume that we want to sort the list &lt;code class=&quot;highlighter-rouge&quot;&gt;[4; 1; 5; 3; 2]&lt;/code&gt; in decreasing order. We assume further that the input list is represented by a complete binary min heap with 5 nodes as shown on the top of Figure 1.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/heapsort.png&quot; alt=&quot;Thumper&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/heapsort.jpg&quot; alt=&quot;Heap-sort&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To sort the list we create an empty list as the output list. We pick the key value &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; of the heap’s root and put it into the output list. Then we remove the root &lt;code class=&quot;highlighter-rouge&quot;&gt;Node 1&lt;/code&gt; from the heap. After these actions, we get a new heap with the root is &lt;code class=&quot;highlighter-rouge&quot;&gt;Node 2&lt;/code&gt; and a new output list with one element &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;. If we do the actions above until the heap is empty (e.g., represented by a node &lt;code class=&quot;highlighter-rouge&quot;&gt;Leaf&lt;/code&gt;), then we get the final output list is in decreasing order &lt;code class=&quot;highlighter-rouge&quot;&gt;[5; 4; 3; 2; 1]&lt;/code&gt;. The process is depicted in Figure 1. Thus the heapsort algorithm can be divided into the following steps. The result list is intialized empty.&lt;/p&gt;
 
@@ -112,7 +112,7 @@ This sorting algorithm has &lt;script type=&quot;math/tex&quot;&gt;O(nlogn)&lt;/
 
 &lt;p&gt;The heap building is &lt;script type=&quot;math/tex&quot;&gt;O(nlogn)&lt;/script&gt; time complexity. The getting and removing the root operations are &lt;script type=&quot;math/tex&quot;&gt;O(1)&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;O(logn)&lt;/script&gt;, respectively, and they are called &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt; times. Therefore, the time complexity of the heap-sort algorithm is &lt;script type=&quot;math/tex&quot;&gt;O(nlogn)&lt;/script&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+&lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
 
 &lt;p&gt;This post demonstrates the use of extendining modules with functor in OCaml programming language as well. 
 Let’s see how this works in the context of the &lt;code class=&quot;highlighter-rouge&quot;&gt;Heap&lt;/code&gt; module to add the additional functionality 
@@ -232,6 +232,8 @@ Finally, I will discuss how heap can be implemented with lists in functional lan
 and show that it does not satisfy the requirements. A tree-based implementation in OCaml 
 will also be given in this post.&lt;/p&gt;
 
+&lt;h2 id=&quot;heap-data-type&quot;&gt;Heap data-type&lt;/h2&gt;
+
 &lt;p&gt;A (complete) binary (min) heap is a binary tree that satisfies the following conditions:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -249,7 +251,7 @@ the node’s children, according to some total order.&lt;/p&gt;
 &lt;p&gt;Figure 1 shows an example of a complete binary min heap, the numbers represent the value 
 of the keys in the nodes.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/heap-1.png&quot; alt=&quot;Thumper&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/heap-1.jpg&quot; alt=&quot;A heap&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Heap is known for its efficient algorithms (logarithmic time complexity) of inserting 
 and deleting the smallest element in implementing a priority queue. It is also used in 
@@ -267,8 +269,6 @@ The following will explain how we heaps are implemented in this way, especially 
 node is inserted into and the min node is removed from a heap with &lt;script type=&quot;math/tex&quot;&gt;O(logn)&lt;/script&gt; time 
 complexity.&lt;/p&gt;
 
-&lt;h3 id=&quot;heap-data-type&quot;&gt;Heap data-type&lt;/h3&gt;
-
 &lt;p&gt;A complete binary heap is represented by a complete binary tree that satisfies the heap 
 property. A node can be a terminal node, called &lt;code class=&quot;highlighter-rouge&quot;&gt;Leaf&lt;/code&gt; or a non-terminal node, called 
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Node&lt;/code&gt;, that contains 
@@ -285,17 +285,17 @@ the left or right child tree. The heap data-type is given in the following snipp
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;insert-a-new-node&quot;&gt;Insert a new node&lt;/h3&gt;
+&lt;h2 id=&quot;insert-a-new-node&quot;&gt;Insert a new node&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/heap-2.png&quot; alt=&quot;Thumper&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/heap-2.jpg&quot; alt=&quot;Insert&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;remove-the-min-node&quot;&gt;Remove the min node&lt;/h3&gt;
+&lt;h2 id=&quot;remove-the-min-node&quot;&gt;Remove the min node&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/heap-3.png&quot; alt=&quot;Thumper&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/heap-3.jpg&quot; alt=&quot;Remove&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;fold-a-heap&quot;&gt;Fold a heap&lt;/h3&gt;
+&lt;h2 id=&quot;fold-a-heap&quot;&gt;Fold a heap&lt;/h2&gt;
 
-&lt;h3 id=&quot;merge-two-heaps&quot;&gt;Merge two heaps&lt;/h3&gt;
+&lt;h2 id=&quot;merge-two-heaps&quot;&gt;Merge two heaps&lt;/h2&gt;
 
 </description>
         <pubDate>Thu, 01 Dec 2016 00:00:00 +0100</pubDate>
@@ -330,7 +330,7 @@ technique can be implemented using OCaml with the
 Permutation module given a user-provided comparable type. For example, lets say 
 I want to generate permutations over a list of pairs of integer values. I could with 
 the functor to create a Permutation module over integer pairs. However it is possible 
-to do permutation over any other value types as long as you provide an impplementation 
+to do permutation over any other value types as long as you provide an implementation 
 of that type.&lt;/p&gt;
 
 &lt;div class=&quot;language-ocaml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;(************************************)&lt;/span&gt;
@@ -605,12 +605,12 @@ generate a new set of permutations.&lt;/p&gt;
 elements &lt;code class=&quot;highlighter-rouge&quot;&gt;[1;2;3]&lt;/code&gt;, there are 4 possible positions (before &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;, and after &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;) 
 to insert &lt;code class=&quot;highlighter-rouge&quot;&gt;4&lt;/code&gt; as shown in the figure.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/permutations_1.jpg&quot; alt=&quot;Thumper&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/permutations_1.jpg&quot; alt=&quot;Thumper&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Therefore, with 6 previous permutations we have totally &lt;script type=&quot;math/tex&quot;&gt;4 * 6 = 24&lt;/script&gt; new permutations 
 if we insert the new element &lt;code class=&quot;highlighter-rouge&quot;&gt;4&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/permutations_2.jpg&quot; alt=&quot;Thumper&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/permutations_2.jpg&quot; alt=&quot;Thumper&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;code&quot;&gt;Code&lt;/h2&gt;
 
@@ -809,6 +809,7 @@ interesting. One can consider and solve that problem using Model Checking techni
 in Computer Science.&lt;/p&gt;
 
 &lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
 &lt;p&gt;There are &lt;script type=&quot;math/tex&quot;&gt;n \geq 2&lt;/script&gt; line segments in the plane such that every two segments cross, 
 and no three segments meet at a point. Geoff has to choose an endpoint of each segment 
 and place a frog on it, facing the other endpoint. Then he will clap his hands &lt;script type=&quot;math/tex&quot;&gt;n - 1&lt;/script&gt; 
@@ -822,6 +823,7 @@ the same intersection point at the same time.&lt;/p&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
 &lt;p&gt;I will not talk about the proof in mathematics. You can think about it. Here I would 
 like to relate this problem to the &lt;strong&gt;race problem&lt;/strong&gt; in multi-threaded programming. As 
 a result, it will come to the &lt;strong&gt;dead-lock problem&lt;/strong&gt; in software engineering.&lt;/p&gt;

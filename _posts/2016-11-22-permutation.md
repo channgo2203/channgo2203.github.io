@@ -30,12 +30,12 @@ Let's see how a new element is inserted into a permutation. Consider a permutati
 elements `[1;2;3]`, there are 4 possible positions (before `1`, `2`, `3`, and after `3`) 
 to insert `4` as shown in the figure.
 
-![Thumper]({{ site.baseurl }}/images/permutations_1.jpg)
+![Thumper]({{ site.baseurl }}/img/permutations_1.jpg)
 
 Therefore, with 6 previous permutations we have totally $$4 * 6 = 24$$ new permutations 
 if we insert the new element `4`.
 
-![Thumper]({{ site.baseurl }}/images/permutations_2.jpg)
+![Thumper]({{ site.baseurl }}/img/permutations_2.jpg)
 
 ## Code
 
