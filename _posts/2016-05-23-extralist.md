@@ -2,15 +2,15 @@
 layout:     post
 title:      Additional Functions for Lists
 date:       2016-05-23
-summary:    Additional Functions for Lists in Standard Library.
-categories: OCaml
-thumbnail: cogs
+excerpt:    Additional functions for lists in the standard library.
+categories: [OCaml]
 tags:
  - lists
  - standard library
  - algorithm
  - OCaml
  - programming
+comments: true
 ---
 
 In this post, I will propose the implementation of some extra functions for data structure 

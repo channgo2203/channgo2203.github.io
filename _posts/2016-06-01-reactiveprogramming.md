@@ -2,15 +2,15 @@
 layout:     post
 title:      Reactive and Synchronous Reactive Programming
 date:       2016-06-01
-summary:    Reactive and Synchronous Reactive Programming.
-categories: Research
-thumbnail: cogs
+excerpt:    Reactive and synchronous reactive programming.
+categories: [Research]
 tags:
  - research
  - synchronous program
  - Signal
  - Lustre
  - Esterel
+comments: true
 ---
 
 The term __reactive system__ was introduced by David Harel and Amir Pnueli to distingish 

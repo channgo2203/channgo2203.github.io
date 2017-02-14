@@ -2,14 +2,14 @@
 layout:     post
 title:      Permutation
 date:       2016-11-22
-summary:    Permutation implementation in OCaml.
-categories: Programming
-thumbnail: cogs
+excerpt:    Permutation implementation in OCaml.
+categories: [Programming]
 tags:
  - dynamic permutation
  - permutation
  - OCaml
  - programming
+comments: true
 ---
 
 In this post, I will talk about a common approach for generating all permutations, 

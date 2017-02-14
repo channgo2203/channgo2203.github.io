@@ -2,15 +2,15 @@
 layout:     post
 title:      Synchronous Programming
 date:       2016-07-11
-summary:    Synchronous Programming.
-categories: Research
-thumbnail: cogs
+excerpt:    Synchronous programming.
+categories: [Research]
 tags:
  - research
  - synchronous program
  - Signal
  - Lustre
  - Esterel
+comments: true
 ---
 
 In this post, I would like to introduce about synchronous programming for reactive 

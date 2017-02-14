@@ -2,14 +2,14 @@
 layout:     post
 title:      Dutch Partition
 date:       2016-10-30
-summary:    Dutch partition problem implementation in OCaml.
-categories: Programming
-thumbnail: cogs
+excerpt:    Dutch partition problem implementation in OCaml.
+categories: [Programming]
 tags:
  - Dutch partition
  - algorithm
  - OCaml
  - programming
+comments: true
 ---
 
 This post describes the implementation of the __Dutch partition__ problem using OCaml 

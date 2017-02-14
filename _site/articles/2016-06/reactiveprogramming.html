@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Reactive and Synchronous Reactive Programming</title>
+  <meta name="description" content="Reactive and synchronous reactive programming.">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2016-06/reactiveprogramming">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">Van Chan Ngo</a>
+  <span class="author_job">Computer Scientist and Software Engineer</span>
+  <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/about/">About</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/research/">Research</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/publications/">Publications</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/pdfs/cv.pdf" target="_blank">CV</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/notes/">Notes</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+      </li>
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('chan.ngo2203@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    <li><a href="http://linkedin.com/in/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="author_job" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Reactive and Synchronous Reactive Programming">Reactive and Synchronous Reactive Programming</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        1 JUN 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    1 min read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>The term <strong>reactive system</strong> was introduced by David Harel and Amir Pnueli to distingish 
+it from <strong>transformational system</strong>. For example, a compiler and usual programs are 
+considered as transformational systems since they will be terminated and compute outputs 
+from the initial inputs. While an operating system is a reactive system, in which it 
+communicates continously with its environment. However, the communication is determined 
+by the own speed of the operating system and it can synchronize with its environments, 
+for instance when users press a menu from the operatiing system interface, who need to 
+wait until the OS completes the task relating to this menu to see the next screen. The 
+users cannot make the next menu appear at the speed they want. We call this class of 
+reactive systems <strong>interactive systems</strong>.</p>
+
+<p><strong>Synchronous reactive system</strong> is an instance of of reactive system. It is different 
+from the interactive systems in the sense that it interacts with its environment at the 
+speed of the environment, meaning that the environment cannot wait. Typical examples 
+are cyber physical systems, real-time safety-critical embedded systems (e.g., nuclear 
+reactors, fly by wire systems).</p>
+
+<p>In general, reactive systems can be implemented by a single infinite loop, in which two 
+schemes are used as follows.</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* event-drivent scheme */</span>
+<span class="n">InitializeMemory</span><span class="p">();</span>
+
+<span class="n">foreach</span> <span class="n">input_event</span> <span class="k">do</span>
+  <span class="n">ComputeOutput</span><span class="p">();</span>
+  <span class="n">UpdateMemory</span><span class="p">();</span>
+<span class="n">end</span>
+
+<span class="cm">/* sampling scheme */</span>
+<span class="n">InitializeMemory</span><span class="p">();</span>
+
+<span class="n">foreach</span> <span class="n">period</span> <span class="k">do</span> 
+  <span class="n">ReadInputs</span><span class="p">();</span>
+  <span class="n">ComputeOutput</span><span class="p">();</span>
+  <span class="n">UpdateMemory</span><span class="p">();</span>
+<span class="n">end</span>
+</code></pre>
+</div>
+
+  </article>
+</div>
+<!--
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-06/reactiveprogramming" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-06/reactiveprogramming" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-06/reactiveprogramming" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-06/reactiveprogramming" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-06/reactiveprogramming" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>-->
+
+
+
+        <footer>
+  &copy; 2017 Van Chan Ngo. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

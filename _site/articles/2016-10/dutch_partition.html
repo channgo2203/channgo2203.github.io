@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dutch Partition</title>
+  <meta name="description" content="Dutch partition problem implementation in OCaml.">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2016-10/dutch_partition">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">Van Chan Ngo</a>
+  <span class="author_job">Computer Scientist and Software Engineer</span>
+  <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/about/">About</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/research/">Research</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/publications/">Publications</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/pdfs/cv.pdf" target="_blank">CV</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/notes/">Notes</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+      </li>
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('chan.ngo2203@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    <li><a href="http://linkedin.com/in/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="author_job" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Dutch Partition">Dutch Partition</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        30 OCT 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    3 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>This post describes the implementation of the <strong>Dutch partition</strong> problem using OCaml 
+such that the memory space complexity is constant.</p>
+
+<h2 id="description">Description</h2>
+<p>The Dutch partition arises when we want to optimize the quick sort: given
+an array <code class="highlighter-rouge">A</code> whose elements are comparable and an index <code class="highlighter-rouge">i</code> of an element in the
+array. Reorder the array such that the initial elements are smaller than <code class="highlighter-rouge">A[i]</code>,
+and are followed by elements that equal to <code class="highlighter-rouge">A[i]</code>, the final elements are bigger
+than <code class="highlighter-rouge">A[i]</code>, using constant memory space complexity <script type="math/tex">O(1)</script>.</p>
+
+<p>I implement the problem using OCaml. The main idea is the use of 3 flags to  determine
+the 3 regions above.</p>
+<ul>
+  <li><code class="highlighter-rouge">A[0 .. smaller-1]</code> : smaller region</li>
+  <li><code class="highlighter-rouge">A[smaller .. equivalent-1]</code> : equivalent region</li>
+  <li><code class="highlighter-rouge">A[equivalent .. larger]</code> : unclassified region</li>
+  <li><code class="highlighter-rouge">A[larger+1 .. size-1]</code>: larger region</li>
+</ul>
+
+<p>The “smaller” and “equivalent” flags are initialized 0 and “larger” is
+initialized <code class="highlighter-rouge">(size - 1)</code>. That means at the beginning the whole array is
+unclassified. We use a recursive function to reduce the number of
+elements in unclassified region is 0.</p>
+
+<h2 id="code">Code</h2>
+<p>The <a href="https://gist.github.com/channgo2203/e432f08220a7c0f9bc8827f141c45124#file-dutch_partition-ml">source code</a> is given as follows.</p>
+
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="n">swap</span> <span class="n">i</span> <span class="n">j</span> <span class="n">a</span> <span class="p">=</span>
+  <span class="k">try</span>
+    <span class="k">let</span> <span class="n">tmp</span> <span class="p">=</span> <span class="n">a</span><span class="o">.(</span><span class="n">j</span><span class="p">)</span> <span class="k">in</span>
+    <span class="n">a</span><span class="o">.(</span><span class="n">j</span><span class="p">)</span> <span class="p">&lt;-</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="o">);</span>
+    <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">)</span> <span class="p">&lt;-</span> <span class="n">tmp</span><span class="p">;</span> <span class="n">a</span>
+  <span class="k">with</span>
+    <span class="p">_</span> <span class="p">-&gt;</span> <span class="k">raise</span> <span class="p">(</span><span class="nc">Invalid_argument</span> <span class="s2">"out-of-range"</span><span class="p">)</span>
+               
+<span class="c">(* auxiliary function *)</span>
+<span class="c">(* a[0 .. smaller - 1] : smaller region
+   a[smaller .. equivalent - 1] : equivalent region
+   a[equivalent .. larger] : unclassified region
+   a[larger + 1 ... size - 1] : larger region
+ *)</span>
+<span class="k">let</span> <span class="k">rec</span> <span class="n">partition</span> <span class="n">smaller</span> <span class="n">equivalent</span> <span class="n">larger</span> <span class="n">pivot</span> <span class="n">a</span> <span class="p">=</span>
+  <span class="k">if</span> <span class="n">equivalent</span> <span class="o">&lt;=</span> <span class="n">larger</span> <span class="k">then</span>
+    <span class="k">begin</span>
+      <span class="k">try</span>
+        <span class="k">if</span> <span class="n">a</span><span class="o">.(</span><span class="n">equivalent</span><span class="p">)</span> <span class="p">&lt;</span> <span class="n">pivot</span> <span class="k">then</span>
+          <span class="c">(* put a.(equivalent) to the smaller region *)</span>
+          <span class="n">partition</span> <span class="p">(</span><span class="n">smaller</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="n">equivalent</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="n">larger</span> <span class="n">pivot</span> <span class="p">(</span><span class="n">swap</span> <span class="n">smaller</span> <span class="n">equivalent</span> <span class="n">a</span><span class="p">)</span>
+        <span class="k">else</span>
+          <span class="k">if</span> <span class="n">a</span><span class="o">.(</span><span class="n">equivalent</span><span class="p">)</span> <span class="p">=</span> <span class="n">pivot</span> <span class="k">then</span>
+            <span class="c">(* move to the next element in the unclassified region *)</span>
+            <span class="n">partition</span> <span class="n">smaller</span> <span class="p">(</span><span class="n">equivalent</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="n">larger</span> <span class="n">pivot</span> <span class="n">a</span>
+          <span class="k">else</span>
+            <span class="c">(* move a.(equivalent) to the larger region *)</span>
+            <span class="n">partition</span> <span class="n">smaller</span> <span class="n">equivalent</span> <span class="p">(</span><span class="n">larger</span><span class="p">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">pivot</span> <span class="p">(</span><span class="n">swap</span> <span class="n">equivalent</span> <span class="n">larger</span> <span class="n">a</span><span class="p">)</span>
+      <span class="k">with</span>
+        <span class="p">_</span> <span class="p">-&gt;</span> <span class="k">raise</span> <span class="p">(</span><span class="nc">Invalid_argument</span> <span class="s2">"out-of-range"</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">else</span>
+    <span class="n">a</span>
+
+<span class="k">let</span> <span class="n">dutch_partition</span> <span class="n">pivot_index</span> <span class="n">a</span> <span class="p">=</span>
+  <span class="k">try</span>
+    <span class="n">partition</span> <span class="mi">0</span> <span class="mi">0</span> <span class="p">(</span><span class="n">pred</span> <span class="p">(</span><span class="nn">Array</span><span class="p">.</span><span class="n">length</span> <span class="n">a</span><span class="o">))</span> <span class="p">(</span><span class="n">a</span><span class="o">.(</span><span class="n">pivot_index</span><span class="o">))</span> <span class="n">a</span>
+  <span class="k">with</span>
+    <span class="p">_</span> <span class="p">-&gt;</span> <span class="k">raise</span> <span class="p">(</span><span class="nc">Invalid_argument</span> <span class="s2">"out-of-range"</span><span class="p">)</span>
+
+<span class="k">open</span> <span class="nc">Printf</span>               
+<span class="c">(* test *)</span>               
+<span class="k">let</span> <span class="p">_</span> <span class="p">=</span>
+  <span class="nn">Array</span><span class="p">.</span><span class="n">iter</span> <span class="p">(</span><span class="n">printf</span> <span class="s2">"%d; "</span><span class="p">)</span> <span class="p">(</span><span class="n">dutch_partition</span> <span class="mi">3</span> <span class="p">[|</span><span class="mi">0</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="mi">6</span><span class="p">;</span><span class="mi">7</span><span class="p">;</span><span class="mi">8</span><span class="p">;</span><span class="mi">9</span><span class="p">;</span><span class="mi">10</span><span class="p">;</span><span class="mi">11</span><span class="p">;</span><span class="mi">12</span><span class="p">;</span><span class="mi">13</span><span class="p">;</span><span class="mi">14</span><span class="p">;</span><span class="mi">15</span><span class="p">;</span><span class="mi">16</span><span class="p">;</span><span class="mi">17</span><span class="p">;</span><span class="mi">18</span><span class="p">;</span><span class="mi">19</span><span class="o">|])</span>
+</code></pre>
+</div>
+
+
+  </article>
+</div>
+<!--
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-10/dutch_partition" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-10/dutch_partition" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-10/dutch_partition" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-10/dutch_partition" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-10/dutch_partition" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>-->
+
+
+
+        <footer>
+  &copy; 2017 Van Chan Ngo. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

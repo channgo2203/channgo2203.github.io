@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Binary Heap</title>
+  <meta name="description" content="Heap implementation in OCaml.">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2016-12/heap">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">Van Chan Ngo</a>
+  <span class="author_job">Computer Scientist and Software Engineer</span>
+  <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/about/">About</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/research/">Research</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/publications/">Publications</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/pdfs/cv.pdf" target="_blank">CV</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/notes/">Notes</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+      </li>
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('chan.ngo2203@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    <li><a href="http://linkedin.com/in/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="author_job" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Binary Heap">Binary Heap</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        1 DEC 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    3 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>In this post, I will talk about the 
+<a href="https://en.wikipedia.org/wiki/Heap_(data_structure)">heap data structure</a>, a specialized 
+tree-based data structure. I will recall how it can be implemented in imperative languages. 
+Finally, I will discuss how heap can be implemented with lists in functional languages 
+and show that it does not satisfy the requirements. A tree-based implementation in OCaml 
+will also be given in this post.</p>
+
+<p>A (complete) binary (min) heap is a binary tree that satisfies the following conditions:</p>
+
+<ul>
+  <li>
+    <p><strong>Shape property</strong>: it is a complete binary tree; that is, all levels of the tree, 
+except possibly the last one (deepest) are fully filled, and, if the last level of the 
+tree is not complete, the nodes of that level are filled from left to right.</p>
+  </li>
+  <li>
+    <p><strong>Heap property</strong>: the key stored in each node is less than or equal to the keys in 
+the node’s children, according to some total order.</p>
+  </li>
+</ul>
+
+<p>Figure 1 shows an example of a complete binary min heap, the numbers represent the value 
+of the keys in the nodes.</p>
+
+<p><img src="/images/heap-1.png" alt="Thumper" /></p>
+
+<p>Heap is known for its efficient algorithms (logarithmic time complexity) of inserting 
+and deleting the smallest element in implementing a priority queue. It is also used in 
+implementing <a href="https://en.wikipedia.org/wiki/Heapsort">heapsort algoritm</a> that has <script type="math/tex">O(nlogn)</script> time complexity.</p>
+
+<p>In imperative world, a heap is generally placed in an array with the layout of complete 
+binary tree, mapping complete binary tree nodes to the array indices. For instance, with 
+the zero-based array, the root node is represented by index <code class="highlighter-rouge">0</code>, if <code class="highlighter-rouge">i</code> is the index of 
+the parent, then the indices of its left and right child are: <code class="highlighter-rouge">left_child(i) = 2*i + 1</code>
+and <code class="highlighter-rouge">right_child(i) = 2*i + 1</code>. However, in functional languages, if we implement an array 
+using list data-structure. Then we cannot obtain the constant time complexity for 
+accessing elements of the array. Therefore, lists cannot be used to implement efficient 
+heaps. Instead, we need to use tree data structures to implement heaps in functional world. 
+The following will explain how we heaps are implemented in this way, especially how a new 
+node is inserted into and the min node is removed from a heap with <script type="math/tex">O(logn)</script> time 
+complexity.</p>
+
+<h3 id="heap-data-type">Heap data-type</h3>
+
+<p>A complete binary heap is represented by a complete binary tree that satisfies the heap 
+property. A node can be a terminal node, called <code class="highlighter-rouge">Leaf</code> or a non-terminal node, called 
+<code class="highlighter-rouge">Node</code>, that contains 
+information about the number of nodes, the height, the key, its left and right trees. 
+We will see that the number of nodes and the height help us decide to add a new node on 
+the left or right child tree. The heap data-type is given in the following snippet.</p>
+
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(** type of node value. *)</span>
+<span class="k">type</span> <span class="n">key</span> <span class="p">=</span> <span class="nn">El</span><span class="p">.</span><span class="n">t</span>
+
+<span class="c">(** a node contains # nodes, height, left tree, key, and right tree. *)</span>
+<span class="k">type</span> <span class="n">heap</span> <span class="p">=</span> <span class="nc">Leaf</span>
+            <span class="p">|</span> <span class="nc">Node</span> <span class="k">of</span> <span class="kt">int</span> <span class="p">*</span> <span class="kt">int</span> <span class="p">*</span> <span class="n">heap</span> <span class="p">*</span> <span class="n">key</span> <span class="p">*</span> <span class="n">heap</span>
+</code></pre>
+</div>
+
+<h3 id="insert-a-new-node">Insert a new node</h3>
+
+<p><img src="/images/heap-2.png" alt="Thumper" /></p>
+
+<h3 id="remove-the-min-node">Remove the min node</h3>
+
+<p><img src="/images/heap-3.png" alt="Thumper" /></p>
+
+<h3 id="fold-a-heap">Fold a heap</h3>
+
+<h3 id="merge-two-heaps">Merge two heaps</h3>
+
+
+  </article>
+</div>
+<!--
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-12/heap" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-12/heap" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-12/heap" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-12/heap" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-12/heap" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>-->
+
+
+
+        <footer>
+  &copy; 2017 Van Chan Ngo. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

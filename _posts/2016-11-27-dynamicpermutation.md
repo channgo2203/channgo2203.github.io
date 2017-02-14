@@ -2,15 +2,16 @@
 layout: post
 title: Dynamic Permutation
 date: 2016-11-27
-summary: Dynamic permutation implementation in OCaml.
-categories: Programming
-thumbnail: cogs
+excerpt: Dynamic permutation implementation in OCaml.
+categories: [Programming]
 tags:
   - dynamic permutation
   - permutation
   - OCaml
   - programming
 published: true
+comments: true
+share: true
 ---
 
 In the [previous post][1], I analyzed a common 

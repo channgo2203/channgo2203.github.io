@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dynamic Permutation</title>
+  <meta name="description" content="Dynamic permutation implementation in OCaml.">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2016-11/dynamicpermutation">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">Van Chan Ngo</a>
+  <span class="author_job">Computer Scientist and Software Engineer</span>
+  <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/about/">About</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/research/">Research</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/publications/">Publications</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/pdfs/cv.pdf" target="_blank">CV</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/notes/">Notes</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+      </li>
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('chan.ngo2203@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    <li><a href="http://linkedin.com/in/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="author_job" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Dynamic Permutation">Dynamic Permutation</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        27 NOV 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    9 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>In the <a href="http://channgo2203.github.io/programming/2016/11/22/permutation/">previous post</a>, I analyzed a common 
+recursive implementation of permutation generation. Due to its <script type="math/tex">n!</script> complexity, a stack 
+overflow will occurs soon with the number of elements is beyon 9.</p>
+
+<p>To overcome this, one technique is to generate a different permutation at a time, 
+in which the complexity of this one permutation generation is linear. I show how this 
+technique can be implemented using OCaml with the 
+<a href="https://en.wikipedia.org/wiki/Steinhaus–Johnson–Trotter_algorithm">Johnson Trotter algorithm</a>.</p>
+
+<p>To make the implementation generic, I implement a functor which generates a 
+Permutation module given a user-provided comparable type. For example, lets say 
+I want to generate permutations over a list of pairs of integer values. I could with 
+the functor to create a Permutation module over integer pairs. However it is possible 
+to do permutation over any other value types as long as you provide an impplementation 
+of that type.</p>
+
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(************************************)</span>
+<span class="c">(*          Permutation             *)</span>
+<span class="c">(*          Van Chan Ngo            *)</span>
+<span class="c">(************************************)</span>
+
+<span class="c">(** Permutation over ordered types *)</span>
+
+<span class="k">type</span> <span class="n">order</span> <span class="p">=</span> <span class="nc">Lt</span>
+           <span class="p">|</span> <span class="nc">Eq</span>
+           <span class="p">|</span> <span class="nc">Gt</span>
+
+<span class="k">type</span> <span class="n">direction</span> <span class="p">=</span> <span class="nc">L</span>
+               <span class="p">|</span> <span class="nc">R</span>
+               
+<span class="k">module</span> <span class="k">type</span> <span class="nc">ComparedType</span> <span class="p">=</span>
+  <span class="k">sig</span>
+    <span class="k">type</span> <span class="n">t</span>
+           <span class="c">(** the type of the elements. *)</span>
+    <span class="k">val</span> <span class="n">compare</span> <span class="p">:</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="n">order</span>
+    <span class="k">val</span> <span class="n">to_string</span> <span class="p">:</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="kt">string</span>
+  <span class="k">end</span>
+
+<span class="k">module</span> <span class="k">type</span> <span class="nc">Permutation</span> <span class="p">=</span>
+  <span class="k">sig</span>
+    <span class="k">type</span> <span class="n">element</span>
+           <span class="c">(** the type of the elements. *)</span>
+    <span class="k">type</span> <span class="n">permutation</span>
+           <span class="c">(** the type of a permutation. *)</span>
+    <span class="k">val</span> <span class="n">empty</span> <span class="p">:</span> <span class="kt">unit</span> <span class="p">-&gt;</span> <span class="n">permutation</span>
+           <span class="c">(** empty permutation. *)</span>
+    <span class="k">val</span> <span class="n">is_empty</span> <span class="p">:</span> <span class="n">permutation</span> <span class="p">-&gt;</span> <span class="kt">bool</span>
+    <span class="k">val</span> <span class="n">of_list</span> <span class="p">:</span> <span class="n">element</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="n">permutation</span>
+    <span class="k">val</span> <span class="n">stream_permutation</span> <span class="p">:</span> <span class="n">permutation</span> <span class="p">-&gt;</span> <span class="n">permutation</span> <span class="nn">Stream</span><span class="p">.</span><span class="n">t</span>
+    <span class="k">val</span> <span class="n">to_string</span> <span class="p">:</span> <span class="n">permutation</span> <span class="p">-&gt;</span> <span class="kt">string</span>
+  <span class="k">end</span>
+
+<span class="k">module</span> <span class="nc">Int</span> <span class="p">:</span> <span class="nc">ComparedType</span> <span class="k">with</span> <span class="k">type</span> <span class="n">t</span> <span class="p">=</span> <span class="kt">int</span>
+
+<span class="k">module</span> <span class="nc">Make</span> <span class="p">(</span><span class="nc">El</span> <span class="p">:</span> <span class="nc">ComparedType</span><span class="p">)</span> <span class="p">:</span> <span class="nc">Permutation</span> <span class="k">with</span> <span class="k">type</span> <span class="n">element</span> <span class="p">=</span> <span class="nn">El</span><span class="p">.</span><span class="n">t</span>
+</code></pre>
+</div>
+
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">type</span> <span class="n">order</span> <span class="p">=</span> <span class="nc">Lt</span>
+           <span class="p">|</span> <span class="nc">Eq</span>
+           <span class="p">|</span> <span class="nc">Gt</span>
+
+<span class="k">type</span> <span class="n">direction</span> <span class="p">=</span> <span class="nc">L</span>
+               <span class="p">|</span> <span class="nc">R</span>
+               
+<span class="k">module</span> <span class="k">type</span> <span class="nc">ComparedType</span> <span class="p">=</span>
+  <span class="k">sig</span>
+    <span class="k">type</span> <span class="n">t</span>
+           <span class="c">(** the type of the elements. *)</span>
+    <span class="k">val</span> <span class="n">compare</span> <span class="p">:</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="n">order</span>
+    <span class="k">val</span> <span class="n">to_string</span> <span class="p">:</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="kt">string</span>
+  <span class="k">end</span>
+
+<span class="k">module</span> <span class="k">type</span> <span class="nc">Permutation</span> <span class="p">=</span>
+  <span class="k">sig</span>
+    <span class="k">type</span> <span class="n">element</span>
+           <span class="c">(** the type of the elements. *)</span>
+    <span class="k">type</span> <span class="n">permutation</span>
+           <span class="c">(** the type of a permutation. *)</span>
+    <span class="k">val</span> <span class="n">empty</span> <span class="p">:</span> <span class="kt">unit</span> <span class="p">-&gt;</span> <span class="n">permutation</span>
+           <span class="c">(** empty permutation. *)</span>
+    <span class="k">val</span> <span class="n">is_empty</span> <span class="p">:</span> <span class="n">permutation</span> <span class="p">-&gt;</span> <span class="kt">bool</span>
+    <span class="k">val</span> <span class="n">of_list</span> <span class="p">:</span> <span class="n">element</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="n">permutation</span>
+    <span class="k">val</span> <span class="n">stream_permutation</span> <span class="p">:</span> <span class="n">permutation</span> <span class="p">-&gt;</span> <span class="n">permutation</span> <span class="nn">Stream</span><span class="p">.</span><span class="n">t</span>
+    <span class="k">val</span> <span class="n">to_string</span> <span class="p">:</span> <span class="n">permutation</span> <span class="p">-&gt;</span> <span class="kt">string</span>
+  <span class="k">end</span>
+
+<span class="k">module</span> <span class="nc">Int</span> <span class="p">=</span>
+  <span class="k">struct</span>
+    <span class="k">type</span> <span class="n">t</span> <span class="p">=</span> <span class="kt">int</span>
+    <span class="k">let</span> <span class="n">to_string</span> <span class="n">x</span> <span class="p">=</span> <span class="n">string_of_int</span> <span class="n">x</span>
+    <span class="k">let</span> <span class="n">compare</span> <span class="n">x</span> <span class="n">y</span> <span class="p">=</span>
+      <span class="k">if</span> <span class="n">x</span> <span class="p">&gt;</span> <span class="n">y</span> <span class="k">then</span>
+        <span class="nc">Gt</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="n">y</span> <span class="k">then</span>
+        <span class="nc">Lt</span>
+      <span class="k">else</span>
+        <span class="nc">Eq</span>
+  <span class="k">end</span>
+  
+<span class="k">module</span> <span class="nc">Make</span> <span class="p">(</span><span class="nc">El</span> <span class="p">:</span> <span class="nc">ComparedType</span><span class="p">)</span> <span class="p">=</span>
+  <span class="k">struct</span>
+    <span class="k">type</span> <span class="n">element</span> <span class="p">=</span> <span class="nn">El</span><span class="p">.</span><span class="n">t</span>
+
+    <span class="k">type</span> <span class="n">permutation</span> <span class="p">=</span> <span class="n">element</span> <span class="kt">list</span>
+
+    <span class="k">let</span> <span class="n">empty</span> <span class="bp">()</span> <span class="p">=</span> <span class="bp">[]</span>
+
+    <span class="k">let</span> <span class="n">is_empty</span> <span class="n">p</span> <span class="p">=</span>
+      <span class="k">match</span> <span class="n">p</span> <span class="k">with</span>
+      <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="bp">true</span>
+      <span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="bp">false</span>
+
+    <span class="k">let</span> <span class="n">of_list</span> <span class="n">l</span> <span class="p">=</span> <span class="n">l</span>
+
+    <span class="k">let</span> <span class="n">to_string</span> <span class="n">p</span> <span class="p">=</span>
+      <span class="nn">List</span><span class="p">.</span><span class="n">fold_left</span> <span class="p">(</span><span class="k">fun</span> <span class="n">acc</span> <span class="n">x</span> <span class="p">-&gt;</span> <span class="n">acc</span> <span class="o">^</span> <span class="s2">" "</span> <span class="o">^</span> <span class="p">(</span><span class="nn">El</span><span class="p">.</span><span class="n">to_string</span> <span class="n">x</span><span class="o">))</span> <span class="s2">""</span> <span class="n">p</span>
+
+    <span class="k">let</span> <span class="n">stream_permutation</span> <span class="n">p</span> <span class="p">=</span>
+      <span class="k">let</span> <span class="n">attach_direction</span> <span class="n">a</span> <span class="p">=</span>
+        <span class="nn">Array</span><span class="p">.</span><span class="n">map</span> <span class="p">(</span><span class="k">fun</span> <span class="n">x</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nc">L</span><span class="o">))</span> <span class="n">a</span>
+      <span class="k">in</span>
+
+      <span class="k">let</span> <span class="n">swap</span> <span class="n">a</span> <span class="n">i</span> <span class="n">j</span> <span class="p">=</span>
+        <span class="k">let</span> <span class="n">tmp</span> <span class="p">=</span> <span class="n">a</span><span class="o">.(</span><span class="n">j</span><span class="p">)</span> <span class="k">in</span>
+        <span class="n">a</span><span class="o">.(</span><span class="n">j</span><span class="p">)</span> <span class="p">&lt;-</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="o">);</span>
+        <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">)</span> <span class="p">&lt;-</span> <span class="n">tmp</span>
+      <span class="k">in</span>
+
+      <span class="k">let</span> <span class="n">is_movable</span> <span class="n">a</span> <span class="n">i</span> <span class="p">=</span>
+        <span class="k">let</span> <span class="n">x</span><span class="p">,</span> <span class="n">d</span> <span class="p">=</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">)</span> <span class="k">in</span>
+
+        <span class="k">match</span> <span class="n">d</span> <span class="k">with</span>
+        <span class="p">|</span> <span class="nc">L</span> <span class="p">-&gt;</span>
+           <span class="k">begin</span>
+             <span class="k">if</span> <span class="n">i</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="k">then</span>
+               <span class="k">match</span> <span class="nn">El</span><span class="p">.</span><span class="n">compare</span> <span class="n">x</span> <span class="p">(</span><span class="n">fst</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">-</span><span class="mi">1</span><span class="o">))</span> <span class="k">with</span>
+               <span class="p">|</span> <span class="nc">Gt</span> <span class="p">-&gt;</span> <span class="bp">true</span>
+               <span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="bp">false</span>
+             <span class="k">else</span>
+               <span class="bp">false</span>
+           <span class="k">end</span>
+             
+        <span class="p">|</span> <span class="nc">R</span> <span class="p">-&gt;</span>
+           <span class="k">begin</span>
+             <span class="k">if</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="nn">Array</span><span class="p">.</span><span class="n">length</span> <span class="n">a</span> <span class="p">-</span> <span class="mi">1</span> <span class="k">then</span>
+               <span class="k">match</span> <span class="nn">El</span><span class="p">.</span><span class="n">compare</span> <span class="n">x</span> <span class="p">(</span><span class="n">fst</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">))</span> <span class="k">with</span>
+               <span class="p">|</span> <span class="nc">Gt</span> <span class="p">-&gt;</span> <span class="bp">true</span>
+               <span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="bp">false</span>
+             <span class="k">else</span>
+               <span class="bp">false</span>
+           <span class="k">end</span>
+      <span class="k">in</span>
+      
+    <span class="k">let</span> <span class="n">move</span> <span class="n">a</span> <span class="n">i</span> <span class="p">=</span>
+      <span class="k">let</span> <span class="n">x</span><span class="p">,</span> <span class="n">d</span> <span class="p">=</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">)</span> <span class="k">in</span>
+      <span class="k">if</span> <span class="n">is_movable</span> <span class="n">a</span> <span class="n">i</span> <span class="k">then</span>
+        <span class="k">match</span> <span class="n">d</span> <span class="k">with</span>
+        <span class="p">|</span> <span class="nc">L</span> <span class="p">-&gt;</span> <span class="n">swap</span> <span class="n">a</span> <span class="n">i</span> <span class="p">(</span><span class="n">i</span><span class="p">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">|</span> <span class="nc">R</span> <span class="p">-&gt;</span> <span class="n">swap</span> <span class="n">a</span> <span class="n">i</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="n">failwith</span> <span class="s2">"not movable"</span>
+    <span class="k">in</span>
+
+    <span class="k">let</span> <span class="n">scan_movable_largest</span> <span class="n">a</span> <span class="p">=</span>
+      <span class="k">let</span> <span class="k">rec</span> <span class="n">aux</span> <span class="n">acc</span> <span class="n">i</span> <span class="p">=</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="nn">Array</span><span class="p">.</span><span class="n">length</span> <span class="n">a</span> <span class="k">then</span>
+          <span class="n">acc</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="n">not</span> <span class="p">(</span><span class="n">is_movable</span> <span class="n">a</span> <span class="n">i</span><span class="p">)</span> <span class="k">then</span>
+          <span class="n">aux</span> <span class="n">acc</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span>
+          <span class="k">let</span> <span class="n">x</span><span class="p">,</span> <span class="p">_</span> <span class="p">=</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">)</span> <span class="k">in</span>
+          <span class="k">match</span> <span class="n">acc</span> <span class="k">with</span>
+          <span class="p">|</span> <span class="nc">None</span> <span class="p">-&gt;</span> <span class="n">aux</span> <span class="p">(</span><span class="nc">Some</span> <span class="n">i</span><span class="p">)</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+          <span class="p">|</span> <span class="nc">Some</span> <span class="n">j</span> <span class="p">-&gt;</span>
+             <span class="k">match</span> <span class="nn">El</span><span class="p">.</span><span class="n">compare</span> <span class="n">x</span> <span class="p">(</span><span class="n">fst</span> <span class="n">a</span><span class="o">.(</span><span class="n">j</span><span class="o">))</span> <span class="k">with</span>
+             <span class="p">|</span> <span class="nc">Lt</span> <span class="p">-&gt;</span> <span class="n">aux</span> <span class="n">acc</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+             <span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="n">aux</span> <span class="p">(</span><span class="nc">Some</span> <span class="n">i</span><span class="p">)</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+      <span class="k">in</span>
+      <span class="n">aux</span> <span class="nc">None</span> <span class="mi">0</span>
+    <span class="k">in</span>
+
+    <span class="k">let</span> <span class="n">flip</span> <span class="n">d</span> <span class="p">=</span>
+      <span class="k">match</span> <span class="n">d</span> <span class="k">with</span>
+      <span class="p">|</span> <span class="nc">L</span> <span class="p">-&gt;</span> <span class="nc">R</span>
+      <span class="p">|</span> <span class="nc">R</span> <span class="p">-&gt;</span> <span class="nc">L</span>
+    <span class="k">in</span>
+
+    <span class="k">let</span> <span class="n">scan_flip_larger</span> <span class="n">x</span> <span class="n">a</span> <span class="p">=</span>
+      <span class="nn">Array</span><span class="p">.</span><span class="n">iteri</span> <span class="p">(</span><span class="k">fun</span> <span class="n">i</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="p">-&gt;</span>
+          <span class="k">match</span> <span class="nn">El</span><span class="p">.</span><span class="n">compare</span> <span class="n">y</span> <span class="n">x</span> <span class="k">with</span>
+          <span class="p">|</span> <span class="nc">Gt</span> <span class="p">-&gt;</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">)</span> <span class="p">&lt;-</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">flip</span> <span class="n">d</span><span class="p">)</span>
+          <span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="bp">()</span><span class="p">)</span>
+                  <span class="n">a</span>
+    <span class="k">in</span>
+
+    <span class="k">let</span> <span class="n">permutations_generator</span> <span class="n">l</span> <span class="p">=</span>
+      <span class="k">let</span> <span class="n">a</span> <span class="p">=</span> <span class="nn">Array</span><span class="p">.</span><span class="n">of_list</span> <span class="n">l</span> <span class="o">|&gt;</span> <span class="n">attach_direction</span> <span class="k">in</span>
+      <span class="k">let</span> <span class="n">r</span> <span class="p">=</span> <span class="n">ref</span> <span class="p">(</span><span class="nc">Some</span> <span class="n">l</span><span class="p">)</span> <span class="k">in</span>
+      <span class="k">let</span> <span class="n">next</span> <span class="bp">()</span> <span class="p">=</span>
+        <span class="k">let</span> <span class="n">p</span> <span class="p">=</span> <span class="o">!</span><span class="n">r</span> <span class="k">in</span>
+        <span class="p">(</span><span class="k">match</span> <span class="n">scan_movable_largest</span> <span class="n">a</span> <span class="k">with</span> <span class="c">(* find the largest movable *)</span>
+         <span class="p">|</span> <span class="nc">None</span> <span class="p">-&gt;</span> <span class="n">r</span> <span class="p">:=</span> <span class="nc">None</span> <span class="c">(* no more permutations *)</span>
+         <span class="p">|</span> <span class="nc">Some</span> <span class="n">i</span> <span class="p">-&gt;</span>
+            <span class="k">let</span> <span class="n">x</span><span class="p">,</span> <span class="p">_</span> <span class="p">=</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">)</span> <span class="k">in</span>
+            <span class="p">(</span>
+              <span class="n">move</span> <span class="n">a</span> <span class="n">i</span><span class="p">;</span> <span class="c">(* move *)</span>
+              <span class="n">scan_flip_larger</span> <span class="n">x</span> <span class="n">a</span><span class="p">;</span> <span class="c">(* after move, scan to flip *)</span>
+              <span class="n">r</span> <span class="p">:=</span> <span class="nc">Some</span> <span class="p">(</span><span class="nn">Array</span><span class="p">.</span><span class="n">map</span> <span class="n">fst</span> <span class="n">a</span> <span class="o">|&gt;</span> <span class="nn">Array</span><span class="p">.</span><span class="n">to_list</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="o">);</span>
+        <span class="n">p</span>
+      <span class="k">in</span>
+      <span class="n">next</span>
+    <span class="k">in</span>
+
+    <span class="k">let</span> <span class="n">generator</span> <span class="p">=</span> <span class="n">permutations_generator</span> <span class="n">p</span> <span class="k">in</span>
+    <span class="nn">Stream</span><span class="p">.</span><span class="n">from</span> <span class="p">(</span><span class="k">fun</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="n">generator</span> <span class="bp">()</span><span class="p">)</span>
+                        
+  <span class="k">end</span>
+</code></pre>
+</div>
+
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nc">IntPair</span> <span class="p">=</span>
+  <span class="k">struct</span>
+    <span class="k">type</span> <span class="n">t</span> <span class="p">=</span> <span class="kt">int</span> <span class="p">*</span> <span class="kt">int</span>
+
+    <span class="k">let</span> <span class="n">to_string</span> <span class="n">x</span> <span class="p">=</span>
+      <span class="k">let</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">)</span> <span class="p">=</span> <span class="n">x</span> <span class="k">in</span>
+      <span class="s2">"("</span> <span class="o">^</span> <span class="p">(</span><span class="n">string_of_int</span> <span class="n">x1</span><span class="p">)</span> <span class="o">^</span> <span class="s2">","</span> <span class="o">^</span> <span class="p">(</span><span class="n">string_of_int</span> <span class="n">x2</span><span class="p">)</span> <span class="o">^</span> <span class="s2">")"</span>
+
+    <span class="k">let</span> <span class="n">compare</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span> <span class="p">=</span>
+      <span class="k">if</span> <span class="n">x1</span> <span class="p">&gt;</span> <span class="n">x2</span> <span class="k">then</span>
+        <span class="nc">Gt</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="n">x1</span> <span class="p">&lt;</span> <span class="n">x2</span> <span class="k">then</span>
+        <span class="nc">Lt</span>
+      <span class="k">else</span>
+        <span class="k">begin</span>
+          <span class="k">if</span> <span class="n">y1</span> <span class="p">&gt;</span> <span class="n">y2</span> <span class="k">then</span>
+            <span class="nc">Gt</span>
+          <span class="k">else</span> <span class="k">if</span> <span class="n">y1</span> <span class="p">&lt;</span> <span class="n">y2</span> <span class="k">then</span>
+            <span class="nc">Lt</span>
+          <span class="k">else</span>
+            <span class="nc">Eq</span>
+        <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">module</span> <span class="nc">P</span> <span class="p">=</span> <span class="nn">Permutation</span><span class="p">.</span><span class="nc">Make</span><span class="p">(</span><span class="nc">IntPair</span><span class="p">)</span>
+</code></pre>
+</div>
+
+
+  </article>
+</div>
+<!--
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-11/dynamicpermutation" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-11/dynamicpermutation" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-11/dynamicpermutation" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-11/dynamicpermutation" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-11/dynamicpermutation" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>-->
+
+
+
+        <footer>
+  &copy; 2017 Van Chan Ngo. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

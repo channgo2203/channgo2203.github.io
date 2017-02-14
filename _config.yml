@@ -1,42 +1,69 @@
-# Site settings
-title: "Van Chan Ngo"
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: Van Chan Ngo
 email: chan.ngo2203@gmail.com
-description: "Ngo's personal page and notes on programming"
-baseurl: ""
-url: "http://channgo2203.github.io"
-title_description: "School of Computer Science, CMU"
-title_image: "http://channgo2203.github.io/images/logo.png"
-google_analytics: "UA-89119753-1"
-disqus_account: channgo
-github_repository: https://github.com/channgo2203
-addthis_id:
-post_limit: 5
+description: Van Chan Ngo' homepage
+url: http://channgo2203.github.io/
 
-# Social usernames/URLs
-twitter_username: channgo2203
-github_username:  channgo2203
-instagram_username:
-reddit_username:
-linkedin_link: https://www.linkedin.com/in/channgo2203
-google_plus_link:
-stackoverflow_link:
-xing_link:
-facebook_link:
 
-# Footer
-footer_left: "<i class='fa fa-copyright'></i> 2016 <a href=\"mailto:chan.ngo2203@gmail.com\">Van Chan Ngo</a>"
-footer_right: "&lt;/&gt; on <a href=\"https://github.com/channgo2203\">Github</a> &nbsp;<i class=\"fa fa-github-alt\"></i>"
-footer_center: "<i class='fa fa-copyright'></i> 2016 <a href=\"mailto:chan.ngo2203@gmail.com\">Van Chan Ngo</a> powered by Carte Noire"
-
-# Build settings
-markdown: kramdown
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          Europe/Paris
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
 
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
 
-sass:
-  style: :compressed
-
-permalink: pretty
-exclude: [vendor]
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Van Chan Ngo
+  avatar: avatar.jpg
+  job: "Computer Scientist and Software Engineer"
+  bio: "Research interests are in formal methods, programming languages, compilers, and security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University."
+  email: chan.ngo2203@gmail.com
+  disqus-shortname: #channgo
+  twitter: #username
+  facebook: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: channgo2203
+  gitlab: #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: channgo2203
+  skype: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  500px: #username
+  codepen: #username

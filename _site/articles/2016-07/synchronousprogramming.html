@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Synchronous Programming</title>
+  <meta name="description" content="Synchronous programming.">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2016-07/synchronousprogramming">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">Van Chan Ngo</a>
+  <span class="author_job">Computer Scientist and Software Engineer</span>
+  <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/about/">About</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/research/">Research</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/publications/">Publications</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/pdfs/cv.pdf" target="_blank">CV</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/notes/">Notes</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
+      </li>
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('chan.ngo2203@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    <li><a href="http://linkedin.com/in/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="author_job" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Synchronous Programming">Synchronous Programming</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        11 JUL 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    4 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>In this post, I would like to introduce about synchronous programming for reactive 
+embedded system. This is a very high-level introduction. I also discuss about the meaning 
+of the synchronous assumption about zero execution time.</p>
+
+<h2 id="some-important-design-issues">Some important design issues</h2>
+<ul>
+  <li>Hard versus soft real-time</li>
+  <li>Safety criticality: e.g. DO-178B/C defines 5 levels of safety:
+    <ol>
+      <li>A- the most critical level, a fault leads to catastrophic consequences,</li>
+      <li>B- leads to severe consequences,</li>
+      <li>C- leads to major consequences,</li>
+      <li>D- leads to minor consequences, and</li>
+      <li>E- leads to consequences without any effect on the system.</li>
+    </ol>
+  </li>
+  <li>Determinism: very important property of embedded systems. It ensures that the system 
+will always behave in the same manner, with respect to its expected functional requirements.</li>
+  <li>Predictability: beyond the functional requirements, one must be able to predict at 
+least the critical nonfunctional behavior of system, e.g. the timing constraints are 
+always satisfied (response time or latency constraints, rate constraints, which rely on 
+the number of events processed by a system during a time period)</li>
+  <li>Distribution and heterogeneity</li>
+  <li>Complexity and modularity</li>
+</ul>
+
+<p>A real issue in real-time programming is how to deal with timing information. The form 
+of timing information is based on the abstraction level adopted. The logical time is 
+related to the physical time only at instants <code class="highlighter-rouge">t1</code> (input event occurs) and <code class="highlighter-rouge">t2</code> 
+(output event of the system).</p>
+
+<p>The real-time programming models include:</p>
+<ul>
+  <li>Asynchronous</li>
+  <li>Pre-estimated time</li>
+  <li>Synchronous</li>
+</ul>
+
+<h2 id="reactive-systems">Reactive systems</h2>
+<p>Reactive systems are systems that continuously react to their environment at a speed 
+determined by this environment. Most industrial real-time systems are reactive. The 
+main features of these systems are the following:</p>
+<ul>
+  <li>Involve concurrency</li>
+  <li>Submitted to strict time requirements: concern both their input rate and their 
+input/output response time</li>
+  <li>Generally deterministic</li>
+  <li>Reliability is an especially important goal</li>
+  <li>Mix of software and hardware</li>
+</ul>
+
+<h2 id="approaches">Approaches</h2>
+
+<p>Classical approaches: Models include automata or Petri-net based models, task-based models, 
+and communicating processes</p>
+<ul>
+  <li>Deterministic automata: Automata are often used to implement the control kernel of a 
+reactive system. A reaction is a block of code (neither loop nor recursive, no interrupt, 
+no overhead due to process management), whose maximal execution time can be accurately 
+bounded. Moreover, automata are well-known mathematical objects for which verification 
+techniques are available (evaluation of temporal logic formulas, reduction and observation). 
+However, automata are “flat” objects, without any hierarchical or parallel structure. As 
+results, they are very difficult to use to design complex systems.</li>
+  <li>Petri-net-based models: These models are mainly used to program industrial controllers, 
+the inherent concurrency of these models reduces the complexity of system description. 
+However, because of the lack of hierarchy, they are hard to apply to big systems. In 
+addition, their semantics, especially concerning time aspects, is often unclear 
+(or ambiguous).</li>
+  <li>Task-based models: The approach consisting in designing a system as made of a set of 
+sequential tasks, activated and controlled by a real-time operating system.</li>
+  <li>Classical concurrent and real-time programming languages: Concurrent and real-time
+programming languages such as ADA or OCCAM take concurrency as a primary
+concern and support modularity. Communication and synchronization mechanisms use
+rendez-vous, and fifo queues. However, they are essentially asynchronous and nondeterministic.</li>
+  <li>The synchronous approach: The synchronous approach naturally expresses concurrency. It 
+is deterministic and hierarchical, and possible to use automatic verification tools.</li>
+</ul>
+
+<p>In the synchronous approach, time is abstracted by a partial order relation.
+Events occurring during the same reaction are regarded as simultaneous. Time only increments
+from one reaction to the next one. Durations between events are not specified. Under
+this abstraction, computation is considered to take zero time. A synchronous program is
+supposed to instantly and deterministically react to the events from its environment. To
+illustrate the basic idea of synchronous approach, we consider an example in which
+requires the two following constraints:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>“The train must stop within 10 seconds”
+
+“The train must stop within 100 meters”
+</code></pre>
+</div>
+
+<p>These constraints can be expressed in completely different ways if the physical time is
+considered. In the synchronous model, they will be expressed by the following constraints:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>“The event stop must precede the 10th next occurrence of the event second”
+
+“The event stop must precede the 100th next occurrence of the event meter”
+</code></pre>
+</div>
+
+<p>The notion of instant is understood as a logical instant: the history of a system is a totally
+ordered sequence of logical instants. At each instant, there are zero, one, or several events
+that can occur. Events which occur at the same instants are considered as simultaneous. In
+the duration between two instants, nothing happens either in the system or its environment.
+Finally, all the processes of the system have the same knowledge of the events occurring at
+a given instant.</p>
+
+  </article>
+</div>
+<!--
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-07/synchronousprogramming" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-07/synchronousprogramming" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-07/synchronousprogramming" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-07/synchronousprogramming" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-07/synchronousprogramming" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>-->
+
+
+
+        <footer>
+  &copy; 2017 Van Chan Ngo. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>
