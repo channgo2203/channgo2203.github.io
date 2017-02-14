@@ -62,7 +62,7 @@ In Proceedings of Workshop on Formal and Computational Cryptography, New York, U
 
 ### Technical Reports
 * M. Fredrikson, J. Hoffmann, and V.C. Ngo.  
-[Quantifying and Preventing Side Channels with Substructural Type Systems](http://channgo2203.github.io/pdfs/cmutr01.pdf).
+[Quantifying and Preventing Side Channels with Substructural Type Systems](http://channgo2203.github.io/pdfs/cmutr01.pdf).  
 In CMU, **Technical Report**, June 2016.
 * V.C. Ngo and A. Legay.  
 [Dependability Analysis of Embedded Control Systems Using SystemC and Statistical Model Checking](https://hal.archives-ouvertes.fr/hal-01180996).  
