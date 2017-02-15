@@ -1464,8 +1464,8 @@ pre code {
   padding: 0 30px; }
   .cover-card .avatar {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     float: none; }
   .cover-card .author_name {
     display: block;
@@ -1512,7 +1512,7 @@ pre code {
     zoom: 1; }
     .nav-list .nav-item a {
       margin-top: 1em;
-      font-size: 100%;
+      font-size: 110%;
       color: #8d7edc; }
       .nav-list .nav-item a:hover, .nav-list .nav-item a:focus {
         color: #bfb6eb; }

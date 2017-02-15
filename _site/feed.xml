@@ -5,18 +5,13 @@
     <description>Van Chan Ngo' homepage</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Feb 2017 00:01:13 +0100</pubDate>
-    <lastBuildDate>Wed, 15 Feb 2017 00:01:13 +0100</lastBuildDate>
+    <pubDate>Wed, 15 Feb 2017 04:46:47 +0100</pubDate>
+    <lastBuildDate>Wed, 15 Feb 2017 04:46:47 +0100</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
-        <title>Variable-length Arguments in OCaml with the Concept of &quot;Folding&quot;</title>
-        <description>&lt;p&gt;I will continue to discuss about the essential data structures and how they are implemented in a functional programming language, OCaml. In this post, I will talk about &lt;a href=&quot;https://en.wikipedia.org/wiki/Red–black_tree&quot;&gt;Red-Black tree&lt;/a&gt; and how it can be implemented in OCaml.&lt;/p&gt;
-
-&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-
-&lt;p&gt;These color bits are used to ensure the tree remains approximately balanced during insertions and deletions.&lt;/p&gt;
-
+        <title>Variable-length Arguments in OCaml</title>
+        <description>
 </description>
         <pubDate>Mon, 06 Feb 2017 00:00:00 +0100</pubDate>
         <link>http://localhost:4000/articles/2017-02/fold</link>
@@ -31,7 +26,7 @@
         <category>functional programming</category>
         
         
-        <category>Programming</category>
+        <category>Programming/OCaml</category>
         
       </item>
     
