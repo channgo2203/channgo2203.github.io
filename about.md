@@ -2,7 +2,7 @@
 layout: post
 title: About
 ---
-I am working as a researcher in the School of Computer Science, and am a member of the Principles of Programming Group at Carnegie Mellon University. My research interests are in formal methods, programming languages, compilers, and security. 
+I am working as a researcher in the School of Computer Science, and am a member of the Principles of Programming Group at Carnegie Mellon University. My research interests are in formal methods, programming languages, compilers, and language-based security. 
 
 I received my Engineer degree (equivalent to Diplôme d'Ingénieur) from 
 [Hanoi University of Technology](http://en.hust.edu.vn/home) with excellent ranking, 
