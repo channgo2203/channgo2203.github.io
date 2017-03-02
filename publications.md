@@ -33,7 +33,8 @@ In Proceedings of International Workshop on Software and Compilers for Embedded 
 In Proceedings of 35th IFIP International Conference on Formal Techniques for Distributed Objects, Components and Systems. IFIP, Grenoble, France, June 2015.
 * <b style="color: #F5A623;">[FASE]</b> V.C. Ngo, J-P. Talpin, T. Gautier, and P. Le Guernic.  
 [Translation Validation for Clock Transformations in a Synchronous Compiler](http://channgo2203.github.io/pdfs/fase15.pdf).  
-In Proceedings of 18th International Conference on Fundamental Approaches to Software Engineering. Springer, London, UK, April 2015.
+In Proceedings of 18th International Conference on Fundamental Approaches to Software Engineering. Springer, London, UK, April 2015.  
+[[Long Version](http://channgo2203.github.io/pdfs/longfase15.pdf)]
 
 ### 2014
 * <b style="color: #F5A623;">[ESLsyn-DAC]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
