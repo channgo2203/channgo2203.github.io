@@ -11,7 +11,7 @@ published: true
 * <b style="color: #F5A623;">[Oakland]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
 [Verifying and Synthesizing Constant-Resource Implementations with Types](http://channgo2203.github.io/pdfs/oakland17.pdf).  
 To appear in 2017 IEEE Symposium on Security & Privacy (Oakland). IEEE, San Jose, CA, USA, May 2017.  
-[[Appendix](http://channgo2203.github.io/pdfs/oakland17_app.pdf)] [[Formalization](http://channgo2203.github.io/zips/oakland17_formalization.zip)][[Tool](http://www.raml.co/code.html)]
+[[Appendix](http://channgo2203.github.io/pdfs/oakland17_app.pdf)] [[Formalization](http://channgo2203.github.io/zips/oakland17_formalization.zip)][[Tool Implementation](http://www.raml.co/code.html)]
 
 ### 2016
 * <b style="color: #F5A623;">[JSEP]</b> V.C. Ngo and A. Legay.   
@@ -52,7 +52,7 @@ Accepted at International High-Level Design, Validation and Test Workshop. IEEE,
 * <b style="color: #F5A623;">[IFM]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic,  and L. Besnard.  
 [Formal Verification of Compiler Transformations on Polychronous Equations](http://channgo2203.github.io/pdfs/ifm12.pdf).  
 In Proceedings of 9th International Conference on Integrated Formal Methods. Springer, Pisa, Italy, June 2012.  
-[[Implementation](https://github.com/channgo2203/SigCV)]
+[[Tool Implementation](https://github.com/channgo2203/SigCV)]
 
 ### 2009
 * <b style="color: #F5A623;">[ESORICS]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
