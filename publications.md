@@ -16,15 +16,18 @@ To appear in 2017 IEEE Symposium on Security & Privacy (Oakland). IEEE, San Jose
 ### 2016
 * <b style="color: #F5A623;">[JSEP]</b> V.C. Ngo and A. Legay.   
 [Formal Verification of Probabilistic SystemC Models with Statistical Model Checking](http://channgo2203.github.io/pdfs/jsep16.pdf).  
-In Journal of Software: Evolution and Process. Wiley, 2016 (Under Review).
+In Journal of Software: Evolution and Process. Wiley, 2016 (Under Review).  
+[[Tool Implementation](https://github.com/channgo2203/PSCV)][Case Studies: [Producer-Consumer](http://channgo2203.github.io/zips/producer_consumer.tar.gz)[Control System](http://channgo2203.github.io/zips/control_system.tar.gz)[Random Scheduler](http://channgo2203.github.io/zips/random_scheduler.tar.gz)][[Tool Website](https://project.inria.fr/pscv/)]
 
 * <b style="color: #F5A623;">[CAV]</b> V.C. Ngo, A. Legay, and V. Joloboff.  
 [PSCV: A Runtime Verification Tool for Probabilistic SystemC Models](http://channgo2203.github.io/pdfs/cav16.pdf).  
-In Proceedings of 28th International Conference on Computer Aided Verification. Springer, Toronto, Ontario, Canada, July 2016.
+In Proceedings of 28th International Conference on Computer Aided Verification. Springer, Toronto, Ontario, Canada, July 2016.  
+[[Tool Implementation](https://github.com/channgo2203/PSCV)][Case Studies: [Producer-Consumer](http://channgo2203.github.io/zips/producer_consumer.tar.gz)[Control System](http://channgo2203.github.io/zips/control_system.tar.gz)[Random Scheduler](http://channgo2203.github.io/zips/random_scheduler.tar.gz)][[Tool Website](https://project.inria.fr/pscv/)]
 
 * <b style="color: #F5A623;">[HASE]</b> V.C. Ngo, A. Legay, and J. Quilbeuf.  
 [Statistical Model Checking for SystemC Models](http://channgo2203.github.io/pdfs/hase16.pdf).  
-In Proceedings of 17th High Assurance Systems Engineering Symposium. IEEE, Orlando, Florida, USA, January 2016.
+In Proceedings of 17th High Assurance Systems Engineering Symposium. IEEE, Orlando, Florida, USA, January 2016.  
+[[Long Version](http://channgo2203.github.io/pdfs/longhase16.pdf)][[Tool Implementation](https://github.com/channgo2203/PSCV)][[Tool Website](https://project.inria.fr/pscv/)]
 
 ### 2015
 * <b style="color: #F5A623;">[SCOPES]</b> V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
