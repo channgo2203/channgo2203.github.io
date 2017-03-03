@@ -30,14 +30,18 @@ In Proceedings of 28th International Conference on Computer Aided Verification. 
 [Statistical Model Checking for SystemC Models](http://channgo2203.github.io/pdfs/hase16.pdf).  
 In Proceedings of 17th High Assurance Systems Engineering Symposium. IEEE, Orlando, Florida, USA, January 2016.  
 [[Long Version](http://channgo2203.github.io/pdfs/longhase16.pdf)][[Tool Implementation](https://github.com/channgo2203/PSCV)][[Tool Website](https://project.inria.fr/pscv/)]  
-[comment]: <> ([Acceptance Rate: 32/78 = 41%])
+<!---
+[Acceptance Rate: 32/78 = 41%]
+-->
 
 ### 2015
 * <b style="color: #F5A623;">[SCOPES]</b> V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
 [Modular Translation Validation of a Full-sized Synchronous Compiler using Off-the-shelf Verification Tools](http://channgo2203.github.io/pdfs/scopes15.pdf).  
 In Proceedings of International Workshop on Software and Compilers for Embedded Systems, Invited Presentation. ACM, St. Goar, Germany, June 2015.  
 [[Tool Implementation](https://github.com/channgo2203/sigcert)]  
-[comment]: <> ([Acceptance Rate: 8/18 = 44.4%])
+<!---
+[Acceptance Rate: 8/18 = 44.4%]
+-->
 
 * <b style="color: #F5A623;">[FORTE]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
 [Translation Validation for Synchronous Data-flow Specification in the SIGNAL Compiler](http://channgo2203.github.io/pdfs/forte15.pdf).  
