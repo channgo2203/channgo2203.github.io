@@ -11,7 +11,8 @@ published: true
 * <b style="color: #F5A623;">[Oakland]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
 [Verifying and Synthesizing Constant-Resource Implementations with Types](http://channgo2203.github.io/pdfs/oakland17.pdf).  
 To appear in 2017 IEEE Symposium on Security & Privacy (Oakland). IEEE, San Jose, CA, USA, May 2017.  
-[[Appendix](http://channgo2203.github.io/pdfs/oakland17_app.pdf)] [[Formalization](http://channgo2203.github.io/zips/oakland17_formalization.zip)][[Tool Implementation](http://www.raml.co/code.html)]
+[[Appendix](http://channgo2203.github.io/pdfs/oakland17_app.pdf)] [[Formalization](http://channgo2203.github.io/zips/oakland17_formalization.zip)][[Tool Implementation](http://www.raml.co/code.html)]  
+[Acceptance Rate: 60/463 = 12.9%]
 
 ### 2016
 * <b style="color: #F5A623;">[JSEP]</b> V.C. Ngo and A. Legay.   
@@ -22,28 +23,33 @@ In Journal of Software: Evolution and Process. Wiley, 2016 (Under Review).
 * <b style="color: #F5A623;">[CAV]</b> V.C. Ngo, A. Legay, and V. Joloboff.  
 [PSCV: A Runtime Verification Tool for Probabilistic SystemC Models](http://channgo2203.github.io/pdfs/cav16.pdf).  
 In Proceedings of 28th International Conference on Computer Aided Verification. Springer, Toronto, Ontario, Canada, July 2016.  
-[[Tool Implementation](https://github.com/channgo2203/PSCV)][Case Studies: [Producer-Consumer](http://channgo2203.github.io/zips/producer_consumer.tar.gz), [Control System](http://channgo2203.github.io/zips/control_system.tar.gz), [Random Scheduler](http://channgo2203.github.io/zips/random_scheduler.tar.gz)][[Tool Website](https://project.inria.fr/pscv/)]
+[[Tool Implementation](https://github.com/channgo2203/PSCV)][Case Studies: [Producer-Consumer](http://channgo2203.github.io/zips/producer_consumer.tar.gz), [Control System](http://channgo2203.github.io/zips/control_system.tar.gz), [Random Scheduler](http://channgo2203.github.io/zips/random_scheduler.tar.gz)][[Tool Website](https://project.inria.fr/pscv/)]  
+[Acceptance Rate: 58/195 = 29.7%]
 
 * <b style="color: #F5A623;">[HASE]</b> V.C. Ngo, A. Legay, and J. Quilbeuf.  
 [Statistical Model Checking for SystemC Models](http://channgo2203.github.io/pdfs/hase16.pdf).  
 In Proceedings of 17th High Assurance Systems Engineering Symposium. IEEE, Orlando, Florida, USA, January 2016.  
-[[Long Version](http://channgo2203.github.io/pdfs/longhase16.pdf)][[Tool Implementation](https://github.com/channgo2203/PSCV)][[Tool Website](https://project.inria.fr/pscv/)]
+[[Long Version](http://channgo2203.github.io/pdfs/longhase16.pdf)][[Tool Implementation](https://github.com/channgo2203/PSCV)][[Tool Website](https://project.inria.fr/pscv/)]  
+[comment]: <> ([Acceptance Rate: 32/78 = 41%])
 
 ### 2015
 * <b style="color: #F5A623;">[SCOPES]</b> V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
 [Modular Translation Validation of a Full-sized Synchronous Compiler using Off-the-shelf Verification Tools](http://channgo2203.github.io/pdfs/scopes15.pdf).  
 In Proceedings of International Workshop on Software and Compilers for Embedded Systems, Invited Presentation. ACM, St. Goar, Germany, June 2015.  
-[[Tool Implementation](https://github.com/channgo2203/sigcert)]
+[[Tool Implementation](https://github.com/channgo2203/sigcert)]  
+[comment]: <> ([Acceptance Rate: 8/18 = 44.4%])
 
 * <b style="color: #F5A623;">[FORTE]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
 [Translation Validation for Synchronous Data-flow Specification in the SIGNAL Compiler](http://channgo2203.github.io/pdfs/forte15.pdf).  
 In Proceedings of 35th IFIP International Conference on Formal Techniques for Distributed Objects, Components and Systems. IFIP, Grenoble, France, June 2015.  
-[[Long Version](http://channgo2203.github.io/pdfs/longforte15.pdf)][[Tool Implementation](https://github.com/channgo2203/sigcert)]
+[[Long Version](http://channgo2203.github.io/pdfs/longforte15.pdf)][[Tool Implementation](https://github.com/channgo2203/sigcert)]  
+[Acceptance Rate: 15/53 = 28.3%]
 
 * <b style="color: #F5A623;">[FASE]</b> V.C. Ngo, J-P. Talpin, T. Gautier, and P. Le Guernic.  
 [Translation Validation for Clock Transformations in a Synchronous Compiler](http://channgo2203.github.io/pdfs/fase15.pdf).  
 In Proceedings of 18th International Conference on Fundamental Approaches to Software Engineering. Springer, London, UK, April 2015.  
-[[Long Version](http://channgo2203.github.io/pdfs/longfase15.pdf)][[Tool Implementation](https://github.com/channgo2203/sigcert)]
+[[Long Version](http://channgo2203.github.io/pdfs/longfase15.pdf)][[Tool Implementation](https://github.com/channgo2203/sigcert)]  
+[Acceptance Rate: 23/80 = 28.7%]
 
 ### 2014
 * <b style="color: #F5A623;">[ESLsyn-DAC]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
@@ -63,12 +69,14 @@ Accepted at International High-Level Design, Validation and Test Workshop. IEEE,
 * <b style="color: #F5A623;">[IFM]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic,  and L. Besnard.  
 [Formal Verification of Compiler Transformations on Polychronous Equations](http://channgo2203.github.io/pdfs/ifm12.pdf).  
 In Proceedings of 9th International Conference on Integrated Formal Methods. Springer, Pisa, Italy, June 2012.  
-[[Tool Implementation](https://github.com/channgo2203/SigCV)]
+[[Tool Implementation](https://github.com/channgo2203/SigCV)]  
+[Acceptance Rate: 22/59 = 37.2%]
 
 ### 2009
 * <b style="color: #F5A623;">[ESORICS]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
 [Formal Indistinguishability Extended to the Random Oracle Model](http://channgo2203.github.io/pdfs/esorics09.pdf).  
-In Proceedings of 14th European Symposium on Research in Computer Security. Springer, Saint-Malo, France, September 2009 (Authors by alphabetical order).
+In Proceedings of 14th European Symposium on Research in Computer Security. Springer, Saint-Malo, France, September 2009 (Authors by alphabetical order).  
+[Acceptance Rate: 42/220 = 19.1%]
 
 * <b style="color: #F5A623;">[FCC]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
 [Formal Indistinguishability Extended to the ROM](http://channgo2203.github.io/pdfs/fcc09.pdf).  
