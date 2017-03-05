@@ -14,3 +14,13 @@ published: true
 comments: true
 ---
 
+```ocaml
+let copy l len index =
+let rec aux lin len index pos lout =
+match lin with
+ | [] -> lout
+ | x::xs -> if (pos >= index) && (pos < index + len) then 
+              aux xs len index (pos+1) (x::lout) 
+              else lout
+in List.rev (aux l len index 0 [])
+```
