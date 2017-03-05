@@ -21,6 +21,6 @@ match lin with
  | [] -> lout
  | x::xs -> if (pos >= index) && (pos < index + len) then 
               aux xs len index (pos+1) (x::lout) 
-              else lout
+            else lout
 in List.rev (aux l len index 0 [])
 ```
