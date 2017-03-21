@@ -74,7 +74,6 @@ Accepted at International High-Level Design, Validation and Test Workshop. IEEE,
 [Formal Verification of Compiler Transformations on Polychronous Equations](http://channgo2203.github.io/pdfs/ifm12.pdf).  
 In Proceedings of 9th International Conference on Integrated Formal Methods. Springer, Pisa, Italy, June 2012.  
 [[Tool Implementation](https://github.com/channgo2203/SigCV)]  
-[Acceptance Rate: 22/59 = 37.2%]
 
 ### 2009
 * <b style="color: #F5A623;">[ESORICS]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
