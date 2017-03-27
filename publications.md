@@ -8,7 +8,7 @@ published: true
 ---
 
 ### 2017
-* <b style="color: #F5A623;">[Oakland <img src="http://channgo2203.github.io/img/best_q.png" alt="Flagship conference" style="width:20px;height:20px;">]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
+* <b style="color: #F5A623;">[Oakland <img src="http://channgo2203.github.io/img/best_q.png" alt="Flagship conference" style="width:30px;height:30px;">]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
 [Verifying and Synthesizing Constant-Resource Implementations with Types](http://channgo2203.github.io/pdfs/oakland17.pdf).  
 To appear in 2017 IEEE Symposium on Security & Privacy (Oakland). IEEE, San Jose, CA, USA, May 2017.  
 [[Long Version](http://channgo2203.github.io/pdfs/oakland17_app.pdf)] [[Formalization](http://channgo2203.github.io/zips/oakland17_formalization.zip)][[Tool Implementation](http://www.raml.co/code.html)]  [[Examples](http://channgo2203.github.io/zips/oakland17_examples.zip)]  
