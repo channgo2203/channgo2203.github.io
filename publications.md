@@ -9,8 +9,8 @@ published: true
 <img src="http://channgo2203.github.io/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;"> denotes that the paper is published at a flagship conference (Rank A+). While <img src="http://channgo2203.github.io/img/good_q.png" alt="Good conference" style="width:22px;height:22px;"> denotes a good conference (Rank A or B). [According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/)]
 
 ### 2017
-* <b style="color: #F5A623;">[Oakland <img src="http://channgo2203.github.io/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;">]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
-[Verifying and Synthesizing Constant-Resource Implementations with Types](http://channgo2203.github.io/pdfs/oakland17.pdf).  
+* <b style="color: #F5A623;">[Oakland]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
+[Verifying and Synthesizing Constant-Resource Implementations with Types](http://channgo2203.github.io/pdfs/oakland17.pdf). <img src="http://channgo2203.github.io/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;">    
 To appear in 2017 IEEE Symposium on Security & Privacy (Oakland). IEEE, San Jose, CA, USA, May 2017.  
 [[Long Version](http://channgo2203.github.io/pdfs/oakland17_app.pdf)] [[Formalization](http://channgo2203.github.io/zips/oakland17_formalization.zip)][[Tool Implementation](http://www.raml.co/code.html)]  [[Examples](http://channgo2203.github.io/zips/oakland17_examples.zip)]  
 [Acceptance Rate: 60/463 = 12.9%]
