@@ -18,7 +18,7 @@ In this post, I want to demonstrate how a side channel can happen in functional 
 Consider the following implementation of `truncate`. 
 
 ```ocaml
-let truncate a l =
+let rec truncate a l =
 match l with
  | [] -> []
  | x::xs -> if (x = a) then 
