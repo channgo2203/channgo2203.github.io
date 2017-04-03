@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Constant-time List Truncation Implementation in OCaml
-date: 2017-03-01T00:00:00.000Z
+date: {}
 excerpt: An example of constant-time implementation for truncating a list in OCaml.
 categories:
   - Programming/OCaml/Security/Side-channel Attacks
@@ -27,6 +27,10 @@ match l with
               truncate a xs
 ```
 
-Assume that there is an attacker who cannot see the content of the input list and the output of the function. But she can see the input value, the length of the input list, and she can measure the execution time of the function. Does she know exactly the position of the first occurrence of the input value in the list? The answer is `yes` if we assume that the attacker can distinguish the execution time in terms of one time unit. Otherwise, she can at least know the input value is in the list or not if the measurement is not very fine-grained.
+Assume that there is an attacker who cannot see the content of the input list and the output of the function. But she can see the input value, the length of the input list, and she can measure the execution time of the function. 
+
+> Does she know exactly the position of the first occurrence of the input value in the list? 
+
+The answer is `yes` if we assume that the attacker can distinguish the execution time in terms of one time unit. Otherwise, she can at least know the input value is in the list or not if the measurement is not very fine-grained.
 
 [1]: https://en.wikipedia.org/wiki/Side-channel_attack
