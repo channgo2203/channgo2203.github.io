@@ -2,7 +2,7 @@
 layout: post
 title: Constant-time List Truncation Implementation in OCaml
 date: 2017-03-01T00:00:00.000Z
-excerpt: An example of constant-time implementation for copying a sub-list in OCaml.
+excerpt: An example of constant-time implementation for truncating a list in OCaml.
 categories:
   - Programming/OCaml/Security/Side-channel Attacks
 tags:
