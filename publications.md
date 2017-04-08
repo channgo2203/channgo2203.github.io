@@ -113,7 +113,8 @@ In HAL-INRIA, **Technical Report RR-7921**, April 2012.
 
 ### Thesis
 * V.C. Ngo.  
-[Formal Verification of a Synchronous Data-flow Compiler: from Signal to C](https://ecm.univ-rennes1.fr/nuxeo/site/esupversions/e10492b5-206a-42fa-b643-e752dac5a750)[Slide](http://channgo2203.github.io/pdfs/phd-slides.pdf).  
+[Formal Verification of a Synchronous Data-flow Compiler: from Signal to C](https://ecm.univ-rennes1.fr/nuxeo/site/esupversions/e10492b5-206a-42fa-b643-e752dac5a750).  
+[[Slide]](http://channgo2203.github.io/pdfs/phd-slides.pdf)    
 Supervisor: [Jean-Pierre Talpin](http://www.irisa.fr/prive/talpin/),  
 Jury: [Sandrine Blazy](http://www.irisa.fr/celtique/blazy/), [Jean-Paul Bodeveix](https://www.irit.fr/~Jean-Paul.Bodeveix/), [Laure Gonnord](http://laure.gonnord.org/pro/), [Abdoulaye Gamatie](http://www.lirmm.fr/~gamatie/), and [Dumitru Potop-Butucaru](https://who.rocq.inria.fr/Dumitru.Potop_Butucaru/).  
 **In Ph.D Thesis in Computer Science**, [INRIA](http://www.inria.fr/en/), [University of Rennes 1](https://www.univ-rennes1.fr/english/), France, July 2014.
