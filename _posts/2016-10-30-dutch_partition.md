@@ -9,6 +9,7 @@ tags:
  - algorithm
  - OCaml
  - programming
+ - data structure
 comments: true
 ---
 

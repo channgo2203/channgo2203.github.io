@@ -9,6 +9,7 @@ tags:
  - permutation
  - OCaml
  - programming
+ - data structure
 comments: true
 ---
 
