@@ -22,6 +22,7 @@ compilers and code generators in the model-based design tool-chains.
 [AVOTE](http://scalp.gforge.inria.fr/)
 
 ### Softwares
+* __Absynth__: Automatic Bound Synthesizer (Absynth) is a tool that automatically and statically computes upper bounds on the expected resource usage for imperative probabilistic programs, [Contact me](http://channgo2203.github.io) 
 * __RAML__: Resource Aware ML (RAML) is a tool that automatically and statically computes resource-use bounds (lower and upper) for OCaml programs. It also can check the constant resource-use programs used in preventing timing side-channel attacks, [RAML](http://www.raml.co/) 
 * __PSCV__: A runtime verification tool for probabilistic SystemC models. It consists of two components: the plug-in for Plasma Lab in Java and tool for generating C++ monitor and aspect advices in C++, [PSCV](https://project.inria.fr/pscv/)
 * __Plasma Lab__: Plasma Lab is a compact, efficient and flexible platform for statistical model checking of stochastic models, [Plasma Lab](https://project.inria.fr/plasma-lab/)
