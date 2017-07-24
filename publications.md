@@ -31,18 +31,14 @@ In Proceedings of 28th International Conference on Computer Aided Verification. 
 [Statistical Model Checking for SystemC Models](http://channgo2203.github.io/pdfs/hase16.pdf).  
 In Proceedings of 17th High Assurance Systems Engineering Symposium. IEEE, Orlando, Florida, USA, January 2016.  
 [[Long Version](http://channgo2203.github.io/pdfs/longhase16.pdf)][[Tool Implementation](https://github.com/channgo2203/PSCV)][[Tool Website](https://project.inria.fr/pscv/)]  
-<!---
 [Acceptance Rate: 32/78 = 41%]
--->
 
 ### 2015
 * <b style="color: #F5A623;">[SCOPES]</b> V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
 [Modular Translation Validation of a Full-sized Synchronous Compiler using Off-the-shelf Verification Tools](http://channgo2203.github.io/pdfs/scopes15.pdf). <img src="http://channgo2203.github.io/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
 In Proceedings of International Workshop on Software and Compilers for Embedded Systems, Invited Presentation. ACM, St. Goar, Germany, June 2015.  
 [[Tool Implementation](https://github.com/channgo2203/sigcert)]  
-<!---
 [Acceptance Rate: 8/18 = 44.4%]
--->
 
 * <b style="color: #F5A623;">[FORTE]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
 [Translation Validation for Synchronous Data-flow Specification in the SIGNAL Compiler](http://channgo2203.github.io/pdfs/forte15.pdf). <img src="http://channgo2203.github.io/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
@@ -60,6 +56,9 @@ In Proceedings of 18th International Conference on Fundamental Approaches to Sof
 * <b style="color: #F5A623;">[ESLsyn-DAC]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
 [Precise Deadlock Detection for Polychronous Data-flow Specifications](http://channgo2203.github.io/pdfs/eslsyn14.pdf).  
 In Proceedings of the Electronic System Level Synthesis Conference. IEEE, San Francisco, CA, USA, June 2014.
+<!---
+[Acceptance Rate: 8/? = ?%]
+-->
 
 ### 2013
 * <b style="color: #F5A623;">[FCS]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard.  
@@ -75,6 +74,7 @@ Accepted at International High-Level Design, Validation and Test Workshop. IEEE,
 [Formal Verification of Compiler Transformations on Polychronous Equations](http://channgo2203.github.io/pdfs/ifm12.pdf). <img src="http://channgo2203.github.io/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
 In Proceedings of 9th International Conference on Integrated Formal Methods. Springer, Pisa, Italy, June 2012.  
 [[Tool Implementation](https://github.com/channgo2203/SigCV)]  
+[Acceptance Rate: 22/59 = 37%]
 
 ### 2009
 * <b style="color: #F5A623;">[ESORICS]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
