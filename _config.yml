@@ -14,7 +14,7 @@ url: http://channgo2203.github.io
 # Jekyll configuration
 ####################################
 #
-timezone:          Europe/Paris
+timezone:          America/New_York
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
