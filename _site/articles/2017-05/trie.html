@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MFGCXMJ');</script>
+<!-- End Google Tag Manager -->
+  
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Trie Data Structure</title>
+  <meta name="description" content="Trie data structure and implementation in OCaml.">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://channgo2203.github.io/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://channgo2203.github.io/css/main.css">
+
+  <link rel="canonical" href="http://channgo2203.github.io/articles/2017-05/trie">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://channgo2203.github.io/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://channgo2203.github.io/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://channgo2203.github.io/" class="author_name">Van Chan Ngo</a>
+  <span class="author_job">Computer Scientist and Software Engineer</span>
+  <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and language-based security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/about">About</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/research">Research</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://channgo2203.github.io/publications">Publications</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/pdfs/cv.pdf" target="_blank">CV</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/talks">Talks</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/notes/">Notes</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/categories/">Categories</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://channgo2203.github.io/tags/">Tags</a>
+      </li>
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('chan.ngo2203@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    <li><a href="http://linkedin.com/in/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+  <div class="social-links">
+    <span class="author_bio mbm">Do one thing, and do it well.</span>
+    <span class="author_bio mbm">-- Unix philosophy</span>
+  </div>
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<a class="author_job" href= "http://channgo2203.github.io/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Trie Data Structure">Trie Data Structure</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        30 MAY 2017
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    7 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <h2 id="introduction">Introduction</h2>
+
+<p>A trie is a kind of search tree that is used to store a dynamic set where the keys are strings. A trie can be seen as a tree-shape deterministic finite automaton (DFA). Each finite language can be generated by a trie automaton, and each trie can be compressed into a acyclic DFA.</p>
+
+<p>Every node of trie consists of multiple branches. Each branch represents a possible character of keys. We need to mark the last node of every key as leaf node. A trie node field value will be used to distinguish the node as leaf node (there are other uses of the value field).</p>
+
+<h2 id="applications">Applications</h2>
+
+<p>A common application of tries is storing a predictive text or auto-complete dictionary. Such applications take advantage of a trie’s ability to quickly look for, insert, and delete items. Using trie, we can search for the key in <script type="math/tex">\mathcal{O}(m)</script> instead of <script type="math/tex">\mathcal{O}(m.\text{log}n)</script> if we use a binary search tree, where <script type="math/tex">m</script>, <script type="math/tex">n</script> are the length of search string and the number of keys, respectively.</p>
+
+<p>Tries are also well suited for implementing approximate matching algorithms including those used in spell checking and hyphenation applications.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>In this post, I will show how to implement a trie where the characters are from ‘a’ to ‘z’ (26 characters in total) using arrays in OCaml.</p>
+
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(************************************)</span>
+<span class="c">(*               Trie               *)</span>
+<span class="c">(*          Van Chan Ngo            *)</span>
+<span class="c">(************************************)</span>
+
+<span class="c">(* trie.mli *)</span>
+
+<span class="k">exception</span> <span class="nc">Trie_invalid</span> <span class="k">of</span> <span class="kt">string</span>
+<span class="k">type</span> <span class="n">t</span>
+<span class="k">val</span> <span class="n">empty</span> <span class="p">:</span> <span class="kt">unit</span> <span class="p">-&gt;</span> <span class="n">t</span>
+<span class="k">val</span> <span class="n">is_empty</span> <span class="p">:</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="kt">bool</span>
+<span class="k">val</span> <span class="n">insert</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">-&gt;</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="kt">unit</span>
+<span class="k">val</span> <span class="n">search</span> <span class="p">:</span> <span class="kt">string</span> <span class="p">-&gt;</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="kt">bool</span>
+
+<span class="c">(* trie.ml *)</span>
+
+<span class="k">exception</span> <span class="nc">Trie_invalid</span> <span class="k">of</span> <span class="kt">string</span>
+
+<span class="k">type</span> <span class="n">t</span> <span class="p">=</span>  <span class="nc">Empty</span> 
+        <span class="p">|</span> <span class="nc">Node</span> <span class="k">of</span> <span class="kt">bool</span> <span class="n">ref</span> <span class="p">*</span> <span class="n">t</span> <span class="kt">array</span> <span class="c">(* true if a node is a leaf *)</span>
+
+<span class="k">let</span> <span class="n">alphabet_size</span> <span class="p">=</span> <span class="mi">26</span> <span class="c">(* number of letters from 'a' to 'z' *)</span>
+
+<span class="k">let</span> <span class="n">get_index</span> <span class="n">c</span> <span class="p">=</span> <span class="nn">Char</span><span class="p">.</span><span class="n">code</span> <span class="n">c</span> <span class="p">-</span> <span class="nn">Char</span><span class="p">.</span><span class="n">code</span> <span class="k">'</span><span class="n">a'</span>
+
+<span class="k">let</span> <span class="n">create_node</span> <span class="bp">()</span> <span class="p">=</span> 
+	<span class="k">let</span> <span class="n">a</span> <span class="p">=</span> <span class="nn">Array</span><span class="p">.</span><span class="n">make</span> <span class="n">alphabet_size</span> <span class="nc">Empty</span> <span class="k">in</span>
+	<span class="nc">Node</span> <span class="p">(</span><span class="n">ref</span> <span class="bp">false</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="n">set_leaf</span> <span class="n">b</span> <span class="n">trie</span> <span class="p">=</span> 
+	<span class="k">match</span> <span class="n">trie</span> <span class="k">with</span>
+	<span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> <span class="bp">()</span>
+	<span class="p">|</span> <span class="nc">Node</span> <span class="p">(</span><span class="n">rb</span><span class="p">,</span> <span class="o">_)</span> <span class="p">-&gt;</span> <span class="n">rb</span> <span class="p">:=</span> <span class="n">b</span>
+
+<span class="k">let</span> <span class="n">empty</span> <span class="bp">()</span> <span class="p">=</span> <span class="n">create_node</span> <span class="bp">()</span>
+
+<span class="k">let</span> <span class="n">is_empty</span> <span class="n">trie</span> <span class="p">=</span> <span class="k">match</span> <span class="n">trie</span> <span class="k">with</span>
+	<span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> <span class="bp">true</span>
+	<span class="p">|</span> <span class="nc">Node</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="p">-&gt;</span>
+		<span class="nn">Array</span><span class="p">.</span><span class="n">fold_left</span> <span class="p">(</span><span class="k">fun</span> <span class="n">res</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="k">match</span> <span class="n">t</span> <span class="k">with</span> 
+                                      <span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> <span class="n">res</span> <span class="p">&amp;&amp;</span> <span class="bp">true</span>
+                                      <span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="n">res</span> <span class="p">&amp;&amp;</span> <span class="bp">false</span>
+                                 <span class="p">)</span> <span class="bp">true</span> <span class="n">a</span>
+
+<span class="k">let</span> <span class="n">insert_char</span> <span class="n">c</span> <span class="n">trie</span> <span class="p">=</span> 
+	<span class="k">let</span> <span class="n">index</span> <span class="p">=</span> <span class="n">get_index</span> <span class="n">c</span> <span class="k">in</span> 
+	<span class="k">match</span> <span class="n">trie</span> <span class="k">with</span>
+	<span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> 
+		<span class="k">raise</span> <span class="p">(</span><span class="nc">Trie_invalid</span> <span class="s2">"Invalid trie!"</span><span class="p">)</span>
+	<span class="p">|</span> <span class="nc">Node</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">array_t</span><span class="p">)</span> <span class="p">-&gt;</span> 
+		<span class="k">let</span> <span class="n">t</span> <span class="p">=</span> <span class="n">array_t</span><span class="o">.(</span><span class="n">index</span><span class="p">)</span> <span class="k">in</span> 
+		<span class="k">begin</span>
+			<span class="k">match</span> <span class="n">t</span> <span class="k">with</span>
+			<span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> <span class="n">array_t</span><span class="o">.(</span><span class="n">index</span><span class="p">)</span> <span class="p">&lt;-</span> <span class="n">create_node</span> <span class="bp">()</span><span class="p">;</span> <span class="n">array_t</span><span class="o">.(</span><span class="n">index</span><span class="p">)</span>
+			<span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="n">array_t</span><span class="o">.(</span><span class="n">index</span><span class="p">)</span>
+		<span class="k">end</span>
+
+<span class="k">let</span> <span class="n">insert</span> <span class="n">s</span> <span class="n">trie</span> <span class="p">=</span> 
+	<span class="k">let</span> <span class="k">rec</span> <span class="n">aux</span> <span class="n">s</span> <span class="n">t</span> <span class="n">mark_leaf</span> <span class="p">=</span> 
+		<span class="k">let</span> <span class="n">n</span> <span class="p">=</span> <span class="nn">String</span><span class="p">.</span><span class="n">length</span> <span class="n">s</span> <span class="k">in</span>
+		<span class="k">if</span> <span class="n">n</span> <span class="p">=</span> <span class="mi">0</span> <span class="k">then</span> 
+			<span class="n">set_leaf</span> <span class="n">mark_leaf</span> <span class="n">t</span>
+		<span class="k">else</span> 
+			<span class="k">let</span> <span class="n">next_node</span> <span class="p">=</span> <span class="n">insert_char</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">get</span> <span class="n">s</span> <span class="mi">0</span><span class="p">)</span> <span class="n">t</span> <span class="k">in</span> 
+			<span class="n">aux</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">sub</span> <span class="n">s</span> <span class="mi">1</span> <span class="p">(</span><span class="n">n</span> <span class="p">-</span> <span class="mi">1</span><span class="o">))</span> <span class="n">next_node</span> <span class="bp">true</span>
+	<span class="k">in</span> <span class="k">match</span> <span class="n">trie</span> <span class="k">with</span>
+	<span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> <span class="n">aux</span> <span class="n">s</span> <span class="p">(</span><span class="n">create_node</span> <span class="bp">()</span><span class="p">)</span> <span class="bp">false</span>
+	<span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="n">aux</span> <span class="n">s</span> <span class="n">trie</span> <span class="bp">false</span>
+
+<span class="k">let</span> <span class="n">search_char</span> <span class="n">c</span> <span class="n">trie</span> <span class="p">=</span>
+	<span class="k">let</span> <span class="n">index</span> <span class="p">=</span> <span class="n">get_index</span> <span class="n">c</span> <span class="k">in</span>
+	<span class="k">match</span> <span class="n">trie</span> <span class="k">with</span>
+	<span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> <span class="nc">Empty</span>
+	<span class="p">|</span> <span class="nc">Node</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="k">match</span> <span class="n">a</span><span class="o">.(</span><span class="n">index</span><span class="p">)</span> <span class="k">with</span>
+		<span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> <span class="nc">Empty</span>
+		<span class="p">|</span> <span class="nc">Node</span> <span class="o">(_,</span> <span class="o">_)</span> <span class="k">as</span> <span class="n">t</span> <span class="p">-&gt;</span> <span class="n">t</span>
+
+<span class="k">let</span> <span class="k">rec</span> <span class="n">search</span> <span class="n">s</span> <span class="n">trie</span> <span class="p">=</span> 
+	<span class="k">let</span> <span class="n">n</span> <span class="p">=</span> <span class="nn">String</span><span class="p">.</span><span class="n">length</span> <span class="n">s</span> <span class="k">in</span>
+	<span class="k">if</span> <span class="n">n</span> <span class="p">=</span> <span class="mi">0</span> <span class="k">then</span>
+		<span class="k">begin</span>
+			<span class="k">match</span> <span class="n">trie</span> <span class="k">with</span>
+			<span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> <span class="bp">false</span>
+			<span class="p">|</span> <span class="nc">Node</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="o">!</span><span class="n">b</span>
+		<span class="k">end</span>
+	<span class="k">else</span>
+		<span class="k">begin</span>
+			<span class="k">let</span> <span class="n">t</span> <span class="p">=</span> <span class="n">search_char</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">get</span> <span class="n">s</span> <span class="mi">0</span><span class="p">)</span> <span class="n">trie</span> <span class="k">in</span>
+			<span class="k">match</span> <span class="n">t</span> <span class="k">with</span>
+			<span class="p">|</span> <span class="nc">Empty</span> <span class="p">-&gt;</span> <span class="bp">false</span>
+			<span class="p">|</span> <span class="nc">Node</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span> <span class="k">as</span> <span class="n">next_trie</span> <span class="p">-&gt;</span> <span class="n">search</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">sub</span> <span class="n">s</span> <span class="mi">1</span> <span class="p">(</span><span class="n">n</span> <span class="p">-</span> <span class="mi">1</span><span class="o">))</span> <span class="n">next_trie</span>
+		<span class="k">end</span>
+
+<span class="c">(* test.ml *)</span>
+
+<span class="k">open</span> <span class="nc">Trie</span>
+
+<span class="k">let</span> <span class="p">_</span> <span class="p">=</span> 
+	<span class="k">let</span> <span class="n">t0</span> <span class="p">=</span> <span class="n">empty</span> <span class="bp">()</span> <span class="k">in</span>
+	<span class="n">insert</span> <span class="s2">"this"</span> <span class="n">t0</span><span class="p">;</span>
+	<span class="n">insert</span> <span class="s2">"is"</span> <span class="n">t0</span><span class="p">;</span>
+	<span class="n">insert</span> <span class="s2">"a"</span> <span class="n">t0</span><span class="p">;</span>
+	<span class="n">insert</span> <span class="s2">"trie"</span> <span class="n">t0</span><span class="p">;</span>
+	<span class="k">if</span> <span class="n">search</span> <span class="s2">"this"</span> <span class="n">t0</span> <span class="k">then</span> 
+		<span class="nn">Printf</span><span class="p">.</span><span class="n">printf</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">this</span><span class="se">\"</span><span class="s2"> is present</span><span class="se">\n</span><span class="s2">"</span>
+	<span class="k">else</span>
+		<span class="nn">Printf</span><span class="p">.</span><span class="n">printf</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">this</span><span class="se">\"</span><span class="s2"> is not present</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="k">if</span> <span class="n">search</span> <span class="s2">"trie"</span> <span class="n">t0</span> <span class="k">then</span> 
+		<span class="nn">Printf</span><span class="p">.</span><span class="n">printf</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">trie</span><span class="se">\"</span><span class="s2"> is present</span><span class="se">\n</span><span class="s2">"</span>
+	<span class="k">else</span>
+		<span class="nn">Printf</span><span class="p">.</span><span class="n">printf</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">trie</span><span class="se">\"</span><span class="s2"> is not present</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="k">if</span> <span class="n">search</span> <span class="s2">"ben"</span> <span class="n">t0</span> <span class="k">then</span> 
+		<span class="nn">Printf</span><span class="p">.</span><span class="n">printf</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">ben</span><span class="se">\"</span><span class="s2"> is present</span><span class="se">\n</span><span class="s2">"</span>
+	<span class="k">else</span>
+		<span class="nn">Printf</span><span class="p">.</span><span class="n">printf</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">ben</span><span class="se">\"</span><span class="s2"> is not present</span><span class="se">\n</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>The outputs should be as follows.</p>
+
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="o">./</span><span class="n">test</span><span class="p">.</span><span class="n">native</span>
+<span class="s2">"this"</span> <span class="n">is</span> <span class="n">present</span>
+<span class="s2">"trie"</span> <span class="n">is</span> <span class="n">present</span>
+<span class="s2">"ben"</span> <span class="n">is</span> <span class="n">not</span> <span class="n">present</span>
+</code></pre>
+</div>
+
+  </article>
+</div>
+<!--
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://channgo2203.github.io/articles/2017-05/trie" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://channgo2203.github.io/articles/2017-05/trie" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://channgo2203.github.io/articles/2017-05/trie" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://channgo2203.github.io/articles/2017-05/trie" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://channgo2203.github.io/articles/2017-05/trie" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>-->
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'channgo';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        <footer>
+  &copy; 2017 Van Chan Ngo. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://channgo2203.github.io/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://channgo2203.github.io/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89119753-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFGCXMJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+</html>

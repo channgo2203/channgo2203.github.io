@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MFGCXMJ');</script>
+<!-- End Google Tag Manager -->
+  
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The Smallest Free Number</title>
+  <meta name="description" content="Pearls of Functional Algorithm Design - The Smallest Free Number">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://channgo2203.github.io/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://channgo2203.github.io/css/main.css">
+
+  <link rel="canonical" href="http://channgo2203.github.io/articles/2017-08/smallest">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://channgo2203.github.io/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://channgo2203.github.io/img/avatar.jpg" alt="" class="avatar">
+  
+  <a href="http://channgo2203.github.io/" class="author_name">Van Chan Ngo</a>
+  <span class="author_job">Computer Scientist and Software Engineer</span>
+  <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and language-based security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/about">About</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/research">Research</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://channgo2203.github.io/publications">Publications</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/pdfs/cv.pdf" target="_blank">CV</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/talks">Talks</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/notes/">Notes</a>
+        <span>/</span>
+      </li>
+      <li class="nav-item">
+        <a href="http://channgo2203.github.io/categories/">Categories</a>
+        <span>/</span>
+      </li>
+       <li class="nav-item">
+        <a href="http://channgo2203.github.io/tags/">Tags</a>
+      </li>
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('chan.ngo2203@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    
+    
+    <li><a href="http://linkedin.com/in/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    
+    <li><a href="http://github.com/channgo2203" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+  <div class="social-links">
+    <span class="author_bio mbm">Do one thing, and do it well.</span>
+    <span class="author_bio mbm">-- Unix philosophy</span>
+  </div>
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<a class="author_job" href= "http://channgo2203.github.io/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="The Smallest Free Number">The Smallest Free Number</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        9 AUG 2017
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    16 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>In this post, I would like to start a topic about functional algorithm design. I will use OCaml language to implement the designs.
+Each post is about a “functional pearl” from the book <a href="https://www.amazon.com/Pearls-Functional-Algorithm-Design-Richard/dp/0521513383">“Pearls of Functional Algorithm Design”</a> by Richard Bird.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Given a set <code class="highlighter-rouge">X</code> of <code class="highlighter-rouge">n</code> natural numbers, we want to find the smallest natural number such that it is not in <code class="highlighter-rouge">X</code>. In practice, this problem can
+be considered as the following common programming task. There is a number of object ids and <code class="highlighter-rouge">X</code> is the set of objects currently in use. The task
+is to find some object not in use, say the one with the smallest id.</p>
+
+<p>Our objective is to design an algorithm whose asymptotic complexity is <strong>linear</strong>, <script type="math/tex">O(n)</script> where <code class="highlighter-rouge">n</code> is the number of elements in <code class="highlighter-rouge">X</code>.</p>
+
+<h2 id="non-linear-solution">Non-linear Solution</h2>
+
+<p>We assume that <code class="highlighter-rouge">X</code> is a list without duplicates in no particular order. Otherwise, let’s say <code class="highlighter-rouge">X</code> is in increasing order, then the <strong>linear</strong> solution is trivial: <strong>simply
+look for the first gap and check the first element is different from <code class="highlighter-rouge">0</code></strong>. For example,</p>
+
+<p><code class="highlighter-rouge">X</code> = [1; 2; 3; 6; 9], then we first check <code class="highlighter-rouge">1</code> is different from <code class="highlighter-rouge">0</code>, thus <code class="highlighter-rouge">0</code> is the smallest number we are looking for.
+Consider an other example, <code class="highlighter-rouge">X</code> = [0; 1; 2; 3; 6; 9], then we check the gap between two continuous elements from the beginning of the list. In this case,
+<code class="highlighter-rouge">6 - 3 &gt; 1</code>, thus <code class="highlighter-rouge">3+1</code> is the number we are looking for.</p>
+
+<p>The implementation is given as follows.</p>
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(* l is in increasing order *)</span>
+<span class="k">let</span> <span class="n">trivial_smallest</span> <span class="n">l</span> <span class="p">=</span>
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">aux</span> <span class="n">l</span> <span class="n">res</span> <span class="p">=</span>
+  <span class="k">match</span> <span class="n">l</span> <span class="k">with</span>
+  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="n">res</span>
+  <span class="p">|</span> <span class="n">x</span><span class="o">::[]</span> <span class="p">-&gt;</span> <span class="n">aux</span> <span class="bp">[]</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">|</span> <span class="n">x1</span><span class="p">::</span><span class="n">x2</span><span class="p">::</span><span class="n">xs</span> <span class="p">-&gt;</span> <span class="k">if</span> <span class="n">x2</span> <span class="p">-</span> <span class="n">x1</span> <span class="p">&gt;</span> <span class="mi">1</span> <span class="k">then</span> <span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">else</span> <span class="n">aux</span> <span class="p">(</span><span class="n">x2</span><span class="p">::</span><span class="n">xs</span><span class="p">)</span> <span class="n">res</span>
+  <span class="k">in</span> 
+  <span class="k">if</span> <span class="p">(</span><span class="nn">List</span><span class="p">.</span><span class="n">length</span> <span class="n">l</span> <span class="p">=</span> <span class="mi">0</span> <span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="nn">List</span><span class="p">.</span><span class="n">hd</span> <span class="n">l</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">then</span> <span class="mi">0</span>
+  <span class="k">else</span> <span class="n">aux</span> <span class="n">l</span> <span class="mi">0</span><span class="p">;;</span> 
+</code></pre>
+</div>
+
+<p>Consider the following quadratic algorithm where <code class="highlighter-rouge">filter : int list -&gt; int list -&gt; int list</code> takes the list <code class="highlighter-rouge">[0;1;...;n]</code> and input list <code class="highlighter-rouge">X</code> and
+returns the list of elements in the first input list in which any occurrence of <code class="highlighter-rouge">x</code> in <code class="highlighter-rouge">X</code> is removed. Then, the number we are looking for is the head of
+the returned list. The implementation is given below.</p>
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(* use the List's mem and filter functions *)</span>
+<span class="k">let</span> <span class="n">quadratic_smallest</span> <span class="n">l</span> <span class="p">=</span>
+  <span class="k">let</span> <span class="n">n</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">length</span> <span class="n">l</span> <span class="k">in</span>
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">loop</span> <span class="n">i</span> <span class="n">l</span> <span class="p">=</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">0</span> <span class="k">then</span> <span class="p">(</span><span class="n">i</span><span class="p">::</span><span class="n">l</span><span class="p">)</span>
+    <span class="k">else</span>
+      <span class="n">loop</span> <span class="p">(</span><span class="n">pred</span> <span class="n">i</span><span class="p">)</span> <span class="p">(</span><span class="n">i</span><span class="p">::</span><span class="n">l</span><span class="p">)</span>
+  <span class="k">in</span>
+  <span class="k">let</span> <span class="n">pre_l</span> <span class="p">=</span> <span class="n">loop</span> <span class="n">n</span> <span class="bp">[]</span> <span class="k">in</span>
+  <span class="k">let</span> <span class="n">filter</span> <span class="n">l1</span> <span class="n">l2</span> <span class="p">=</span>
+    <span class="nn">List</span><span class="p">.</span><span class="n">filter</span> <span class="p">(</span><span class="k">fun</span> <span class="n">x</span> <span class="p">-&gt;</span> <span class="n">not</span> <span class="p">(</span><span class="nn">List</span><span class="p">.</span><span class="n">mem</span> <span class="n">x</span> <span class="n">l2</span><span class="o">))</span> <span class="n">l1</span>
+  <span class="k">in</span>
+  <span class="nn">List</span><span class="p">.</span><span class="n">hd</span> <span class="p">(</span><span class="n">filter</span> <span class="n">pre_l</span> <span class="n">l</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(* test function *)</span>
+<span class="k">let</span> <span class="n">remove_duplicate</span> <span class="n">l</span> <span class="p">=</span>
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">aux</span> <span class="n">l</span> <span class="n">res</span> <span class="p">=</span>
+    <span class="k">match</span> <span class="n">l</span> <span class="k">with</span>
+    <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">rev</span> <span class="n">res</span>
+    <span class="p">|</span> <span class="n">x</span><span class="p">::</span><span class="n">xs</span> <span class="p">-&gt;</span> <span class="k">let</span> <span class="n">filtered</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">filter</span> <span class="p">(</span><span class="k">fun</span> <span class="n">y</span> <span class="p">-&gt;</span> <span class="n">not</span> <span class="p">(</span><span class="n">x</span> <span class="p">=</span> <span class="n">y</span><span class="o">))</span> <span class="n">xs</span> <span class="k">in</span>
+      <span class="n">aux</span> <span class="n">filtered</span> <span class="p">(</span><span class="n">x</span><span class="p">::</span><span class="n">res</span><span class="p">)</span>
+  <span class="k">in</span>
+  <span class="n">aux</span> <span class="n">l</span> <span class="bp">[]</span><span class="p">;;</span>
+  
+<span class="k">let</span> <span class="n">create_input</span> <span class="n">n</span> <span class="p">=</span>  
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">loop</span> <span class="n">i</span> <span class="n">l</span> <span class="p">=</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">0</span> <span class="k">then</span> <span class="p">(</span><span class="n">i</span><span class="p">::</span><span class="n">l</span><span class="p">)</span>
+    <span class="k">else</span>
+      <span class="n">loop</span> <span class="p">(</span><span class="n">pred</span> <span class="n">i</span><span class="p">)</span> <span class="p">(</span><span class="n">i</span><span class="p">::</span><span class="n">l</span><span class="p">)</span>
+  <span class="k">in</span>
+  <span class="n">loop</span> <span class="n">n</span> <span class="bp">[]</span><span class="p">;;</span>
+
+<span class="k">let</span> <span class="n">test</span> <span class="n">f</span> <span class="n">n</span> <span class="p">=</span>
+  <span class="k">let</span> <span class="n">l</span> <span class="p">=</span> <span class="n">create_input</span> <span class="n">n</span> <span class="k">in</span>
+  <span class="k">let</span> <span class="n">t</span> <span class="p">=</span> <span class="nn">Sys</span><span class="p">.</span><span class="n">time</span><span class="bp">()</span> <span class="k">in</span>
+  <span class="k">let</span> <span class="n">s</span> <span class="p">=</span> <span class="n">f</span> <span class="n">l</span> <span class="k">in</span>
+  <span class="nn">Printf</span><span class="p">.</span><span class="n">printf</span> <span class="s2">"Execution time: %fs</span><span class="se">\n</span><span class="s2">"</span> <span class="p">(</span><span class="nn">Sys</span><span class="p">.</span><span class="n">time</span><span class="bp">()</span> <span class="p">-.</span> <span class="n">t</span><span class="o">);</span>
+  <span class="n">s</span>
+</code></pre>
+</div>
+
+<p>The funtion <code class="highlighter-rouge">quadratic_smallest</code> works, however whose asymptotic complexity is quadratic <script type="math/tex">O(n^2)</script> because <code class="highlighter-rouge">List.mem</code> and <code class="highlighter-rouge">List.filter</code> are <script type="math/tex">O(n)</script> where <code class="highlighter-rouge">n</code>
+is the length of the input list <code class="highlighter-rouge">X</code>.</p>
+
+<p>One can think about the other solution is that we first sort the input list <code class="highlighter-rouge">X</code>, then employ the above <strong>linear</strong> trivial algorithm. However, the complexity
+of the sort algorithm is at least <script type="math/tex">O(nlogn)</script>. Hence, this solution is <script type="math/tex">O(nlogn)</script>. In the following, I will discuss two <strong>linear</strong> algorithms based on array data structure and divide and conquer.</p>
+
+<p>The function <code class="highlighter-rouge">test</code> is used to estimate the execution time of the <code class="highlighter-rouge">quadratic_smallest</code> function. The following results show the runtime with different lengths of the input list <code class="highlighter-rouge">X</code>. For example, with <code class="highlighter-rouge">n = 10000</code>, the runtime is almost <code class="highlighter-rouge">1</code> second. If we increase the length <code class="highlighter-rouge">10</code> times, then the runtime is <code class="highlighter-rouge">101</code> seconds. Roundly speaking, the runtime is squared, <script type="math/tex">10^2 = 100</script>.</p>
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="n">test</span> <span class="n">quadratic_smallest</span> <span class="mi">10000</span><span class="p">;;</span>
+<span class="nc">Execution</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">953102</span><span class="n">s</span>
+<span class="p">-</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">10001</span>
+
+<span class="n">test</span> <span class="n">quadratic_smallest</span> <span class="mi">100000</span><span class="p">;;</span>
+<span class="nc">Execution</span> <span class="n">time</span><span class="p">:</span> <span class="mi">100</span><span class="p">.</span><span class="mi">936317</span><span class="n">s</span>
+<span class="p">-</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">100001</span>
+</code></pre>
+</div>
+
+<h2 id="an-array-based-solution">An Array-based Solution</h2>
+
+<p>The key idea of the <em>array-based</em> and <em>divide and conquer</em> solutions is that not every natural number in the range <code class="highlighter-rouge">[0...len]</code> where <code class="highlighter-rouge">len</code> is the length of the input list <code class="highlighter-rouge">X</code> can be in <code class="highlighter-rouge">X</code>. Thus, the smallest number not in <code class="highlighter-rouge">X</code> is the number we are looking for. The array-based solution uses an array with <code class="highlighter-rouge">n + 1</code> Boolean value (0: not present and 1: present) elements as a checklist of those numbers present in <code class="highlighter-rouge">X</code>. Then the index of the first <code class="highlighter-rouge">0</code> element in the checklist array is the finding smallest number. The array elements are initialized to <code class="highlighter-rouge">0</code>.</p>
+
+<p>The algorithm can be implemented with <code class="highlighter-rouge">Array</code> data structure in OCaml as follows. In which, we assume that the access function of array is <strong>constant</strong>.</p>
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(* returns a checklist array *)</span>
+<span class="k">let</span> <span class="n">array_filter</span> <span class="n">a</span> <span class="n">l</span> <span class="n">len</span> <span class="p">=</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nn">Array</span><span class="p">.</span><span class="n">length</span> <span class="n">a</span> <span class="o">&lt;&gt;</span> <span class="p">(</span><span class="n">len</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span> <span class="k">then</span>
+    <span class="n">failwith</span> <span class="s2">"Input is not consistent"</span><span class="p">;</span>
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">aux</span> <span class="n">a</span> <span class="n">l</span> <span class="n">len</span> <span class="p">=</span>
+  <span class="k">match</span> <span class="n">l</span> <span class="k">with</span>
+  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="n">a</span>
+  <span class="p">|</span> <span class="n">x</span><span class="p">::</span><span class="n">xs</span> <span class="p">-&gt;</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">x</span> <span class="p">&gt;</span> <span class="n">len</span> <span class="k">then</span>
+      <span class="n">aux</span> <span class="n">a</span> <span class="n">xs</span> <span class="n">len</span>
+    <span class="k">else</span>
+      <span class="k">begin</span>
+        <span class="n">a</span><span class="o">.(</span><span class="n">x</span><span class="p">)</span> <span class="p">&lt;-</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="n">aux</span> <span class="n">a</span> <span class="n">xs</span> <span class="n">len</span>
+      <span class="k">end</span>
+  <span class="k">in</span>
+  <span class="n">aux</span> <span class="n">a</span> <span class="n">l</span> <span class="n">len</span>
+<span class="k">in</span>
+<span class="c">(* returns the first `0` index *)</span>
+<span class="k">let</span> <span class="n">get_smallest</span> <span class="n">a</span> <span class="p">=</span>
+  <span class="k">let</span> <span class="n">n</span> <span class="p">=</span> <span class="nn">Array</span><span class="p">.</span><span class="n">length</span> <span class="n">a</span> <span class="k">in</span>
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">loop</span> <span class="n">i</span> <span class="p">=</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="p">=</span> <span class="n">n</span> <span class="k">then</span> <span class="p">-</span><span class="mi">1</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="n">a</span><span class="o">.(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="mi">0</span> <span class="k">then</span> <span class="n">i</span>
+    <span class="k">else</span> <span class="n">loop</span> <span class="p">(</span><span class="n">succ</span> <span class="n">i</span><span class="p">)</span>
+  <span class="k">in</span>
+  <span class="n">loop</span> <span class="mi">0</span>
+<span class="k">in</span>
+<span class="k">let</span> <span class="n">linear_smallest</span> <span class="n">l</span> <span class="p">=</span>
+  <span class="k">let</span> <span class="n">n</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">length</span> <span class="n">l</span> <span class="k">in</span>
+  <span class="k">let</span> <span class="n">a</span> <span class="p">=</span> <span class="nn">Array</span><span class="p">.</span><span class="n">make</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="mi">0</span> <span class="k">in</span>
+  <span class="n">get_smallest</span> <span class="p">(</span><span class="n">array_filter</span> <span class="n">a</span> <span class="n">l</span> <span class="n">n</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Because the array access function is <script type="math/tex">O(1)</script>, thus the asymptotic complexity of the <code class="highlighter-rouge">array_filter</code> function is <script type="math/tex">O(n)</script> where <code class="highlighter-rouge">n</code> is the length of the input list. The function <code class="highlighter-rouge">get_smallest</code> is <script type="math/tex">O(n)</script> where <code class="highlighter-rouge">n</code> is the length of the array. Hence, the complexity of the <code class="highlighter-rouge">linear_smallest</code> function is <script type="math/tex">O(n)</script>, in other words, it is linear on the length of the input list.</p>
+
+<p>We run the function <code class="highlighter-rouge">test</code> with <code class="highlighter-rouge">linear_smallest</code> as parameter to see its execution time. The results show that if we increase the length of the input list <code class="highlighter-rouge">10</code> times (from <code class="highlighter-rouge">10000</code> to <code class="highlighter-rouge">100000</code>), the the runtime is <code class="highlighter-rouge">0.01</code> compared to <code class="highlighter-rouge">0.001</code>. Thus it is almost <code class="highlighter-rouge">10</code> time longer that reflects the linear complexity.
+We also see that the algorithm scales much better than the quadratic version. For instance, for the list of <code class="highlighter-rouge">100000000</code> elements, it takes only <code class="highlighter-rouge">17.5</code> seconds where the quadratic version seems to run forever (in fact, it is more than one day)! The experiments were run on a machine with an <code class="highlighter-rouge">Intel Core i5 2.4 GHz</code> processor and <code class="highlighter-rouge">8GB</code> of RAM under Mac OS X <code class="highlighter-rouge">10.12.5</code>.</p>
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="n">test</span> <span class="n">linear_smallest</span> <span class="mi">10000</span><span class="p">;;</span>
+<span class="nc">Execution</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">001119</span><span class="n">s</span>
+<span class="p">-</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">10001</span>
+
+<span class="n">test</span> <span class="n">linear_smallest</span> <span class="mi">100000</span><span class="p">;;</span>
+<span class="nc">Execution</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">010943</span><span class="n">s</span>
+<span class="p">-</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">100001</span>
+
+<span class="n">test</span> <span class="n">linear_smallest</span> <span class="mi">100000000</span><span class="p">;;</span>
+<span class="nc">Execution</span> <span class="n">time</span><span class="p">:</span> <span class="mi">17</span><span class="p">.</span><span class="mi">463857</span><span class="n">s</span>
+<span class="p">-</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">100000001</span>
+</code></pre>
+</div>
+<h2 id="divide-and-conquer">Divide and Conquer</h2>
+
+<p>As I’ve mentioned before, the key idea of <em>divide and conquer</em> solution is that not every natural number in the range <code class="highlighter-rouge">[0...len]</code> where <code class="highlighter-rouge">len</code> is the length of the input list <code class="highlighter-rouge">X</code> can be in <code class="highlighter-rouge">X</code>. We first observe the following properties of <code class="highlighter-rouge">filter</code> (denoted <code class="highlighter-rouge">\\</code>) and <code class="highlighter-rouge">append</code> (denoted <code class="highlighter-rouge">@</code>) functions. Recall that <code class="highlighter-rouge">filter u v</code> returns the first list <code class="highlighter-rouge">u</code> in which the occurrences of elements in the second list <code class="highlighter-rouge">v</code> are filtered out. <code class="highlighter-rouge">append u v</code> concatenates two lists.</p>
+
+<p><code class="highlighter-rouge">(u @ v) \\ t = (u \\ t) @ (v \\ t)</code></p>
+
+<p><code class="highlighter-rouge">u \\ (v @ t) = (u \\ v) \\ t</code></p>
+
+<p><code class="highlighter-rouge">(u \\ v) \\ t = (u \\ t) \\ v</code></p>
+
+<p>If we have <code class="highlighter-rouge">u1</code>, <code class="highlighter-rouge">u2</code>, <code class="highlighter-rouge">v1</code>, and <code class="highlighter-rouge">v2</code> such that <code class="highlighter-rouge">u1 \\ v2 = u1</code> and <code class="highlighter-rouge">u2 \\ v1 = u2</code>. In other words, <code class="highlighter-rouge">u1</code> and <code class="highlighter-rouge">v2</code> (respectively <code class="highlighter-rouge">u2</code> and <code class="highlighter-rouge">v1</code>) are disjoint. Then, following the properties above, we get</p>
+
+<p><code class="highlighter-rouge">(u1 @ u2) \\ (v1 @ v2) = (u1 \\ v1) @ (u2 \\ v2)</code></p>
+
+<p>Given a natural number <code class="highlighter-rouge">a</code> and an input list <code class="highlighter-rouge">X</code> whose elements are not duplicated and bigger than <code class="highlighter-rouge">a</code>. For any natural number <code class="highlighter-rouge">b</code> that is strictly bigger than <code class="highlighter-rouge">a</code>, we have <code class="highlighter-rouge">[a; ... ; a + len] \\ X = [a; ... ; b - 1] \\ X1 @ [b; ... ; a + len] \\ X2</code> where <code class="highlighter-rouge">len</code> is the length of <code class="highlighter-rouge">X</code>, <code class="highlighter-rouge">X1</code> is the sublist of <code class="highlighter-rouge">X</code> containing all elements that are smaller than <code class="highlighter-rouge">b</code>, and <code class="highlighter-rouge">X2</code> is the sublist of <code class="highlighter-rouge">X</code> containing all elements that are bigger than <code class="highlighter-rouge">b</code>, that is, <code class="highlighter-rouge">X</code> is divided into two partitions. Hence, the smallest number from <code class="highlighter-rouge">a</code> is <code class="highlighter-rouge">List.hd [a; ... ; a + len] \\ X = List.hd ([a; ... ; b - 1] \\ X1 @ [b; ...; a + len] \\ X2)</code>. If <code class="highlighter-rouge">[a; ... ; b - 1] \\ X1</code> is empty then the smallest number is <code class="highlighter-rouge">List.hd [b; ... ; a + len] \\ X2)</code>. Otherwise, it is <code class="highlighter-rouge">List.hd [a; ... ; b - 1] \\ X1</code>. In case that <code class="highlighter-rouge">X</code> is empty, the smallest number is <code class="highlighter-rouge">a</code>.</p>
+
+<p>The next questions are: Can we implement the checking that <code class="highlighter-rouge">[a; ... ; b - 1] \\ X1</code> is empty with a <strong>linear</strong> runtime complexity algorithm (the direct computation, e.g., using <code class="highlighter-rouge">List.mem</code>, takes <strong>quadratic</strong> runtime in the length of <code class="highlighter-rouge">X1</code>? And how to choose <code class="highlighter-rouge">b</code> such that the <strong>recurrence relation</strong> of _divice and conquer__ gives us a <strong>linear solution</strong>?</p>
+
+<p>Because <code class="highlighter-rouge">X1</code> is a list of distinct natural numbers less than <code class="highlighter-rouge">b</code> and <code class="highlighter-rouge">[a; ... ; b - 1]</code> contains <code class="highlighter-rouge">b - a</code> numbers from <code class="highlighter-rouge">a</code> to <code class="highlighter-rouge">b - 1</code>. Hence, to check that <code class="highlighter-rouge">[a; ... ; b - 1] \\ X1</code> is empty, we only need to compute the length of <code class="highlighter-rouge">X1</code> and show that it equals to <code class="highlighter-rouge">b - a</code>. This algorithm takes <strong>linear</strong> runtime in the length of <code class="highlighter-rouge">X1</code> in the worst-case. For the second question, if we choose <code class="highlighter-rouge">b = a + 1 + len div 2</code> where <code class="highlighter-rouge">len</code> is the length of <code class="highlighter-rouge">X</code>, then we have length of the first partition is smaller or equal to <code class="highlighter-rouge">len div 2</code>, the length of the second partition is <code class="highlighter-rouge">len - len div 2 - 1</code> and smaller than <code class="highlighter-rouge">len div 2</code>. Hence, we get the following recurrence relation:</p>
+
+<p><code class="highlighter-rouge">T(len) = T(len div 2) + O(len)</code></p>
+
+<p>By the <strong>Master Theorem</strong>, the solution is <code class="highlighter-rouge">T(len) = O(len)</code>. The implementation using <code class="highlighter-rouge">List.partition</code> function is given as follows.</p>
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="k">rec</span> <span class="n">smallest_from</span> <span class="n">a</span> <span class="n">l</span> <span class="p">=</span> 
+  <span class="k">match</span> <span class="n">l</span> <span class="k">with</span>
+  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="n">a</span>
+  <span class="p">|</span> <span class="kt">list</span> <span class="p">-&gt;</span> 
+    <span class="k">let</span> <span class="n">b</span> <span class="p">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="nn">List</span><span class="p">.</span><span class="n">length</span> <span class="n">l</span> <span class="o">/</span> <span class="mi">2</span> <span class="k">in</span>
+    <span class="k">let</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">partition</span> <span class="p">(</span><span class="k">fun</span> <span class="n">y</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">y</span> <span class="p">&lt;</span> <span class="n">b</span><span class="o">))</span> <span class="kt">list</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nn">List</span><span class="p">.</span><span class="n">length</span> <span class="n">x1</span> <span class="p">=</span> <span class="n">b</span> <span class="p">-</span> <span class="n">a</span><span class="p">)</span> <span class="k">then</span> 
+      <span class="n">smallest_from</span> <span class="n">b</span> <span class="n">x2</span>
+    <span class="k">else</span>
+      <span class="n">smallest_from</span> <span class="n">a</span> <span class="n">x1</span>
+<span class="k">in</span>
+<span class="k">let</span> <span class="n">divide_smallest</span> <span class="n">l</span> <span class="p">=</span> 
+  <span class="n">smallest_from</span> <span class="mi">0</span> <span class="n">l</span>
+</code></pre>
+</div>
+<p>We can avoid to compute the length of the input list in the function <code class="highlighter-rouge">smallest_from</code> by giving it as an argument like</p>
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="k">rec</span> <span class="n">smallest_from</span> <span class="n">a</span> <span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span> <span class="p">=</span> 
+  <span class="k">if</span> <span class="n">len</span> <span class="p">=</span> <span class="mi">0</span> <span class="k">then</span> <span class="n">a</span>
+  <span class="k">else</span> 
+    <span class="k">begin</span>
+      <span class="k">let</span> <span class="n">b</span> <span class="p">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">len</span> <span class="o">/</span> <span class="mi">2</span> <span class="k">in</span>
+      <span class="k">let</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">partition</span> <span class="p">(</span><span class="k">fun</span> <span class="n">y</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">y</span> <span class="p">&lt;</span> <span class="n">b</span><span class="o">))</span> <span class="n">l</span> <span class="k">in</span>
+      <span class="k">let</span> <span class="n">len1</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">length</span> <span class="n">x1</span> <span class="k">in</span>
+      <span class="k">if</span> <span class="n">len1</span> <span class="p">=</span> <span class="p">(</span><span class="n">b</span> <span class="p">-</span> <span class="n">a</span><span class="p">)</span> <span class="k">then</span> 
+        <span class="n">smallest_from</span> <span class="n">b</span> <span class="o">((</span><span class="n">len</span> <span class="p">-</span> <span class="n">len1</span><span class="o">),</span> <span class="n">x2</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="n">smallest_from</span> <span class="n">a</span> <span class="p">(</span><span class="n">len1</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">in</span>
+<span class="k">let</span> <span class="n">divide_smallest</span> <span class="n">l</span> <span class="p">=</span> 
+  <span class="n">smallest_from</span> <span class="mi">0</span> <span class="p">(</span><span class="nn">List</span><span class="p">.</span><span class="n">length</span> <span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>As before we run the function <code class="highlighter-rouge">test</code> with <code class="highlighter-rouge">divide_smallest</code> as parameter to see its execution time. The results show that if we increase the length of the input list <code class="highlighter-rouge">10</code> times (from <code class="highlighter-rouge">1000000</code> to <code class="highlighter-rouge">10000000</code>), the the runtime is <code class="highlighter-rouge">4.570747</code> compared to <code class="highlighter-rouge">0.461642</code>. Thus it is almost <code class="highlighter-rouge">10</code> time longer that reflects the linear complexity.
+We also see that this algorithm scales much better than the quadratic version. For instance, for the list of <code class="highlighter-rouge">100000000</code> elements, it takes only <code class="highlighter-rouge">94.211405</code> seconds. It turns out that it is a bit less efficient than the <strong>array-based</strong> solution.</p>
+<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="n">test</span> <span class="n">divide_smallest</span> <span class="mi">1000000</span><span class="p">;;</span>
+<span class="nc">Execution</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">461642</span><span class="n">s</span>
+<span class="p">-</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">10001</span>
+
+<span class="n">test</span> <span class="n">divide_smallest</span> <span class="mi">10000000</span><span class="p">;;</span>
+<span class="nc">Execution</span> <span class="n">time</span><span class="p">:</span> <span class="mi">4</span><span class="p">.</span><span class="mi">570747</span><span class="n">s</span>
+<span class="p">-</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">100001</span>
+
+<span class="n">test</span> <span class="n">divide_smallest</span> <span class="mi">100000000</span><span class="p">;;</span>
+<span class="nc">Execution</span> <span class="n">time</span><span class="p">:</span> <span class="mi">47</span><span class="p">.</span><span class="mi">099375</span><span class="n">s</span>
+<span class="p">-</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">100000001</span>
+</code></pre>
+</div>
+
+
+  </article>
+</div>
+<!--
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://channgo2203.github.io/articles/2017-08/smallest" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://channgo2203.github.io/articles/2017-08/smallest" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://channgo2203.github.io/articles/2017-08/smallest" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://news.ycombinator.com/submitlink?u=http://channgo2203.github.io/articles/2017-08/smallest" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://channgo2203.github.io/articles/2017-08/smallest" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>-->
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'channgo';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        <footer>
+  &copy; 2017 Van Chan Ngo. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, <a href="http://github.com/renyuanz/leonids/">leonids theme</a>
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://channgo2203.github.io/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://channgo2203.github.io/js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89119753-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFGCXMJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+</html>
