@@ -6,11 +6,11 @@ category:
   - Publication
 published: true
 ---
-<img src="http://channgo2203.github.io/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;"> denotes that the paper is published at a flagship conference (e.g., rank A*), while <img src="http://channgo2203.github.io/img/good_q.png" alt="Good conference" style="width:22px;height:22px;"> denotes a good conference (e.g., rank A). [According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/)]
+<img src="http://channgo2203.github.io/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;"> denotes that the paper is published at a flagship conference (e.g., rank A*) or a premium journal, while <img src="http://channgo2203.github.io/img/good_q.png" alt="Good conference" style="width:22px;height:22px;"> denotes a good conference (e.g., rank A) or a leading journal. [According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/)]
 
 ### 2017
 * <b style="color: #F5A623;">[JSEP]</b> V.C. Ngo and A. Legay.   
-[Formal Verification of Probabilistic SystemC Models with Statistical Model Checking](http://channgo2203.github.io/pdfs/jsep16.pdf).  
+[Formal Verification of Probabilistic SystemC Models with Statistical Model Checking](http://channgo2203.github.io/pdfs/jsep16.pdf). <img src="http://channgo2203.github.io/img/good_q.png" alt="Leading journal" style="width:22px;height:22px;">
 In Journal of Software: Evolution and Process. Wiley, 2017.  
 [[Tool Implementation](https://github.com/channgo2203/PSCV)][Case Studies: [Producer-Consumer](http://channgo2203.github.io/zips/producer_consumer.tar.gz), [Control System](http://channgo2203.github.io/zips/control_system.tar.gz), [Random Scheduler](http://channgo2203.github.io/zips/random_scheduler.tar.gz)][[Tool Website](https://project.inria.fr/pscv/)]
 
