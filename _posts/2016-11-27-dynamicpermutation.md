@@ -15,14 +15,14 @@ comments: true
 share: true
 ---
 
-In the [previous post][1], I analyzed a common 
+In the [previous post]({{ site.baseurl }}/articles/2016-11/permutation), I analyzed a common 
 recursive implementation of permutation generation. Due to its $$n!$$ complexity, a stack 
-overflow will occurs soon with the number of elements is beyon 9.
+overflow will occurs soon with the number of elements is beyond 9.
 
 To overcome this, one technique is to generate a different permutation at a time, 
 in which the complexity of this one permutation generation is linear. I show how this 
 technique can be implemented using OCaml with the 
-[Johnson Trotter algorithm][2]. 
+[Johnson Trotter algorithm][1]. 
 
 To make the implementation generic, I implement a functor which generates a 
 Permutation module given a user-provided comparable type. For example, lets say 
@@ -265,5 +265,4 @@ module IntPair =
 module P = Permutation.Make(IntPair)
 ```
 
-[1]: http://channgo2203.github.io/programming/2016/11/22/permutation/
-[2]: https://en.wikipedia.org/wiki/Steinhaus–Johnson–Trotter_algorithm
+[1]: https://en.wikipedia.org/wiki/Steinhaus–Johnson–Trotter_algorithm

@@ -164,7 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </header>
 
   <article class="post-content">
-    <p>In the <a href="http://channgo2203.github.io/programming/2016/12/01/heap/">previous post</a>, I talked about heap data structure, a tree-based implementation 
+    <p>In the <a href="/articles/2016-12/heap">previous post</a>, I talked about heap data structure, a tree-based implementation 
 in OCaml. This post will discuss how it is used to implement the <a href="https://en.wikipedia.org/wiki/Heapsort">heap sort algorithm</a>. 
 This sorting algorithm has <script type="math/tex">O(nlogn)</script> worst-case time complexity.</p>
 
@@ -191,7 +191,7 @@ This sorting algorithm has <script type="math/tex">O(nlogn)</script> worst-case 
 Let’s see how this works in the context of the <code class="highlighter-rouge">Heap</code> module to add the additional functionality 
 for sorting. Instead of writing a heap-sort module extending the heap module with the sorting function by hand, we use a functor to add this functionality to the heap module that supports the <code class="highlighter-rouge">fold_on_min</code> function.</p>
 
-<p>We create a new module <code class="highlighter-rouge">Heapsort</code> that automates the process of adding sorting function to the <a href="http://channgo2203.github.io/programming/2016/12/01/heap/"><code class="highlighter-rouge">Heap</code> module</a>. As you can see, <code class="highlighter-rouge">Heapsort</code> contains a <code class="highlighter-rouge">type k</code> of the <code class="highlighter-rouge">Heap</code> key type, a function <code class="highlighter-rouge">sort_list</code> to sort a list of this type, and a functor <code class="highlighter-rouge">Make</code> that allows one to extend a <code class="highlighter-rouge">Heap</code> module.</p>
+<p>We create a new module <code class="highlighter-rouge">Heapsort</code> that automates the process of adding sorting function to the <a href="https://en.wikipedia.org/wiki/Heapsort"><code class="highlighter-rouge">Heap</code> module</a>. As you can see, <code class="highlighter-rouge">Heapsort</code> contains a <code class="highlighter-rouge">type k</code> of the <code class="highlighter-rouge">Heap</code> key type, a function <code class="highlighter-rouge">sort_list</code> to sort a list of this type, and a functor <code class="highlighter-rouge">Make</code> that allows one to extend a <code class="highlighter-rouge">Heap</code> module.</p>
 
 <div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(************************************)</span>
 <span class="c">(*            Heap-sort             *)</span>
