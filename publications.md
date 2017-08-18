@@ -6,7 +6,7 @@ category:
   - Publication
 published: true
 ---
-<img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;"> denotes that the paper is published at a flagship conference (e.g., rank A*) or a premium journal, while <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;"> denotes a good conference (e.g., rank A) or a leading journal. [According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/)]
+<img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;"> denotes that the paper is published at a flagship conference (e.g., rank A*) or a premium journal, while <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;"> denotes a good conference (e.g., rank A) or a leading journal. [According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/)]. <b style="color: #F83E4B;">[Color]</b>, <b style="color: #8d7edc;">[Color]</b>, and <b style="color: #F5A623;">[Color]</b> denotes journals, conferences, and workshop, respectively. 
 
 ### 2017
 * <b style="color: #F83E4B;">[JSEP]</b> V.C. Ngo and A. Legay.   
@@ -34,7 +34,7 @@ In Proceedings of 17th High Assurance Systems Engineering Symposium. IEEE, Orlan
 [Acceptance Rate: 32/78 = 41%]
 
 ### 2015
-* <b style="color: #8d7edc;">[SCOPES]</b> V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
+* <b style="color: #F5A623;">[SCOPES]</b> V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
 [Modular Translation Validation of a Full-sized Synchronous Compiler using Off-the-shelf Verification Tools]({{ site.baseurl }}/pdfs/scopes15.pdf). <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
 In Proceedings of International Workshop on Software and Compilers for Embedded Systems, Invited Presentation. ACM, St. Goar, Germany, June 2015.  
 [[Tool Implementation](https://github.com/channgo2203/sigcert)]  
@@ -66,7 +66,7 @@ In Proceedings of the Electronic System Level Synthesis Conference. IEEE, San Fr
 In Journal of Frontiers of Computer Science. Special Issue on Synchronous Programming, Springer, 2013.
 
 ### 2012
-* <b style="color: #8d7edc;">[HLDVT]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard.  
+* <b style="color: #F5A623;">[HLDVT]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard.  
 [Formal Verification of Automatically Generated C-code from Polychronous Data-flow Equations]({{ site.baseurl }}/pdfs/hldvt12.pdf).  
 Accepted at International High-Level Design, Validation and Test Workshop. IEEE, California, USA, November 2012.
 
@@ -82,7 +82,7 @@ In Proceedings of 9th International Conference on Integrated Formal Methods. Spr
 In Proceedings of 14th European Symposium on Research in Computer Security. Springer, Saint-Malo, France, September 2009 (Authors by alphabetical order).  
 [Acceptance Rate: 42/220 = 19.1%]
 
-* <b style="color: #8d7edc;">[FCC]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
+* <b style="color: #F5A623;">[FCC]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
 [Formal Indistinguishability Extended to the ROM]({{ site.baseurl }}/pdfs/fcc09.pdf).  
 In Proceedings of Workshop on Formal and Computational Cryptography, New York, USA, July 2009 (Authors by alphabetical order).
 
