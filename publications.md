@@ -6,7 +6,7 @@ category:
   - Publication
 published: true
 ---
-<img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;"> denotes that the paper is published at a flagship conference (e.g., rank A*) or a premium journal, while <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;"> denotes a good conference (e.g., rank A) or a leading journal. [According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/)]. <b style="color: #F83E4B;">[Color]</b>, <b style="color: #8d7edc;">[Color]</b>, and <b style="color: #F5A623;">[Color]</b> denotes journals, conferences, and workshop, respectively. 
+<img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;"> denotes that the paper is published at a flagship conference (e.g., rank A*) or a premium journal, while <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;"> denotes a good conference (e.g., rank A) or a leading journal. [According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/)]. <b style="color: #F83E4B;">[Color]</b>, <b style="color: #8d7edc;">[Color]</b>, and <b style="color: #F5A623;">[Color]</b> denotes journals, conferences, and workshops, respectively. 
 
 ### 2017
 * <b style="color: #F83E4B;">[JSEP]</b> V.C. Ngo and A. Legay.   
