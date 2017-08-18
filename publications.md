@@ -9,51 +9,51 @@ published: true
 <img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;"> denotes that the paper is published at a flagship conference (e.g., rank A*) or a premium journal, while <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;"> denotes a good conference (e.g., rank A) or a leading journal. [According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/)]
 
 ### 2017
-* <b style="color: #F5A623;">[JSEP]</b> V.C. Ngo and A. Legay.   
+* <b style="color: #F83E4B;">[JSEP]</b> V.C. Ngo and A. Legay.   
 [Formal Verification of Probabilistic SystemC Models with Statistical Model Checking]({{ site.baseurl }}/pdfs/jsep16.pdf). <img src="{{ site.url }}/img/good_q.png" alt="Leading journal" style="width:22px;height:22px;">  
-In Journal of Software: Evolution and Process. Wiley, 2017.  
+In Journal of Software: Evolution and Process. Wiley, 2017 (Invited to submit an extended version of [HASE paper]({{ site.baseurl }}/pdfs/hase16.pdf)).  
 [[Tool Implementation](https://github.com/channgo2203/PSCV)][Case Studies: [Producer-Consumer]({{ site.url }}/zips/producer_consumer.tar.gz), [Control System]({{ site.baseurl }}/zips/control_system.tar.gz), [Random Scheduler]({{ site.baseurl }}/zips/random_scheduler.tar.gz)][[Tool Website](https://project.inria.fr/pscv/)]
 
-* <b style="color: #F5A623;">[Oakland]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
+* <b style="color: #8d7edc;">[Oakland]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
 [Verifying and Synthesizing Constant-Resource Implementations with Types]({{ site.baseurl }}/pdfs/oakland17.pdf). <img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;">    
 To appear in 2017 IEEE Symposium on Security & Privacy (Oakland). IEEE, San Jose, CA, USA, May 2017.  
 [[Long Version]({{ site.baseurl }}/pdfs/oakland17_app.pdf)] [[Formalization]({{ site.baseurl }}/zips/oakland17_formalization.zip)][[Tool Implementation](http://www.raml.co/code.html)]  [[Examples]({{ site.baseurl }}/zips/oakland17_examples.zip)]  
 [Acceptance Rate: 60/463 = 12.9%]
 
 ### 2016
-* <b style="color: #F5A623;">[CAV]</b> V.C. Ngo, A. Legay, and V. Joloboff.  
+* <b style="color: #8d7edc;">[CAV]</b> V.C. Ngo, A. Legay, and V. Joloboff.  
 [PSCV: A Runtime Verification Tool for Probabilistic SystemC Models]({{ site.baseurl }}/pdfs/cav16.pdf). <img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:22px;height:22px;">    
 In Proceedings of 28th International Conference on Computer Aided Verification. Springer, Toronto, Ontario, Canada, July 2016.  
 [[Tool Implementation](https://github.com/channgo2203/PSCV)][Case Studies: [Producer-Consumer]({{ site.baseurl }}/zips/producer_consumer.tar.gz), [Control System]({{ site.baseurl }}/zips/control_system.tar.gz), [Random Scheduler]({{ site.baseurl }}/zips/random_scheduler.tar.gz)][[Tool Website](https://project.inria.fr/pscv/)]  
 [Acceptance Rate: 58/195 = 29.7%]
 
-* <b style="color: #F5A623;">[HASE]</b> V.C. Ngo, A. Legay, and J. Quilbeuf.  
+* <b style="color: #8d7edc;">[HASE]</b> V.C. Ngo, A. Legay, and J. Quilbeuf.  
 [Statistical Model Checking for SystemC Models]({{ site.baseurl }}/pdfs/hase16.pdf).  
 In Proceedings of 17th High Assurance Systems Engineering Symposium. IEEE, Orlando, Florida, USA, January 2016.  
 [[Long Version]({{ site.baseurl }}/pdfs/longhase16.pdf)][[Tool Implementation](https://github.com/channgo2203/PSCV)][[Tool Website](https://project.inria.fr/pscv/)]  
 [Acceptance Rate: 32/78 = 41%]
 
 ### 2015
-* <b style="color: #F5A623;">[SCOPES]</b> V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
+* <b style="color: #8d7edc;">[SCOPES]</b> V.C. Ngo, J-P. Talpin, T. Gautier, L. Besnard, and P. Le Guernic.  
 [Modular Translation Validation of a Full-sized Synchronous Compiler using Off-the-shelf Verification Tools]({{ site.baseurl }}/pdfs/scopes15.pdf). <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
 In Proceedings of International Workshop on Software and Compilers for Embedded Systems, Invited Presentation. ACM, St. Goar, Germany, June 2015.  
 [[Tool Implementation](https://github.com/channgo2203/sigcert)]  
 [Acceptance Rate: 8/18 = 44.4%]
 
-* <b style="color: #F5A623;">[FORTE]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
+* <b style="color: #8d7edc;">[FORTE]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
 [Translation Validation for Synchronous Data-flow Specification in the SIGNAL Compiler]({{ site.baseurl }}/pdfs/forte15.pdf). <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
 In Proceedings of 35th IFIP International Conference on Formal Techniques for Distributed Objects, Components and Systems. IFIP, Grenoble, France, June 2015.  
 [[Long Version]({{ site.url }}/pdfs/longforte15.pdf)][[Tool Implementation](https://github.com/channgo2203/sigcert)]  
 [Acceptance Rate: 15/53 = 28.3%]
 
-* <b style="color: #F5A623;">[FASE]</b> V.C. Ngo, J-P. Talpin, T. Gautier, and P. Le Guernic.  
+* <b style="color: #8d7edc;">[FASE]</b> V.C. Ngo, J-P. Talpin, T. Gautier, and P. Le Guernic.  
 [Translation Validation for Clock Transformations in a Synchronous Compiler]({{ site.baseurl }}/pdfs/fase15.pdf). <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
 In Proceedings of 18th International Conference on Fundamental Approaches to Software Engineering. Springer, London, UK, April 2015.  
 [[Long Version]({{ site.baseurl }}/pdfs/longfase15.pdf)][[Tool Implementation](https://github.com/channgo2203/sigcert)]  
 [Acceptance Rate: 23/80 = 28.7%]
 
 ### 2014
-* <b style="color: #F5A623;">[ESLsyn-DAC]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
+* <b style="color: #8d7edc;">[ESLsyn-DAC]</b> V.C. Ngo, J-P. Talpin, and T. Gautier.  
 [Precise Deadlock Detection for Polychronous Data-flow Specifications]({{ site.baseurl }}/pdfs/eslsyn14.pdf).  
 In Proceedings of the Electronic System Level Synthesis Conference. IEEE, San Francisco, CA, USA, June 2014.
 <!---
@@ -61,28 +61,28 @@ In Proceedings of the Electronic System Level Synthesis Conference. IEEE, San Fr
 -->
 
 ### 2013
-* <b style="color: #F5A623;">[FCS]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard.  
+* <b style="color: #F83E4B;">[FCS]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard.  
 [Formal Verification of Synchronous Data-flow Program Transformations Toward Certified Compilers]({{ site.baseurl }}/pdfs/fcs13.pdf).  
 In Journal of Frontiers of Computer Science. Special Issue on Synchronous Programming, Springer, 2013.
 
 ### 2012
-* <b style="color: #F5A623;">[HLDVT]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard.  
+* <b style="color: #8d7edc;">[HLDVT]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic, and L. Besnard.  
 [Formal Verification of Automatically Generated C-code from Polychronous Data-flow Equations]({{ site.baseurl }}/pdfs/hldvt12.pdf).  
 Accepted at International High-Level Design, Validation and Test Workshop. IEEE, California, USA, November 2012.
 
-* <b style="color: #F5A623;">[IFM]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic,  and L. Besnard.  
+* <b style="color: #8d7edc;">[IFM]</b> V.C. Ngo, J-P. Talpin, T. Gautier, P. Le Guernic,  and L. Besnard.  
 [Formal Verification of Compiler Transformations on Polychronous Equations]({{ site.baseurl }}/pdfs/ifm12.pdf). <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
 In Proceedings of 9th International Conference on Integrated Formal Methods. Springer, Pisa, Italy, June 2012.  
 [[Tool Implementation](https://github.com/channgo2203/SigCV)]  
 [Acceptance Rate: 22/59 = 37%]
 
 ### 2009
-* <b style="color: #F5A623;">[ESORICS]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
+* <b style="color: #8d7edc;">[ESORICS]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
 [Formal Indistinguishability Extended to the Random Oracle Model]({{ site.baseurl }}/pdfs/esorics09.pdf). <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
 In Proceedings of 14th European Symposium on Research in Computer Security. Springer, Saint-Malo, France, September 2009 (Authors by alphabetical order).  
 [Acceptance Rate: 42/220 = 19.1%]
 
-* <b style="color: #F5A623;">[FCC]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
+* <b style="color: #8d7edc;">[FCC]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
 [Formal Indistinguishability Extended to the ROM]({{ site.baseurl }}/pdfs/fcc09.pdf).  
 In Proceedings of Workshop on Formal and Computational Cryptography, New York, USA, July 2009 (Authors by alphabetical order).
 
