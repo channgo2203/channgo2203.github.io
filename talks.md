@@ -4,7 +4,11 @@ title: Talks
 category: [Research,Talk]
 ---
 
-- _PSCV: A Runtime Verification Tool for Probabilistic SystemC Models_. Talk at CAV 2016, Toronto, Ontario, Canada, July 2016.
+- _[Bounded Expectations: Resource Analysis for Probabilistic Programs - Tool Demonstration]({{ site.baseurl }}/pdfs/absynth_slides.pdf)_. Present at Dagtuhl Seminar 17291, Wadern, Germany, July 2017. 
+
+- _[Verifying and Synthesizing Constant-Resource Implementations with Types]({{ site.baseurl }}/pdfs/oakland17_slides.pdf)_. Talk at S&P Oakland 2017, San Jose, CA, USA, May 2017.
+
+- _[PSCV: A Runtime Verification Tool for Probabilistic SystemC Models]({{ site.baseurl }}/pdfs/cav16_slides.pdf)_. Talk at CAV 2016, Toronto, Ontario, Canada, July 2016.
 
 - _[Statistical Model Checking for SystemC Models]({{ site.baseurl }}/pdfs/hase16_slides.pdf)_. Talk at HASE 2016, Orlando, FL, USA, January 2016.
 
