@@ -79,12 +79,12 @@ In Proceedings of 9th International Conference on Integrated Formal Methods. Spr
 ### 2009
 * <b style="color: #8d7edc;">[ESORICS]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
 [Formal Indistinguishability Extended to the Random Oracle Model]({{ site.baseurl }}/pdfs/esorics09.pdf). <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:22px;height:22px;">    
-In Proceedings of 14th European Symposium on Research in Computer Security. Springer, Saint-Malo, France, September 2009 (Authors by alphabetical order).  
+In Proceedings of 14th European Symposium on Research in Computer Security. Springer, Saint-Malo, France, September 2009 (Main author, authors by alphabetical order).  
 [Acceptance Rate: 42/220 = 19.1%]
 
 * <b style="color: #F5A623;">[FCC]</b> C. Ene, Y. Lakhnech, and V.C. Ngo.  
 [Formal Indistinguishability Extended to the ROM]({{ site.baseurl }}/pdfs/fcc09.pdf).  
-In Proceedings of Workshop on Formal and Computational Cryptography, New York, USA, July 2009 (Authors by alphabetical order).
+In Proceedings of Workshop on Formal and Computational Cryptography, New York, USA, July 2009 (Main author, authors by alphabetical order).
 
 ### Technical Reports
 * V.C. Ngo, Q. Carbonneaux, and J. Hoffmann.  
