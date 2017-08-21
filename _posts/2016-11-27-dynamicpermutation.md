@@ -15,7 +15,7 @@ comments: true
 share: true
 ---
 
-In the [previous post]({{ site.baseurl }}/articles/2016-11/permutation), I analyzed a common 
+In the [previous post]({{ site.url }}/articles/2016-11/permutation), I analyzed a common 
 recursive implementation of permutation generation. Due to its $$n!$$ complexity, a stack 
 overflow will occurs soon with the number of elements is beyond 9.
 

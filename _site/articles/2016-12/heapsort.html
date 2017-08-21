@@ -48,15 +48,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/about">About</a>
+        <a href="http://channgo2203.github.io/about.html">About</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/research">Research</a>
+        <a href="http://channgo2203.github.io/research.html">Research</a>
         <span>/</span>
       </li>
        <li class="nav-item">
-        <a href="http://channgo2203.github.io/publications">Publications</a>
+        <a href="http://channgo2203.github.io/publications.html">Publications</a>
         <span>/</span>
       </li>
       <li class="nav-item">
@@ -65,7 +65,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </ul>
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/talks">Talks</a>
+        <a href="http://channgo2203.github.io/talks.html">Talks</a>
         <span>/</span>
       </li>
       <li class="nav-item">
@@ -164,7 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </header>
 
   <article class="post-content">
-    <p>In the <a href="/articles/2016-12/heap">previous post</a>, I talked about heap data structure, a tree-based implementation 
+    <p>In the <a href="http://channgo2203.github.io/articles/2016-12/heap">previous post</a>, I talked about heap data structure, a tree-based implementation 
 in OCaml. This post will discuss how it is used to implement the <a href="https://en.wikipedia.org/wiki/Heapsort">heap sort algorithm</a>. 
 This sorting algorithm has <script type="math/tex">O(nlogn)</script> worst-case time complexity.</p>
 
@@ -172,7 +172,7 @@ This sorting algorithm has <script type="math/tex">O(nlogn)</script> worst-case 
 
 <p>Assume that we want to sort the list <code class="highlighter-rouge">[4; 1; 5; 3; 2]</code> in decreasing order. We assume further that the input list is represented by a complete binary min heap with 5 nodes as shown on the top of Figure 1.</p>
 
-<p><img src="/img/heapsort.jpg" alt="Heap-sort" /></p>
+<p><img src="http://channgo2203.github.io/img/heapsort.jpg" alt="Heap-sort" /></p>
 
 <p>To sort the list we create an empty list as the output list. We pick the key value <code class="highlighter-rouge">1</code> of the heap’s root and put it into the output list. Then we remove the root <code class="highlighter-rouge">Node 1</code> from the heap. After these actions, we get a new heap with the root is <code class="highlighter-rouge">Node 2</code> and a new output list with one element <code class="highlighter-rouge">1</code>. If we do the actions above until the heap is empty (e.g., represented by a node <code class="highlighter-rouge">Leaf</code>), then we get the final output list is in decreasing order <code class="highlighter-rouge">[5; 4; 3; 2; 1]</code>. The process is depicted in Figure 1. Thus the heap-sort algorithm can be divided into the following steps. The result list is initialized empty.</p>
 

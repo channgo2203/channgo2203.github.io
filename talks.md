@@ -4,21 +4,21 @@ title: Talks
 category: [Research,Talk]
 ---
 
-- _[Bounded Expectations: Resource Analysis for Probabilistic Programs - Tool Demonstration]({{ site.baseurl }}/pdfs/absynth_slides.pdf)_. Present at Dagtuhl Seminar 17291, Wadern, Germany, July 2017. 
+- _[Bounded Expectations: Resource Analysis for Probabilistic Programs - Tool Demonstration]({{ site.url }}/pdfs/absynth_slides.pdf)_. Present at Dagtuhl Seminar 17291, Wadern, Germany, July 2017. 
 
-- _[Verifying and Synthesizing Constant-Resource Implementations with Types]({{ site.baseurl }}/pdfs/oakland17_slides.pdf)_. Talk at S&P Oakland 2017, San Jose, CA, USA, May 2017.
+- _[Verifying and Synthesizing Constant-Resource Implementations with Types]({{ site.url }}/pdfs/oakland17_slides.pdf)_. Talk at S&P Oakland 2017, San Jose, CA, USA, May 2017.
 
-- _[PSCV: A Runtime Verification Tool for Probabilistic SystemC Models]({{ site.baseurl }}/pdfs/cav16_slides.pdf)_. Talk at CAV 2016, Toronto, Ontario, Canada, July 2016.
+- _[PSCV: A Runtime Verification Tool for Probabilistic SystemC Models]({{ site.url }}/pdfs/cav16_slides.pdf)_. Talk at CAV 2016, Toronto, Ontario, Canada, July 2016.
 
-- _[Statistical Model Checking for SystemC Models]({{ site.baseurl }}/pdfs/hase16_slides.pdf)_. Talk at HASE 2016, Orlando, FL, USA, January 2016.
+- _[Statistical Model Checking for SystemC Models]({{ site.url }}/pdfs/hase16_slides.pdf)_. Talk at HASE 2016, Orlando, FL, USA, January 2016.
 
-- _[Translation Validation for Synchronous Data-flow Specification in the SIGNAL Compiler]({{ site.baseurl }}/pdfs/forte15_slides.pdf)_. Talk at FORTE-DisCoTec 2015, Grenoble, France, June 2015.
+- _[Translation Validation for Synchronous Data-flow Specification in the SIGNAL Compiler]({{ site.url }}/pdfs/forte15_slides.pdf)_. Talk at FORTE-DisCoTec 2015, Grenoble, France, June 2015.
 
-- _[Translation Validation for Clock Transformations in a Synchronous Compiler]({{ site.baseurl }}/pdfs/fase15_slides.pdf)_. Talk at FASE-ETAPS 2015, London, UK, April 2015.
+- _[Translation Validation for Clock Transformations in a Synchronous Compiler]({{ site.url }}/pdfs/fase15_slides.pdf)_. Talk at FASE-ETAPS 2015, London, UK, April 2015.
 
 - _Case Study: Dependability Analysis of Embedded Control Systems using SystemC and Statistical Model Checking_. Talk at INRIA Rennes, France, March 2015.
 
-- _[Precise Deadlock Detection for Polychronous Data-flow Specifications]({{ site.baseurl }}/pdfs/dac14_slides.pdf)_. Talk at ESLsyn-DAC 2014, San Francisco, CA, USA, June 2014.
+- _[Precise Deadlock Detection for Polychronous Data-flow Specifications]({{ site.url }}/pdfs/dac14_slides.pdf)_. Talk at ESLsyn-DAC 2014, San Francisco, CA, USA, June 2014.
 
 - _Seminar: Compilation and Execution of Streaming Programs_. St Germain au Mont d'Or, France, April 2014.
 

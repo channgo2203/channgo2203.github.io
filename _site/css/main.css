@@ -1039,7 +1039,7 @@ html {
   color: rgba(0, 0, 0, 0.87);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-size: 15px; }
+  font-size: 16px; }
 
 blockquote {
   display: block;
@@ -1192,7 +1192,7 @@ pre, code {
   color: #525252;
   font-size: 0.9em;
   background-color: #f8f8f8;
-  font-size: 12px; }
+  font-size: 13px; }
 
 code {
   color: #e96900;

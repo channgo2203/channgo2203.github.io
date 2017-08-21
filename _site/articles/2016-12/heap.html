@@ -48,15 +48,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/about">About</a>
+        <a href="http://channgo2203.github.io/about.html">About</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/research">Research</a>
+        <a href="http://channgo2203.github.io/research.html">Research</a>
         <span>/</span>
       </li>
        <li class="nav-item">
-        <a href="http://channgo2203.github.io/publications">Publications</a>
+        <a href="http://channgo2203.github.io/publications.html">Publications</a>
         <span>/</span>
       </li>
       <li class="nav-item">
@@ -65,7 +65,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </ul>
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/talks">Talks</a>
+        <a href="http://channgo2203.github.io/talks.html">Talks</a>
         <span>/</span>
       </li>
       <li class="nav-item">
@@ -190,7 +190,7 @@ the node’s children, according to some total order.</p>
 <p>Figure 1 shows an example of a complete binary min heap, the numbers represent the value 
 of the keys in the nodes.</p>
 
-<p><img src="/img/heap-1.jpg" alt="A heap" /></p>
+<p><img src="http://channgo2203.github.io/img/heap-1.jpg" alt="A heap" /></p>
 
 <p>Heap is known for its efficient algorithms (logarithmic time complexity) of inserting 
 and deleting the smallest element in implementing a priority queue. It is also used in 
@@ -228,7 +228,7 @@ the left or right child tree. The heap data-type is given in the following snipp
 
 <p>We consider an example of inserting <code class="highlighter-rouge">0</code> into the following integer heap. We first need to determine which direction for inserting, insert to the left subtree or to the right subtree, in order to satisfy the <strong>shape property</strong>. In this example, the left tree is full, so we should insert <code class="highlighter-rouge">0</code> into the right tree. We insert <code class="highlighter-rouge">0</code> to the bottom level of the heap. Because <code class="highlighter-rouge">0</code> is smaller than its parent, <code class="highlighter-rouge">6</code>, so we swap <code class="highlighter-rouge">0</code> and <code class="highlighter-rouge">6</code>. After swapping, it is obvious that <code class="highlighter-rouge">0</code> is smaller than <code class="highlighter-rouge">3</code>, thus we swap again <code class="highlighter-rouge">0</code> and <code class="highlighter-rouge">3</code>. Finally, <code class="highlighter-rouge">0</code> is smaller than <code class="highlighter-rouge">1</code>, so we swap <code class="highlighter-rouge">0</code> and <code class="highlighter-rouge">1</code>. At this point, the new heap satisfies both <strong>shape property</strong> and <strong>heap property</strong>.</p>
 
-<p><img src="/img/heap-2.jpg" alt="Insert" /></p>
+<p><img src="http://channgo2203.github.io/img/heap-2.jpg" alt="Insert" /></p>
 
 <p>In general, we have the following algorithm that takes <script type="math/tex">O(logn)</script> runtime to insert a key into a heap.</p>
 
@@ -253,7 +253,7 @@ the left or right child tree. The heap data-type is given in the following snipp
 
 <p>Assume that we want to remove the root of the following heap. We first replace the root with the last node on the bottom of the heap, meaning that the new root is now <code class="highlighter-rouge">11</code>. We then compare <code class="highlighter-rouge">11</code> with its children in order to make the <strong>heap property</strong> satisfied. Because <code class="highlighter-rouge">11</code> is bigger than the smallest child <code class="highlighter-rouge">2</code>, so we swap them. After that, <code class="highlighter-rouge">11</code> is bigger than the smallest child <code class="highlighter-rouge">4</code>, we swap them again. Now, <code class="highlighter-rouge">11</code> is bigger than the smallest child <code class="highlighter-rouge">8</code>, we finally swap them. At the end, we have a new heap that satisfies all conditions, namely <strong>shapre property</strong> and <strong>heap property</strong>.</p>
 
-<p><img src="/img/heap-3.jpg" alt="Remove" /></p>
+<p><img src="http://channgo2203.github.io/img/heap-3.jpg" alt="Remove" /></p>
 
 <p>The <script type="math/tex">O(logn)</script> time complexity algorithm of removing the root from the heap is given as follows.</p>
 
