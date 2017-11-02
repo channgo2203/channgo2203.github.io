@@ -11,9 +11,14 @@ from [Joseph Fourier University](https://www.ujf-grenoble.fr/?language=en)
 (Université de Grenoble), and my Ph.D from [Inria](http://www.inria.fr/en/) 
 France under the supervision of [Dr. Jean-Pierre Talpin](http://www.irisa.fr/prive/talpin/).
 
-I am interested in design, implementation of system-level programming languages, 
-compilers, and formal verification for building reliable, certified software and 
-hardware systems. A common theme is constructing correct embedded systems (i.e., control 
+I am interested in building reliable and secure computer systems by developing formal frameworks
+which guarantee that software satisfies formally its specification, especially embedded safety-critical
+software such as automotive, avionic, and health-care applications. The construction of a formal framework
+involves the research and knowledge of principles of programming languages, compiler design and development,
+and formal methods including model checking, theorem proving, and static analysis for providing
+formal assurances that the specification is fulfilled.
+
+A common theme is constructing correct embedded systems (i.e., control 
 software in safety-critical systems, embedded system hardware designs) by applying formal 
 verification including static analysis, model checking and correctness proof on the 
 source code implementation, or mathematical models of these systems producing by 

@@ -4,8 +4,13 @@ title: Research
 category: [Research]
 ---
 
-I am interested in design, implementation of system-level programming languages, compilers, 
-and formal verification for building reliable, certified software and hardware systems. 
+My research activities aim at building reliable and secure computer systems by developing formal frameworks
+which guarantee that software satisfies formally its specification, especially embedded safety-critical
+software such as automotive, avionic, and health-care applications. The construction of a formal framework
+involves the research and knowledge of principles of programming languages, compiler design and development,
+and formal methods including model checking, theorem proving, and static analysis for providing
+formal assurances that the specification is fulfilled.
+
 A common theme is constructing correct embedded systems (i.e., control software in 
 safety-critical systems, embedded system hardware designs) by applying formal 
 verification including static analysis, model checking and correctness proof on the 
@@ -37,6 +42,8 @@ compilers and code generators in the model-based design tool-chains.
 * Software development in C/C++, C Sharp, Java, OCaml, and Python
 
 ### Review Activity
+* PC Member: Developments in Implicit Computational Complexity (DICE'18), Thessaloniki, Greece, April 2018
+* ACM Transactions on Programming Languages and Systems (TOPLAS'18), 2018
 * The 29th International Conference on Computer Aided Verification (CAV'17), Heidelberg, Germany, July 2017
 * The ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI'17), Barcelona, Spain, June 2017
 * The 26th International Conference on Compiler Construction (CC'17), Austin, Texas, US, February 2017
