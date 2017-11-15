@@ -5,9 +5,76 @@
     <description>Van Chan Ngo' homepage</description>
     <link>http://channgo2203.github.io/</link>
     <atom:link href="http://channgo2203.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 Aug 2017 14:16:35 -0400</pubDate>
-    <lastBuildDate>Mon, 21 Aug 2017 14:16:35 -0400</lastBuildDate>
+    <pubDate>Thu, 02 Nov 2017 10:41:40 -0400</pubDate>
+    <lastBuildDate>Thu, 02 Nov 2017 10:41:40 -0400</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>A Biased Random Walk in OCaml</title>
+        <description>&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This post shows how a biased random walk can be implemented in OCaml as a recursive 
+defition. Consider a walker whoes initial position is &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; where &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; is positive integer 
+will go forward &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; step with probability &lt;code class=&quot;highlighter-rouge&quot;&gt;1/3&lt;/code&gt; and will go backward &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; step with 
+probability &lt;code class=&quot;highlighter-rouge&quot;&gt;2/3&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;What we are interested in here is what is the number of steps that the walker needs 
+to take to go from the position &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;. Obviously, in the worst-case this number of 
+steps is infinite. However, we can show that the probability that this situation 
+happens is &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, e.g., it is &lt;code class=&quot;highlighter-rouge&quot;&gt;1/3^m&lt;/code&gt; where &lt;code class=&quot;highlighter-rouge&quot;&gt;m&lt;/code&gt; go to infinity. We say that this random 
+walk algorithm is almost sure termination.&lt;/p&gt;
+
+&lt;p&gt;Thus the more interesting question is what is the expected number of steps that the 
+walker needs to take to go from &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;. If we call &lt;code class=&quot;highlighter-rouge&quot;&gt;T(n)&lt;/code&gt; is the expected number of steps 
+to go from &lt;code class=&quot;highlighter-rouge&quot;&gt;n&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, then we have the following recursion relation &lt;code class=&quot;highlighter-rouge&quot;&gt;T(n) = 1 + 1/3T(n+1) + 2/3T(n-1)&lt;/code&gt;. The solution of this relation is &lt;code class=&quot;highlighter-rouge&quot;&gt;T(n) = 3.n&lt;/code&gt;. However, the recursion relation solving is not easy problem. If we use our automatic analyzer, &lt;a href=&quot;http://channgo2203.github.io/zips/tool_benchmark.zip&quot;&gt;Absynth&lt;/a&gt;, that can infer the upper bound on this expected value, the we get the   same tightest bound &lt;code class=&quot;highlighter-rouge&quot;&gt;3.n&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
+
+&lt;div class=&quot;language-ocaml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;rec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;biased_rw&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;match&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&amp;gt;&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;(* encode the probability 2/3 *)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;67&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;biased_rw&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;biased_rw&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;(* testing function *)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rt&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(_,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;rt&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float_of_int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/.&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;float_of_int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;The following are the average values of &lt;code class=&quot;highlighter-rouge&quot;&gt;counter&lt;/code&gt; when we run &lt;code class=&quot;highlighter-rouge&quot;&gt;biased_rw&lt;/code&gt; for &lt;code class=&quot;highlighter-rouge&quot;&gt;10000&lt;/code&gt; times.&lt;/p&gt;
+
+&lt;div class=&quot;language-ocaml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;biased_rw&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;29&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;472&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 30 Oct 2017 00:00:00 -0400</pubDate>
+        <link>http://channgo2203.github.io/articles/2017-10/rdwalk</link>
+        <guid isPermaLink="true">http://channgo2203.github.io/articles/2017-10/rdwalk</guid>
+        
+        <category>probabilistic programming</category>
+        
+        <category>OCaml programming</category>
+        
+        
+        <category>Functional Programming</category>
+        
+        <category>Research</category>
+        
+        <category>News</category>
+        
+      </item>
     
       <item>
         <title>The Smallest Free Number</title>
@@ -682,34 +749,6 @@ We also see that this algorithm scales much better than the quadratic version. F
         <category>Programming</category>
         
         <category>OCaml</category>
-        
-      </item>
-    
-      <item>
-        <title>Red-Black Tree</title>
-        <description>&lt;p&gt;I will continue to dicuss about the essential data structures and how they are implemented in a functional programming language, OCaml. In this post, I will talk about &lt;a href=&quot;https://en.wikipedia.org/wiki/Red–black_tree&quot;&gt;Red-Black tree&lt;/a&gt; and how it can be implemented in OCaml.&lt;/p&gt;
-
-&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
-
-&lt;p&gt;These color bits are used to ensure the tree remains approximately balanced during insertions and deletions.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 02 Jan 2017 00:00:00 -0500</pubDate>
-        <link>http://channgo2203.github.io/articles/2017-01/rbtree</link>
-        <guid isPermaLink="true">http://channgo2203.github.io/articles/2017-01/rbtree</guid>
-        
-        <category>red-black tree</category>
-        
-        <category>algorithm</category>
-        
-        <category>OCaml</category>
-        
-        <category>programming</category>
-        
-        <category>data structure</category>
-        
-        
-        <category>Programming</category>
         
       </item>
     
