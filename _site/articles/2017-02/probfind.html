@@ -18,17 +18,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="An example of probabilistic functional program.">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="http://channgo2203.github.io/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://channgo2203.github.io/css/main.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
 
-  <link rel="canonical" href="http://channgo2203.github.io/articles/2017-02/probfind">
-  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://channgo2203.github.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/articles/2017-02/probfind">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
   <!-- 16x16 -->
-  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
   <!-- 32x32 -->
-  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.png">
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
 </head>
 
 
@@ -40,44 +40,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="cover-card table-cell table-middle">
   
-  <img src="http://channgo2203.github.io/img/avatar.jpg" alt="" class="avatar">
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
   
-  <a href="http://channgo2203.github.io/" class="author_name">Van Chan Ngo</a>
+  <a href="http://localhost:4000/" class="author_name">Van Chan Ngo</a>
   <span class="author_job">Computer Scientist and Software Engineer</span>
   <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and language-based security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/about.html">About</a>
+        <a href="http://localhost:4000/about.html">About</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/research.html">Research</a>
+        <a href="http://localhost:4000/research.html">Research</a>
         <span>/</span>
       </li>
        <li class="nav-item">
-        <a href="http://channgo2203.github.io/publications.html">Publications</a>
-        <span>/</span>
-      </li>
-      <li class="nav-item">
-        <a href="http://channgo2203.github.io/pdfs/cv.pdf" target="_blank">CV</a>
+        <a href="http://localhost:4000/publications.html">Publications</a>
       </li>
     </ul>
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/talks.html">Talks</a>
+        <a href="http://localhost:4000/talks.html">Talks</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/notes/">Notes</a>
+        <a href="http://localhost:4000/notes/">Notes</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/categories/">Categories</a>
+        <a href="http://localhost:4000/pdfs/cv.pdf" target="_blank">CV</a>
         <span>/</span>
       </li>
-       <li class="nav-item">
-        <a href="http://channgo2203.github.io/tags/">Tags</a>
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
       </li>
     </ul>
   </nav>
@@ -138,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<a class="author_job" href= "http://channgo2203.github.io/" >
+<a class="author_job" href= "http://localhost:4000/" >
   Home
 </a>
 
@@ -149,7 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <h1 title="Probabilistic Functional Programs">Probabilistic Functional Programs</h1>
     <span class="post-meta">
       <span class="post-date">
-        23 FEB 2017
+        22 FEB 2017
       </span>
       •
       <span class="read-time" title="Estimated read time">
@@ -187,41 +188,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>The following implements a simple example of probabilistic program for finding a given value in a list of integer values. The fist function <code class="highlighter-rouge">find</code> represents the standard program, e.g., without probability. It is easy to see that in the worst-case, the variable <code class="highlighter-rouge">acc</code> (initialized to 0) will have the value as the length of the input list <code class="highlighter-rouge">l</code>.</p>
 
-<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="k">rec</span> <span class="n">find</span> <span class="n">a</span> <span class="n">l</span> <span class="n">acc</span> <span class="p">=</span>
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="k">rec</span> <span class="n">find</span> <span class="n">a</span> <span class="n">l</span> <span class="n">acc</span> <span class="o">=</span>
   <span class="k">match</span> <span class="n">l</span> <span class="k">with</span>
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="bp">false</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
-  <span class="p">|</span> <span class="n">x</span><span class="p">::</span><span class="n">xs</span> <span class="p">-&gt;</span> 
-    <span class="k">if</span> <span class="n">a</span> <span class="p">=</span> <span class="n">x</span> <span class="k">then</span> 
-      <span class="p">(</span><span class="bp">true</span><span class="o">,(</span><span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span> 
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="bp">false</span><span class="o">,</span> <span class="n">acc</span><span class="p">)</span>
+  <span class="o">|</span> <span class="n">x</span><span class="o">::</span><span class="n">xs</span> <span class="o">-&gt;</span> 
+    <span class="k">if</span> <span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="k">then</span> 
+      <span class="p">(</span><span class="bp">true</span><span class="o">,</span><span class="p">(</span><span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> 
     <span class="k">else</span> 
-      <span class="n">find</span> <span class="n">a</span> <span class="n">xs</span> <span class="p">(</span><span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);;</span> 
-</code></pre>
-</div>
+      <span class="n">find</span> <span class="n">a</span> <span class="n">xs</span> <span class="p">(</span><span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);;</span> 
+</code></pre></div></div>
 
-<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="k">rec</span> <span class="n">pfind</span> <span class="n">a</span> <span class="n">l</span> <span class="n">acc</span> <span class="p">=</span>
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="k">rec</span> <span class="n">pfind</span> <span class="n">a</span> <span class="n">l</span> <span class="n">acc</span> <span class="o">=</span>
   <span class="k">match</span> <span class="n">l</span> <span class="k">with</span>
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="bp">false</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
-  <span class="p">|</span> <span class="n">x</span><span class="p">::</span><span class="n">xs</span> <span class="k">as</span> <span class="n">l</span> <span class="p">-&gt;</span> <span class="k">let</span> <span class="n">c</span> <span class="p">=</span> <span class="nn">Random</span><span class="p">.</span><span class="n">int</span> <span class="mi">2</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">c</span> <span class="p">=</span> <span class="mi">0</span> <span class="k">then</span> 
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="bp">false</span><span class="o">,</span> <span class="n">acc</span><span class="p">)</span>
+  <span class="o">|</span> <span class="n">x</span><span class="o">::</span><span class="n">xs</span> <span class="k">as</span> <span class="n">l</span> <span class="o">-&gt;</span> <span class="k">let</span> <span class="n">c</span> <span class="o">=</span> <span class="nn">Random</span><span class="p">.</span><span class="n">int</span> <span class="mi">2</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">then</span> 
       <span class="n">pfind</span> <span class="n">a</span> <span class="n">l</span> <span class="p">(</span><span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> 
     <span class="k">else</span> 
-      <span class="p">(</span><span class="k">if</span> <span class="n">a</span> <span class="p">=</span> <span class="n">x</span> <span class="k">then</span> 
-         <span class="p">(</span><span class="bp">true</span><span class="o">,(</span><span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span> 
+      <span class="p">(</span><span class="k">if</span> <span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="k">then</span> 
+         <span class="p">(</span><span class="bp">true</span><span class="o">,</span><span class="p">(</span><span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> 
        <span class="k">else</span> 
-         <span class="n">pfind</span> <span class="n">a</span> <span class="n">xs</span> <span class="p">(</span><span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="o">));;</span> 
-</code></pre>
-</div>
+         <span class="n">pfind</span> <span class="n">a</span> <span class="n">xs</span> <span class="p">(</span><span class="n">acc</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));;</span> 
+</code></pre></div></div>
 
-<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="n">test</span> <span class="n">n</span> <span class="n">f</span> <span class="n">a</span> <span class="n">l</span> <span class="p">=</span>
-  <span class="k">let</span> <span class="n">res</span> <span class="p">=</span> <span class="n">ref</span> <span class="bp">[]</span> <span class="k">in</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span> <span class="k">to</span> <span class="n">n</span> <span class="k">do</span>
-    <span class="k">let</span> <span class="p">(</span><span class="n">found</span><span class="p">,</span><span class="n">cost</span><span class="p">)</span> <span class="p">=</span> <span class="n">f</span> <span class="n">a</span> <span class="n">l</span> <span class="mi">0</span> <span class="k">in</span>
-	<span class="n">res</span> <span class="p">:=</span> <span class="n">cost</span><span class="o">::(!</span><span class="n">res</span><span class="p">)</span>
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">test</span> <span class="n">n</span> <span class="n">f</span> <span class="n">a</span> <span class="n">l</span> <span class="o">=</span>
+  <span class="k">let</span> <span class="n">res</span> <span class="o">=</span> <span class="n">ref</span> <span class="bp">[]</span> <span class="k">in</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">to</span> <span class="n">n</span> <span class="k">do</span>
+    <span class="k">let</span> <span class="p">(</span><span class="n">found</span><span class="o">,</span><span class="n">cost</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span> <span class="n">a</span> <span class="n">l</span> <span class="mi">0</span> <span class="k">in</span>
+	<span class="n">res</span> <span class="o">:=</span> <span class="n">cost</span><span class="o">::</span><span class="p">(</span><span class="o">!</span><span class="n">res</span><span class="p">)</span>
   <span class="k">done</span><span class="p">;</span> 
-  <span class="k">let</span> <span class="n">sum</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">fold_left</span> <span class="p">(</span><span class="k">fun</span> <span class="n">s</span> <span class="n">x</span> <span class="p">-&gt;</span> <span class="n">s</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="mi">0</span> <span class="o">!</span><span class="n">res</span> <span class="k">in</span> 
-  <span class="p">(</span><span class="n">float_of_int</span> <span class="n">sum</span><span class="p">)</span> <span class="o">/.</span> <span class="p">(</span><span class="n">float_of_int</span> <span class="n">n</span><span class="o">);;</span>
-</code></pre>
-</div>
+  <span class="k">let</span> <span class="n">sum</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">fold_left</span> <span class="p">(</span><span class="k">fun</span> <span class="n">s</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">s</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="mi">0</span> <span class="o">!</span><span class="n">res</span> <span class="k">in</span> 
+  <span class="p">(</span><span class="n">float_of_int</span> <span class="n">sum</span><span class="p">)</span> <span class="o">/.</span> <span class="p">(</span><span class="n">float_of_int</span> <span class="n">n</span><span class="p">);;</span>
+</code></pre></div></div>
 
 <p>In the second function <code class="highlighter-rouge">pfind</code>, the integer value <code class="highlighter-rouge">c</code> is sampled from a uniform distribution from 0 (inclusive) to 2 (exclusive). In other words, <code class="highlighter-rouge">c</code> is <code class="highlighter-rouge">0</code> with probability <code class="highlighter-rouge">0.5</code> and is <code class="highlighter-rouge">1</code> with probability <code class="highlighter-rouge">1 - 0.5 = 0.5</code>. A a result, with probability <code class="highlighter-rouge">0.5</code>, the recursive call on the tail of the list is skipped and with the same probability the recursion is called on the tail of the list.</p>
 
@@ -235,12 +233,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>For this simple program, we can compute manually that this expected value is <code class="highlighter-rouge">2.|l|</code>, where <code class="highlighter-rouge">|l|</code> is the number of elements in the list in the worst-case. My on-going work is to automatically and statically infer a symbolic upper bound on this expected value. The following are the average values of <code class="highlighter-rouge">acc</code> when we run <code class="highlighter-rouge">find</code> and <code class="highlighter-rouge">pfind</code> <code class="highlighter-rouge">10000000</code> times.</p>
 
-<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="p">#</span> <span class="n">test</span> <span class="mi">10000000</span> <span class="n">find</span> <span class="mi">10</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="mi">6</span><span class="o">];;</span>
-<span class="p">-</span> <span class="p">:</span> <span class="kt">float</span> <span class="p">=</span> <span class="mi">7</span><span class="p">.</span>
-<span class="p">#</span> <span class="n">test</span> <span class="mi">10000000</span> <span class="n">pfind</span> <span class="mi">10</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="mi">6</span><span class="o">];;</span>
-<span class="p">-</span> <span class="p">:</span> <span class="kt">float</span> <span class="p">=</span> <span class="mi">13</span><span class="p">.</span><span class="mi">998363</span>
-</code></pre>
-</div>
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">#</span> <span class="n">test</span> <span class="mi">10000000</span> <span class="n">find</span> <span class="mi">10</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="mi">6</span><span class="p">];;</span>
+<span class="o">-</span> <span class="o">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mi">7</span><span class="o">.</span>
+<span class="o">#</span> <span class="n">test</span> <span class="mi">10000000</span> <span class="n">pfind</span> <span class="mi">10</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="mi">6</span><span class="p">];;</span>
+<span class="o">-</span> <span class="o">:</span> <span class="kt">float</span> <span class="o">=</span> <span class="mi">13</span><span class="o">.</span><span class="mi">998363</span>
+</code></pre></div></div>
 
   </article>
 </div>
@@ -249,19 +246,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://channgo2203.github.io/articles/2017-02/probfind" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2017-02/probfind" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://channgo2203.github.io/articles/2017-02/probfind" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2017-02/probfind" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://channgo2203.github.io/articles/2017-02/probfind" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2017-02/probfind" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://channgo2203.github.io/articles/2017-02/probfind" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2017-02/probfind" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://channgo2203.github.io/articles/2017-02/probfind" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2017-02/probfind" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div>-->
@@ -290,8 +287,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="http://channgo2203.github.io/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="http://channgo2203.github.io/js/main.js"></script>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
 
 <!-- Asynchronous Google Analytics snippet -->
 <script>

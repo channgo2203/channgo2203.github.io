@@ -18,17 +18,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="Permutation implementation in OCaml.">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="http://channgo2203.github.io/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://channgo2203.github.io/css/main.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
 
-  <link rel="canonical" href="http://channgo2203.github.io/articles/2016-11/permutation">
-  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://channgo2203.github.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/articles/2016-11/permutation">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
   <!-- 16x16 -->
-  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
   <!-- 32x32 -->
-  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.png">
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
 </head>
 
 
@@ -40,44 +40,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="cover-card table-cell table-middle">
   
-  <img src="http://channgo2203.github.io/img/avatar.jpg" alt="" class="avatar">
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
   
-  <a href="http://channgo2203.github.io/" class="author_name">Van Chan Ngo</a>
+  <a href="http://localhost:4000/" class="author_name">Van Chan Ngo</a>
   <span class="author_job">Computer Scientist and Software Engineer</span>
   <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and language-based security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/about.html">About</a>
+        <a href="http://localhost:4000/about.html">About</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/research.html">Research</a>
+        <a href="http://localhost:4000/research.html">Research</a>
         <span>/</span>
       </li>
        <li class="nav-item">
-        <a href="http://channgo2203.github.io/publications.html">Publications</a>
-        <span>/</span>
-      </li>
-      <li class="nav-item">
-        <a href="http://channgo2203.github.io/pdfs/cv.pdf" target="_blank">CV</a>
+        <a href="http://localhost:4000/publications.html">Publications</a>
       </li>
     </ul>
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/talks.html">Talks</a>
+        <a href="http://localhost:4000/talks.html">Talks</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/notes/">Notes</a>
+        <a href="http://localhost:4000/notes/">Notes</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/categories/">Categories</a>
+        <a href="http://localhost:4000/pdfs/cv.pdf" target="_blank">CV</a>
         <span>/</span>
       </li>
-       <li class="nav-item">
-        <a href="http://channgo2203.github.io/tags/">Tags</a>
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
       </li>
     </ul>
   </nav>
@@ -138,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<a class="author_job" href= "http://channgo2203.github.io/" >
+<a class="author_job" href= "http://localhost:4000/" >
   Home
 </a>
 
@@ -182,12 +183,12 @@ generate a new set of permutations.</p>
 elements <code class="highlighter-rouge">[1;2;3]</code>, there are 4 possible positions (before <code class="highlighter-rouge">1</code>, <code class="highlighter-rouge">2</code>, <code class="highlighter-rouge">3</code>, and after <code class="highlighter-rouge">3</code>) 
 to insert <code class="highlighter-rouge">4</code> as shown in the figure.</p>
 
-<p><img src="http://channgo2203.github.io/img/permutations_1.jpg" alt="Thumper" /></p>
+<p><img src="http://localhost:4000/img/permutations_1.jpg" alt="Thumper" /></p>
 
 <p>Therefore, with 6 previous permutations we have totally <script type="math/tex">4 * 6 = 24</script> new permutations 
 if we insert the new element <code class="highlighter-rouge">4</code>.</p>
 
-<p><img src="http://channgo2203.github.io/img/permutations_2.jpg" alt="Thumper" /></p>
+<p><img src="http://localhost:4000/img/permutations_2.jpg" alt="Thumper" /></p>
 
 <h2 id="code">Code</h2>
 
@@ -196,20 +197,19 @@ function inserts a new element given a set of permutations. The permutations fun
 recursively generates all permuations. If the number of elements is 0 or 1, then there 
 is only 1 permutation. Here is the <a href="https://gist.github.com/channgo2203/fc0d4453ec1ac99633526cc1225eaa5b#file-recursive_permutation-ml">Gist</a>.</p>
 
-<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="n">insert_all_positions</span> <span class="n">x</span> <span class="n">l</span> <span class="p">=</span> 
-<span class="k">let</span> <span class="k">rec</span> <span class="n">aux</span> <span class="n">prev</span> <span class="n">acc</span> <span class="n">l</span> <span class="p">=</span> 
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">insert_all_positions</span> <span class="n">x</span> <span class="n">l</span> <span class="o">=</span> 
+<span class="k">let</span> <span class="k">rec</span> <span class="n">aux</span> <span class="n">prev</span> <span class="n">acc</span> <span class="n">l</span> <span class="o">=</span> 
 <span class="k">match</span> <span class="n">l</span> <span class="k">with</span>
-<span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">prev</span> <span class="o">@</span> <span class="p">[</span><span class="n">x</span><span class="o">])</span> <span class="p">::</span> <span class="n">acc</span> <span class="o">|&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">rev</span>
-<span class="p">|</span> <span class="n">hd</span><span class="p">::</span><span class="n">tl</span> <span class="k">as</span> <span class="n">l</span> <span class="p">-&gt;</span> <span class="n">aux</span> <span class="p">(</span><span class="n">prev</span> <span class="o">@</span> <span class="p">[</span><span class="n">hd</span><span class="o">])</span> <span class="o">((</span><span class="n">prev</span> <span class="o">@</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">@</span> <span class="n">l</span><span class="p">)</span> <span class="p">::</span> <span class="n">acc</span><span class="p">)</span> <span class="n">tl</span> 
+<span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">prev</span> <span class="o">@</span> <span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="o">::</span> <span class="n">acc</span> <span class="o">|&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">rev</span>
+<span class="o">|</span> <span class="n">hd</span><span class="o">::</span><span class="n">tl</span> <span class="k">as</span> <span class="n">l</span> <span class="o">-&gt;</span> <span class="n">aux</span> <span class="p">(</span><span class="n">prev</span> <span class="o">@</span> <span class="p">[</span><span class="n">hd</span><span class="p">])</span> <span class="p">((</span><span class="n">prev</span> <span class="o">@</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">@</span> <span class="n">l</span><span class="p">)</span> <span class="o">::</span> <span class="n">acc</span><span class="p">)</span> <span class="n">tl</span> 
 <span class="k">in</span> <span class="n">aux</span> <span class="bp">[]</span> <span class="bp">[]</span> <span class="n">l</span><span class="p">;;</span>
 
-<span class="k">let</span> <span class="k">rec</span> <span class="n">permutation</span> <span class="n">l</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="k">rec</span> <span class="n">permutation</span> <span class="n">l</span> <span class="o">=</span> 
 <span class="k">match</span> <span class="n">l</span> <span class="k">with</span> 
-<span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="bp">[]</span>
-<span class="p">|</span> <span class="n">hd</span><span class="o">::[]</span> <span class="p">-&gt;</span> <span class="o">[[</span><span class="n">hd</span><span class="o">]]</span>
-<span class="p">|</span> <span class="n">hd</span><span class="p">::</span><span class="n">tl</span> <span class="p">-&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">fold_left</span> <span class="p">(</span><span class="k">fun</span> <span class="n">acc</span> <span class="n">p</span> <span class="p">-&gt;</span> <span class="n">acc</span> <span class="o">@</span> <span class="n">insert_all_positions</span> <span class="n">hd</span> <span class="n">p</span><span class="p">)</span> <span class="bp">[]</span> <span class="p">(</span><span class="n">permutation</span> <span class="n">tl</span><span class="o">);;</span>
-</code></pre>
-</div>
+<span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="bp">[]</span>
+<span class="o">|</span> <span class="n">hd</span><span class="o">::</span><span class="bp">[]</span> <span class="o">-&gt;</span> <span class="p">[[</span><span class="n">hd</span><span class="p">]]</span>
+<span class="o">|</span> <span class="n">hd</span><span class="o">::</span><span class="n">tl</span> <span class="o">-&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">fold_left</span> <span class="p">(</span><span class="k">fun</span> <span class="n">acc</span> <span class="n">p</span> <span class="o">-&gt;</span> <span class="n">acc</span> <span class="o">@</span> <span class="n">insert_all_positions</span> <span class="n">hd</span> <span class="n">p</span><span class="p">)</span> <span class="bp">[]</span> <span class="p">(</span><span class="n">permutation</span> <span class="n">tl</span><span class="p">);;</span>
+</code></pre></div></div>
 
 <h2 id="complexity">Complexity</h2>
 
@@ -229,10 +229,9 @@ takes <script type="math/tex">(m + 1)</script> time units. Therefore for each re
 <p>When I run the code above with OCaml version 4.02.1, stack overflow occurs likely with the 
 number of elements is 9. For example,</p>
 
-<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="n">permutation</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="mi">6</span><span class="p">;</span><span class="mi">7</span><span class="p">;</span><span class="mi">8</span><span class="p">;</span><span class="mi">9</span><span class="o">];;</span>
-<span class="nc">Stack</span> <span class="n">overflow</span> <span class="n">during</span> <span class="n">evaluation</span> <span class="p">(</span><span class="n">looping</span> <span class="n">recursion</span><span class="o">?).</span>
-</code></pre>
-</div>
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">permutation</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="mi">6</span><span class="p">;</span><span class="mi">7</span><span class="p">;</span><span class="mi">8</span><span class="p">;</span><span class="mi">9</span><span class="p">];;</span>
+<span class="nc">Stack</span> <span class="n">overflow</span> <span class="n">during</span> <span class="n">evaluation</span> <span class="p">(</span><span class="n">looping</span> <span class="n">recursion</span><span class="o">?</span><span class="p">)</span><span class="o">.</span>
+</code></pre></div></div>
 
 <h2 id="dynamic-permutations">Dynamic permutations</h2>
 
@@ -248,19 +247,19 @@ permutation each time. I will talk about this algorithm in a next post.</p>
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://channgo2203.github.io/articles/2016-11/permutation" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-11/permutation" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://channgo2203.github.io/articles/2016-11/permutation" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-11/permutation" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://channgo2203.github.io/articles/2016-11/permutation" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-11/permutation" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://channgo2203.github.io/articles/2016-11/permutation" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-11/permutation" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://channgo2203.github.io/articles/2016-11/permutation" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-11/permutation" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div>-->
@@ -289,8 +288,8 @@ permutation each time. I will talk about this algorithm in a next post.</p>
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="http://channgo2203.github.io/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="http://channgo2203.github.io/js/main.js"></script>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
 
 <!-- Asynchronous Google Analytics snippet -->
 <script>

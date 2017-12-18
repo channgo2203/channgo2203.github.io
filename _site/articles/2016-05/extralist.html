@@ -18,17 +18,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="Additional functions for lists in the standard library.">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="http://channgo2203.github.io/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://channgo2203.github.io/css/main.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
 
-  <link rel="canonical" href="http://channgo2203.github.io/articles/2016-05/extralist">
-  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://channgo2203.github.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/articles/2016-05/extralist">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
   <!-- 16x16 -->
-  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
   <!-- 32x32 -->
-  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.png">
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
 </head>
 
 
@@ -40,44 +40,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="cover-card table-cell table-middle">
   
-  <img src="http://channgo2203.github.io/img/avatar.jpg" alt="" class="avatar">
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
   
-  <a href="http://channgo2203.github.io/" class="author_name">Van Chan Ngo</a>
+  <a href="http://localhost:4000/" class="author_name">Van Chan Ngo</a>
   <span class="author_job">Computer Scientist and Software Engineer</span>
   <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and language-based security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/about.html">About</a>
+        <a href="http://localhost:4000/about.html">About</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/research.html">Research</a>
+        <a href="http://localhost:4000/research.html">Research</a>
         <span>/</span>
       </li>
        <li class="nav-item">
-        <a href="http://channgo2203.github.io/publications.html">Publications</a>
-        <span>/</span>
-      </li>
-      <li class="nav-item">
-        <a href="http://channgo2203.github.io/pdfs/cv.pdf" target="_blank">CV</a>
+        <a href="http://localhost:4000/publications.html">Publications</a>
       </li>
     </ul>
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/talks.html">Talks</a>
+        <a href="http://localhost:4000/talks.html">Talks</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/notes/">Notes</a>
+        <a href="http://localhost:4000/notes/">Notes</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/categories/">Categories</a>
+        <a href="http://localhost:4000/pdfs/cv.pdf" target="_blank">CV</a>
         <span>/</span>
       </li>
-       <li class="nav-item">
-        <a href="http://channgo2203.github.io/tags/">Tags</a>
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
       </li>
     </ul>
   </nav>
@@ -138,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<a class="author_job" href= "http://channgo2203.github.io/" >
+<a class="author_job" href= "http://localhost:4000/" >
   Home
 </a>
 
@@ -167,7 +168,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p>In this post, I will propose the implementation of some extra functions for data structure 
 list in OCaml. The functionality is self-defined in the <a href="https://github.com/channgo2203/Functional-Data-Structures/tree/master/List">source code</a>.</p>
 
-<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(******************************************************)</span>
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">(******************************************************)</span>
 <span class="c">(*                                                                        
  *		Listplus                                                                                                    
  *                                                                        
@@ -178,90 +179,89 @@ list in OCaml. The functionality is self-defined in the <a href="https://github.
 
 <span class="c">(** This module provides some extra useful functions for OCaml list. *)</span>
 
-<span class="k">val</span> <span class="n">last</span> <span class="p">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="n">option</span> 
+<span class="k">val</span> <span class="n">last</span> <span class="o">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="n">option</span> 
 <span class="c">(** Return the last element of the given list. *)</span>
 
-<span class="k">val</span> <span class="n">biggest_prefix</span> <span class="p">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span>
+<span class="k">val</span> <span class="n">biggest_prefix</span> <span class="o">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span>
 <span class="c">(** Return the prefix without the last element of the given list. 
 	For example, [biggest_prefix [1;2;3]] = [[1;2]].
 *)</span>
 
-<span class="k">val</span> <span class="n">truncate</span> <span class="p">:</span> <span class="k">'</span><span class="n">a</span> <span class="p">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span>
+<span class="k">val</span> <span class="n">truncate</span> <span class="o">:</span> <span class="k">'</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span>
 <span class="c">(** [truncate a l] truncates list [l] from the first occurrence of [a]. 
 	Return [l] if [a] is not found in [l]. 
 *)</span>
 	
-<span class="k">val</span> <span class="n">catenate</span> <span class="p">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span>
+<span class="k">val</span> <span class="n">catenate</span> <span class="o">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span>
 <span class="c">(** Catenate two lists. *)</span>
 	
-<span class="k">val</span> <span class="n">prefixes</span> <span class="p">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="kt">list</span>
+<span class="k">val</span> <span class="n">prefixes</span> <span class="o">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="kt">list</span>
 <span class="c">(** Return a list of all prefixes of the given list in increasing order of length. 
 	For example, [prefixes [1;2;3]] = [[[];[1];[1;2];[1;2;3]]].
 *)</span>
 	  
-<span class="k">val</span> <span class="n">suffixes</span> <span class="p">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="kt">list</span>
+<span class="k">val</span> <span class="n">suffixes</span> <span class="o">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="kt">list</span>
 <span class="c">(** Return a list of all suffixes of the given list in decreasing order of length. 
 	For example, [suffixes [1;2;3]] = [[[1;2;3];[2,3];[3],[]]].
 *)</span>
 
-<span class="k">val</span> <span class="n">print</span> <span class="p">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="k">'</span><span class="n">a</span> <span class="p">-&gt;</span> <span class="kt">string</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="kt">unit</span>
+<span class="k">val</span> <span class="n">print</span> <span class="o">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="k">'</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">string</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">unit</span>
 <span class="c">(** Print the list content to standard stdout. *)</span>
 
-<span class="k">val</span> <span class="n">print_pre_suffixes</span> <span class="p">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="kt">list</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="k">'</span><span class="n">a</span> <span class="p">-&gt;</span> <span class="kt">string</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="kt">unit</span>
+<span class="k">val</span> <span class="n">print_pre_suffixes</span> <span class="o">:</span> <span class="k">'</span><span class="n">a</span> <span class="kt">list</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="k">'</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">string</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">unit</span>
 <span class="c">(** Print the prefixes or suffixes of a list to standard stdout. *)</span>
 
-<span class="k">let</span> <span class="k">rec</span> <span class="n">last</span> <span class="n">l</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="k">rec</span> <span class="n">last</span> <span class="n">l</span> <span class="o">=</span> 
   <span class="k">match</span> <span class="n">l</span> <span class="k">with</span> 
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="nc">None</span>
-  <span class="p">|</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">-&gt;</span> <span class="nc">Some</span> <span class="n">x</span>
-  <span class="p">|</span> <span class="o">_::</span><span class="n">t</span> <span class="p">-&gt;</span> <span class="n">last</span> <span class="n">t</span>
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="nc">None</span>
+  <span class="o">|</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="nc">Some</span> <span class="n">x</span>
+  <span class="o">|</span> <span class="n">_</span><span class="o">::</span><span class="n">t</span> <span class="o">-&gt;</span> <span class="n">last</span> <span class="n">t</span>
 	
-<span class="k">let</span> <span class="n">biggest_prefix</span> <span class="n">l</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="k">rec</span> <span class="n">bpre_aux</span> <span class="n">xs</span> <span class="n">ys</span> <span class="p">=</span> <span class="k">match</span> <span class="n">xs</span> <span class="k">with</span> 
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="n">ys</span>
-  <span class="p">|</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">-&gt;</span> <span class="n">ys</span>
-  <span class="p">|</span> <span class="n">h</span><span class="p">::</span><span class="n">t</span> <span class="p">-&gt;</span> <span class="n">bpre_aux</span> <span class="n">t</span> <span class="p">(</span><span class="n">h</span><span class="p">::</span><span class="n">ys</span><span class="p">)</span>
+<span class="k">let</span> <span class="n">biggest_prefix</span> <span class="n">l</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">bpre_aux</span> <span class="n">xs</span> <span class="n">ys</span> <span class="o">=</span> <span class="k">match</span> <span class="n">xs</span> <span class="k">with</span> 
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="n">ys</span>
+  <span class="o">|</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">ys</span>
+  <span class="o">|</span> <span class="n">h</span><span class="o">::</span><span class="n">t</span> <span class="o">-&gt;</span> <span class="n">bpre_aux</span> <span class="n">t</span> <span class="p">(</span><span class="n">h</span><span class="o">::</span><span class="n">ys</span><span class="p">)</span>
   <span class="k">in</span>
   <span class="nn">List</span><span class="p">.</span><span class="n">rev</span> <span class="p">(</span><span class="n">bpre_aux</span> <span class="n">l</span> <span class="bp">[]</span><span class="p">)</span>
 	
-<span class="k">let</span> <span class="k">rec</span> <span class="n">truncate</span> <span class="n">a</span> <span class="n">l</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="k">rec</span> <span class="n">truncate</span> <span class="n">a</span> <span class="n">l</span> <span class="o">=</span> 
   <span class="k">match</span> <span class="n">l</span> <span class="k">with</span> 
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="bp">[]</span>
-  <span class="p">|</span> <span class="n">h</span><span class="p">::</span><span class="n">t</span> <span class="p">-&gt;</span> 
-  <span class="k">if</span> <span class="p">(</span><span class="n">h</span> <span class="p">=</span> <span class="n">a</span><span class="p">)</span> <span class="k">then</span> <span class="n">t</span>
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="bp">[]</span>
+  <span class="o">|</span> <span class="n">h</span><span class="o">::</span><span class="n">t</span> <span class="o">-&gt;</span> 
+  <span class="k">if</span> <span class="p">(</span><span class="n">h</span> <span class="o">=</span> <span class="n">a</span><span class="p">)</span> <span class="k">then</span> <span class="n">t</span>
   <span class="k">else</span> <span class="n">truncate</span> <span class="n">a</span> <span class="n">t</span>
 
-<span class="k">let</span> <span class="k">rec</span> <span class="n">catenate</span> <span class="n">l1</span> <span class="n">l2</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="k">rec</span> <span class="n">catenate</span> <span class="n">l1</span> <span class="n">l2</span> <span class="o">=</span> 
   <span class="k">match</span> <span class="n">l1</span> <span class="k">with</span> 
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="n">l2</span>
-  <span class="p">|</span> <span class="n">h</span><span class="p">::</span><span class="n">t</span> <span class="p">-&gt;</span> <span class="n">h</span><span class="o">::(</span><span class="n">catenate</span> <span class="n">t</span> <span class="n">l2</span><span class="p">)</span>
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="n">l2</span>
+  <span class="o">|</span> <span class="n">h</span><span class="o">::</span><span class="n">t</span> <span class="o">-&gt;</span> <span class="n">h</span><span class="o">::</span><span class="p">(</span><span class="n">catenate</span> <span class="n">t</span> <span class="n">l2</span><span class="p">)</span>
 
-<span class="k">let</span> <span class="n">prefixes</span> <span class="n">l</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="k">rec</span> <span class="n">pre_aux</span> <span class="n">xs</span> <span class="n">ys</span> <span class="p">=</span> <span class="k">match</span> <span class="n">xs</span> <span class="k">with</span> 
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="n">ys</span>
-  <span class="p">|</span> <span class="n">h</span><span class="p">::</span><span class="n">t</span> <span class="p">-&gt;</span> <span class="k">let</span> <span class="n">bpre</span> <span class="p">=</span> <span class="n">biggest_prefix</span> <span class="n">xs</span> <span class="k">in</span> <span class="n">pre_aux</span> <span class="n">bpre</span> <span class="p">(</span><span class="n">bpre</span><span class="p">::</span><span class="n">ys</span><span class="p">)</span>
+<span class="k">let</span> <span class="n">prefixes</span> <span class="n">l</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">pre_aux</span> <span class="n">xs</span> <span class="n">ys</span> <span class="o">=</span> <span class="k">match</span> <span class="n">xs</span> <span class="k">with</span> 
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="n">ys</span>
+  <span class="o">|</span> <span class="n">h</span><span class="o">::</span><span class="n">t</span> <span class="o">-&gt;</span> <span class="k">let</span> <span class="n">bpre</span> <span class="o">=</span> <span class="n">biggest_prefix</span> <span class="n">xs</span> <span class="k">in</span> <span class="n">pre_aux</span> <span class="n">bpre</span> <span class="p">(</span><span class="n">bpre</span><span class="o">::</span><span class="n">ys</span><span class="p">)</span>
   <span class="k">in</span> <span class="n">pre_aux</span> <span class="n">l</span> <span class="p">[</span><span class="n">l</span><span class="p">]</span>
 
-<span class="k">let</span> <span class="k">rec</span> <span class="n">suffixes</span> <span class="n">l</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="k">rec</span> <span class="n">suffixes</span> <span class="n">l</span> <span class="o">=</span> 
   <span class="k">match</span> <span class="n">l</span> <span class="k">with</span> 
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="p">[</span> <span class="bp">[]</span> <span class="p">]</span>
-  <span class="p">|</span> <span class="n">h</span><span class="p">::</span><span class="n">t</span> <span class="p">-&gt;</span> <span class="n">l</span><span class="o">::(</span><span class="n">suffixes</span> <span class="n">t</span><span class="p">)</span>
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="p">[</span> <span class="bp">[]</span> <span class="p">]</span>
+  <span class="o">|</span> <span class="n">h</span><span class="o">::</span><span class="n">t</span> <span class="o">-&gt;</span> <span class="n">l</span><span class="o">::</span><span class="p">(</span><span class="n">suffixes</span> <span class="n">t</span><span class="p">)</span>
 
-<span class="k">let</span> <span class="n">print</span> <span class="n">l</span> <span class="n">f</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="k">rec</span> <span class="n">print_aux</span> <span class="n">al</span> <span class="n">printfunction</span> <span class="p">=</span> <span class="k">match</span> <span class="n">al</span> <span class="k">with</span> 
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="bp">()</span>
-  <span class="p">|</span> <span class="n">h</span><span class="p">::</span><span class="n">t</span> <span class="p">-&gt;</span> <span class="n">print_string</span> <span class="p">(</span><span class="s2">" "</span> <span class="o">^</span> <span class="p">(</span><span class="n">printfunction</span> <span class="n">h</span><span class="o">));</span> <span class="n">print_aux</span> <span class="n">t</span> <span class="n">printfunction</span>
+<span class="k">let</span> <span class="n">print</span> <span class="n">l</span> <span class="n">f</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">print_aux</span> <span class="n">al</span> <span class="n">printfunction</span> <span class="o">=</span> <span class="k">match</span> <span class="n">al</span> <span class="k">with</span> 
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="bp">()</span>
+  <span class="o">|</span> <span class="n">h</span><span class="o">::</span><span class="n">t</span> <span class="o">-&gt;</span> <span class="n">print_string</span> <span class="p">(</span><span class="s2">" "</span> <span class="o">^</span> <span class="p">(</span><span class="n">printfunction</span> <span class="n">h</span><span class="p">));</span> <span class="n">print_aux</span> <span class="n">t</span> <span class="n">printfunction</span>
   <span class="k">in</span>
   <span class="n">print_string</span> <span class="s2">"["</span><span class="p">;</span> <span class="n">print_aux</span> <span class="n">l</span> <span class="n">f</span><span class="p">;</span> <span class="n">print_string</span> <span class="s2">" ]"</span>
 
-<span class="k">let</span> <span class="n">print_pre_suffixes</span> <span class="n">l</span> <span class="n">f</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="k">rec</span> <span class="n">print_aux</span> <span class="n">al</span> <span class="n">printfunction</span> <span class="p">=</span> <span class="k">match</span> <span class="n">al</span> <span class="k">with</span>
-  <span class="p">|</span> <span class="bp">[]</span> <span class="p">-&gt;</span> <span class="bp">()</span>
-  <span class="p">|</span> <span class="n">h</span><span class="p">::</span><span class="n">t</span> <span class="p">-&gt;</span>  <span class="n">print_string</span> <span class="s2">" "</span><span class="p">;</span> <span class="n">print</span> <span class="n">h</span> <span class="n">printfunction</span><span class="p">;</span> <span class="n">print_aux</span> <span class="n">t</span> <span class="n">printfunction</span>
+<span class="k">let</span> <span class="n">print_pre_suffixes</span> <span class="n">l</span> <span class="n">f</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="k">rec</span> <span class="n">print_aux</span> <span class="n">al</span> <span class="n">printfunction</span> <span class="o">=</span> <span class="k">match</span> <span class="n">al</span> <span class="k">with</span>
+  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="bp">()</span>
+  <span class="o">|</span> <span class="n">h</span><span class="o">::</span><span class="n">t</span> <span class="o">-&gt;</span>  <span class="n">print_string</span> <span class="s2">" "</span><span class="p">;</span> <span class="n">print</span> <span class="n">h</span> <span class="n">printfunction</span><span class="p">;</span> <span class="n">print_aux</span> <span class="n">t</span> <span class="n">printfunction</span>
   <span class="k">in</span>
   <span class="n">print_string</span> <span class="s2">"["</span><span class="p">;</span> <span class="n">print_aux</span> <span class="n">l</span> <span class="n">f</span><span class="p">;</span> <span class="n">print_string</span> <span class="s2">" ]"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
   </article>
@@ -271,19 +271,19 @@ list in OCaml. The functionality is self-defined in the <a href="https://github.
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://channgo2203.github.io/articles/2016-05/extralist" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-05/extralist" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://channgo2203.github.io/articles/2016-05/extralist" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-05/extralist" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://channgo2203.github.io/articles/2016-05/extralist" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-05/extralist" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://channgo2203.github.io/articles/2016-05/extralist" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-05/extralist" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://channgo2203.github.io/articles/2016-05/extralist" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-05/extralist" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div>-->
@@ -312,8 +312,8 @@ list in OCaml. The functionality is self-defined in the <a href="https://github.
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="http://channgo2203.github.io/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="http://channgo2203.github.io/js/main.js"></script>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
 
 <!-- Asynchronous Google Analytics snippet -->
 <script>

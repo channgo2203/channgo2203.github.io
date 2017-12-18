@@ -18,17 +18,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="Given a string s and a list of strings ls. Find a shortest substring of s that contains all strings in a list of strings ls.">
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="http://channgo2203.github.io/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://channgo2203.github.io/css/main.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
 
-  <link rel="canonical" href="http://channgo2203.github.io/articles/2016-05/strpuzzle1">
-  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://channgo2203.github.io/feed.xml" />
+  <link rel="canonical" href="http://localhost:4000/articles/2016-05/strpuzzle1">
+  <link rel="alternate" type="application/rss+xml" title="Van Chan Ngo" href="http://localhost:4000/feed.xml" />
 
   <!-- Icons -->
   <!-- 16x16 -->
-  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.ico">
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
   <!-- 32x32 -->
-  <link rel="shortcut icon" href="http://channgo2203.github.io/favicon.png">
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
 </head>
 
 
@@ -40,44 +40,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="cover-card table-cell table-middle">
   
-  <img src="http://channgo2203.github.io/img/avatar.jpg" alt="" class="avatar">
+  <img src="http://localhost:4000/img/avatar.jpg" alt="" class="avatar">
   
-  <a href="http://channgo2203.github.io/" class="author_name">Van Chan Ngo</a>
+  <a href="http://localhost:4000/" class="author_name">Van Chan Ngo</a>
   <span class="author_job">Computer Scientist and Software Engineer</span>
   <span class="author_bio mbm">Research interests are in formal methods, programming languages, compilers, and language-based security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University.</span>
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/about.html">About</a>
+        <a href="http://localhost:4000/about.html">About</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/research.html">Research</a>
+        <a href="http://localhost:4000/research.html">Research</a>
         <span>/</span>
       </li>
        <li class="nav-item">
-        <a href="http://channgo2203.github.io/publications.html">Publications</a>
-        <span>/</span>
-      </li>
-      <li class="nav-item">
-        <a href="http://channgo2203.github.io/pdfs/cv.pdf" target="_blank">CV</a>
+        <a href="http://localhost:4000/publications.html">Publications</a>
       </li>
     </ul>
     <ul class="nav-list">
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/talks.html">Talks</a>
+        <a href="http://localhost:4000/talks.html">Talks</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/notes/">Notes</a>
+        <a href="http://localhost:4000/notes/">Notes</a>
         <span>/</span>
       </li>
       <li class="nav-item">
-        <a href="http://channgo2203.github.io/categories/">Categories</a>
+        <a href="http://localhost:4000/pdfs/cv.pdf" target="_blank">CV</a>
         <span>/</span>
       </li>
-       <li class="nav-item">
-        <a href="http://channgo2203.github.io/tags/">Tags</a>
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+      </li>
+    </ul>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/tags/">Tags</a>
       </li>
     </ul>
   </nav>
@@ -138,7 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script type="text/javascript"
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<a class="author_job" href= "http://channgo2203.github.io/" >
+<a class="author_job" href= "http://localhost:4000/" >
   Home
 </a>
 
@@ -205,7 +206,7 @@ same characters and <code class="highlighter-rouge">lstr</code> is list of this 
 <p>In the following, I show how to implement the algorithm above in the functional 
 language OCaml. All other utility functions can be downloaded <a href="https://github.com/channgo2203/puzzleset/tree/master/string/prob1">here</a>.</p>
 
-<div class="language-ocaml highlighter-rouge"><pre class="highlight"><code><span class="c">(* 
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">(* 
  * find the shortest substring of str containing 
  * the strings str1 str2,...,strm in a list
  *)</span>
@@ -217,110 +218,110 @@ language OCaml. All other utility functions can be downloaded <a href="https://g
 <span class="c">(* 
  * find substring sub in string str forward from pos 
  *)</span>
-<span class="k">let</span> <span class="n">find_sub</span> <span class="n">str</span> <span class="n">pos</span> <span class="n">sub</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="n">r</span> <span class="p">=</span> <span class="nn">Str</span><span class="p">.</span><span class="n">regexp_string</span> <span class="n">sub</span> <span class="k">in</span>
+<span class="k">let</span> <span class="n">find_sub</span> <span class="n">str</span> <span class="n">pos</span> <span class="n">sub</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="n">r</span> <span class="o">=</span> <span class="nn">Str</span><span class="p">.</span><span class="n">regexp_string</span> <span class="n">sub</span> <span class="k">in</span>
   <span class="nn">Str</span><span class="p">.</span><span class="n">search_forward</span> <span class="n">r</span> <span class="n">str</span> <span class="n">pos</span> 
 
 <span class="c">(* 
  * find substring sub in string str backward from pos 
  *)</span>
-<span class="k">let</span> <span class="n">rfind_sub</span> <span class="n">str</span> <span class="n">pos</span> <span class="n">sub</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="n">r</span> <span class="p">=</span> <span class="nn">Str</span><span class="p">.</span><span class="n">regexp_string</span> <span class="n">sub</span> <span class="k">in</span>
+<span class="k">let</span> <span class="n">rfind_sub</span> <span class="n">str</span> <span class="n">pos</span> <span class="n">sub</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="n">r</span> <span class="o">=</span> <span class="nn">Str</span><span class="p">.</span><span class="n">regexp_string</span> <span class="n">sub</span> <span class="k">in</span>
   <span class="nn">Str</span><span class="p">.</span><span class="n">search_backward</span> <span class="n">r</span> <span class="n">str</span> <span class="n">pos</span> 
 
 <span class="c">(*
  * get the substring from findex to lindex inclding 
  * characters at findex and lindex
  *)</span>
-<span class="k">let</span> <span class="n">get_substring</span> <span class="n">str</span> <span class="n">findex</span> <span class="n">lindex</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="n">get_substring</span> <span class="n">str</span> <span class="n">findex</span> <span class="n">lindex</span> <span class="o">=</span> 
   <span class="k">try</span> 
-    <span class="k">let</span> <span class="n">sub</span> <span class="p">=</span> <span class="nn">String</span><span class="p">.</span><span class="n">sub</span> <span class="n">str</span> <span class="n">findex</span> <span class="p">(</span><span class="n">lindex</span> <span class="p">-</span> <span class="n">findex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">let</span> <span class="n">sub</span> <span class="o">=</span> <span class="nn">String</span><span class="p">.</span><span class="n">sub</span> <span class="n">str</span> <span class="n">findex</span> <span class="p">(</span><span class="n">lindex</span> <span class="o">-</span> <span class="n">findex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">in</span>
     <span class="nc">Some</span> <span class="n">sub</span>
   <span class="k">with</span> 
-    <span class="nc">Invalid_argument</span> <span class="n">e</span> <span class="p">-&gt;</span> <span class="nc">None</span>
+    <span class="nc">Invalid_argument</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="nc">None</span>
 
 <span class="c">(*
  * min element in a list
  *)</span>
-<span class="k">let</span> <span class="n">min_element</span> <span class="n">l</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="n">h</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">hd</span> <span class="n">l</span> <span class="k">in</span>
+<span class="k">let</span> <span class="n">min_element</span> <span class="n">l</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="n">h</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">hd</span> <span class="n">l</span> <span class="k">in</span>
   <span class="k">match</span> <span class="n">h</span> <span class="k">with</span>
-  <span class="p">|</span> <span class="nc">None</span> <span class="p">-&gt;</span> <span class="p">-</span><span class="mi">1</span>
-  <span class="p">|</span> <span class="nc">Some</span> <span class="n">i</span> <span class="p">-&gt;</span> 
-      <span class="nn">List</span><span class="p">.</span><span class="n">fold_left</span> <span class="n">l</span> <span class="p">~</span><span class="n">init</span><span class="p">:</span><span class="n">i</span> 
-        <span class="p">~</span><span class="n">f</span><span class="o">:(</span><span class="k">fun</span> <span class="n">a</span> <span class="n">b</span> <span class="p">-&gt;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span> <span class="k">then</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span><span class="p">)</span>
+  <span class="o">|</span> <span class="nc">None</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="mi">1</span>
+  <span class="o">|</span> <span class="nc">Some</span> <span class="n">i</span> <span class="o">-&gt;</span> 
+      <span class="nn">List</span><span class="p">.</span><span class="n">fold_left</span> <span class="n">l</span> <span class="o">~</span><span class="n">init</span><span class="o">:</span><span class="n">i</span> 
+        <span class="o">~</span><span class="n">f</span><span class="o">:</span><span class="p">(</span><span class="k">fun</span> <span class="n">a</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span> <span class="k">then</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="c">(*
  * max element in a list
  *)</span>
-<span class="k">let</span> <span class="n">max_element</span> <span class="n">l</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="n">h</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">hd</span> <span class="n">l</span> <span class="k">in</span> 
+<span class="k">let</span> <span class="n">max_element</span> <span class="n">l</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="n">h</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">hd</span> <span class="n">l</span> <span class="k">in</span> 
   <span class="k">match</span> <span class="n">h</span> <span class="k">with</span> 
-  <span class="p">|</span> <span class="nc">None</span> <span class="p">-&gt;</span> <span class="p">-</span><span class="mi">1</span>
-  <span class="p">|</span> <span class="nc">Some</span> <span class="n">i</span> <span class="p">-&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">fold_left</span> <span class="n">l</span> <span class="p">~</span><span class="n">init</span><span class="p">:</span><span class="n">i</span> 
-      <span class="p">~</span><span class="n">f</span><span class="o">:(</span><span class="k">fun</span> <span class="n">a</span> <span class="n">b</span> <span class="p">-&gt;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span> <span class="k">then</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span><span class="p">)</span>
+  <span class="o">|</span> <span class="nc">None</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="mi">1</span>
+  <span class="o">|</span> <span class="nc">Some</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="nn">List</span><span class="p">.</span><span class="n">fold_left</span> <span class="n">l</span> <span class="o">~</span><span class="n">init</span><span class="o">:</span><span class="n">i</span> 
+      <span class="o">~</span><span class="n">f</span><span class="o">:</span><span class="p">(</span><span class="k">fun</span> <span class="n">a</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span> <span class="k">then</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="c">(* print all strings in the list of indices *)</span>
-<span class="k">let</span> <span class="n">print_lstr_index</span> <span class="n">des</span> <span class="n">str</span> <span class="n">lindex</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="n">print_lstr_index</span> <span class="n">des</span> <span class="n">str</span> <span class="n">lindex</span> <span class="o">=</span> 
   <span class="n">printf</span> <span class="s2">"-------------------------------</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
   <span class="n">printf</span> <span class="s2">"%s</span><span class="se">\n</span><span class="s2">"</span> <span class="n">des</span><span class="p">;</span>
 	
-  <span class="k">let</span> <span class="n">lstr_opt</span> <span class="p">=</span> 
+  <span class="k">let</span> <span class="n">lstr_opt</span> <span class="o">=</span> 
   <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">lindex</span> 
-    <span class="p">(</span><span class="k">fun</span> <span class="n">x</span> <span class="p">-&gt;</span> 
-     <span class="k">let</span> <span class="n">fi</span><span class="p">,</span><span class="n">li</span> <span class="p">=</span> <span class="n">x</span> <span class="k">in</span> 
+    <span class="p">(</span><span class="k">fun</span> <span class="n">x</span> <span class="o">-&gt;</span> 
+     <span class="k">let</span> <span class="n">fi</span><span class="o">,</span><span class="n">li</span> <span class="o">=</span> <span class="n">x</span> <span class="k">in</span> 
      <span class="n">get_substring</span> <span class="n">str</span> <span class="n">fi</span> <span class="n">li</span><span class="p">)</span> 
   <span class="k">in</span> 
-  <span class="nn">List</span><span class="p">.</span><span class="n">iter</span> <span class="n">lstr_opt</span> <span class="p">~</span><span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="k">fun</span> <span class="n">s_opt</span> <span class="p">-&gt;</span> 
+  <span class="nn">List</span><span class="p">.</span><span class="n">iter</span> <span class="n">lstr_opt</span> <span class="o">~</span><span class="n">f</span><span class="o">:</span> <span class="p">(</span><span class="k">fun</span> <span class="n">s_opt</span> <span class="o">-&gt;</span> 
     <span class="k">match</span> <span class="n">s_opt</span> <span class="k">with</span> 
-    <span class="p">|</span> <span class="nc">None</span> <span class="p">-&gt;</span> <span class="n">printf</span> <span class="s2">"Invalid indices</span><span class="se">\n</span><span class="s2">"</span> 
-    <span class="p">|</span> <span class="nc">Some</span> <span class="n">s</span> <span class="p">-&gt;</span> <span class="n">printf</span> <span class="s2">"%s</span><span class="se">\n</span><span class="s2">"</span> <span class="n">s</span><span class="o">);</span>
+    <span class="o">|</span> <span class="nc">None</span> <span class="o">-&gt;</span> <span class="n">printf</span> <span class="s2">"Invalid indices</span><span class="se">\n</span><span class="s2">"</span> 
+    <span class="o">|</span> <span class="nc">Some</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="n">printf</span> <span class="s2">"%s</span><span class="se">\n</span><span class="s2">"</span> <span class="n">s</span><span class="p">);</span>
 	
   <span class="n">printf</span> <span class="s2">"-------------------------------</span><span class="se">\n</span><span class="s2">"</span>
 
 <span class="c">(* print all strings in a list *)</span>
-<span class="k">let</span> <span class="n">print_lstr</span> <span class="n">des</span> <span class="n">lstr</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="n">print_lstr</span> <span class="n">des</span> <span class="n">lstr</span> <span class="o">=</span> 
   <span class="n">printf</span> <span class="s2">"-------------------------------</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
   <span class="n">printf</span> <span class="s2">"%s</span><span class="se">\n</span><span class="s2">"</span> <span class="n">des</span><span class="p">;</span>
 	
-  <span class="nn">List</span><span class="p">.</span><span class="n">iter</span> <span class="n">lstr</span> <span class="p">~</span><span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="k">fun</span> <span class="n">s</span> <span class="p">-&gt;</span> <span class="n">printf</span> <span class="s2">"%s</span><span class="se">\n</span><span class="s2">"</span> <span class="n">s</span><span class="o">);</span>
+  <span class="nn">List</span><span class="p">.</span><span class="n">iter</span> <span class="n">lstr</span> <span class="o">~</span><span class="n">f</span><span class="o">:</span> <span class="p">(</span><span class="k">fun</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="n">printf</span> <span class="s2">"%s</span><span class="se">\n</span><span class="s2">"</span> <span class="n">s</span><span class="p">);</span>
 	
   <span class="n">printf</span> <span class="s2">"-------------------------------</span><span class="se">\n</span><span class="s2">"</span>
 
 <span class="c">(* print a list of indices *)</span>
-<span class="k">let</span> <span class="n">print_lindex</span> <span class="n">des</span> <span class="n">lindex</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="n">print_lindex</span> <span class="n">des</span> <span class="n">lindex</span> <span class="o">=</span> 
   <span class="n">printf</span> <span class="s2">"-------------------------------</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
   <span class="n">printf</span> <span class="s2">"%s</span><span class="se">\n</span><span class="s2">"</span> <span class="n">des</span><span class="p">;</span>
 	
-  <span class="nn">List</span><span class="p">.</span><span class="n">iter</span> <span class="n">lindex</span> <span class="p">~</span><span class="n">f</span><span class="p">:</span> 
-    <span class="p">(</span><span class="k">fun</span> <span class="n">s</span> <span class="p">-&gt;</span> <span class="k">let</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="p">=</span> <span class="n">s</span> <span class="k">in</span> <span class="n">printf</span> <span class="s2">"(%i,%i)</span><span class="se">\n</span><span class="s2">"</span> <span class="n">x</span> <span class="n">y</span><span class="o">);</span>
+  <span class="nn">List</span><span class="p">.</span><span class="n">iter</span> <span class="n">lindex</span> <span class="o">~</span><span class="n">f</span><span class="o">:</span> 
+    <span class="p">(</span><span class="k">fun</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="k">let</span> <span class="n">x</span><span class="o">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">s</span> <span class="k">in</span> <span class="n">printf</span> <span class="s2">"(%i,%i)</span><span class="se">\n</span><span class="s2">"</span> <span class="n">x</span> <span class="n">y</span><span class="p">);</span>
 	
   <span class="n">printf</span> <span class="s2">"-------------------------------</span><span class="se">\n</span><span class="s2">"</span>
 	
 <span class="c">(*
  * compare two pair of indices 
  *)</span>
-<span class="k">let</span> <span class="n">index_compare</span> <span class="n">x</span> <span class="n">y</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="p">=</span> <span class="n">x</span> <span class="k">in</span> 
-  <span class="k">let</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span> <span class="p">=</span> <span class="n">y</span> <span class="k">in</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">x1</span> <span class="p">=</span> <span class="n">y1</span> <span class="p">&amp;&amp;</span> <span class="n">x2</span> <span class="p">=</span> <span class="n">y2</span><span class="p">)</span> <span class="k">then</span> <span class="mi">0</span> 
-  <span class="k">else</span> <span class="k">if</span> <span class="o">((</span><span class="n">x1</span> <span class="p">&lt;</span> <span class="n">y1</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">x1</span> <span class="p">=</span> <span class="n">y1</span> <span class="p">&amp;&amp;</span> <span class="n">x2</span> <span class="o">&lt;=</span> <span class="n">y2</span><span class="o">))</span> <span class="k">then</span> <span class="p">-</span><span class="mi">1</span> 
+<span class="k">let</span> <span class="n">index_compare</span> <span class="n">x</span> <span class="n">y</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="n">x1</span><span class="o">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span> <span class="k">in</span> 
+  <span class="k">let</span> <span class="n">y1</span><span class="o">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span> <span class="k">in</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">&amp;&amp;</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">y2</span><span class="p">)</span> <span class="k">then</span> <span class="mi">0</span> 
+  <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n">x1</span> <span class="o">&lt;</span> <span class="n">y1</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">x1</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">&amp;&amp;</span> <span class="n">x2</span> <span class="o">&lt;=</span> <span class="n">y2</span><span class="p">))</span> <span class="k">then</span> <span class="o">-</span><span class="mi">1</span> 
   <span class="k">else</span> <span class="mi">1</span>
  
 <span class="c">(*
  * update the set shortest substrings
  * if new_sub is not longer, then add it to the set
  *)</span>
-<span class="k">let</span> <span class="n">update_lshortest_substr</span> <span class="n">l</span> <span class="n">i</span> <span class="p">=</span> 
-  <span class="k">let</span> <span class="n">a_opt</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">hd</span> <span class="n">l</span> <span class="k">in</span>
+<span class="k">let</span> <span class="n">update_lshortest_substr</span> <span class="n">l</span> <span class="n">i</span> <span class="o">=</span> 
+  <span class="k">let</span> <span class="n">a_opt</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">hd</span> <span class="n">l</span> <span class="k">in</span>
   <span class="k">match</span> <span class="n">a_opt</span> <span class="k">with</span>
-  <span class="p">|</span> <span class="nc">None</span> <span class="p">-&gt;</span> <span class="p">[</span> <span class="n">i</span> <span class="p">]</span>
-  <span class="p">|</span> <span class="nc">Some</span> <span class="n">a</span> <span class="p">-&gt;</span> 
-    <span class="k">let</span> <span class="n">i1</span><span class="p">,</span> <span class="n">i2</span> <span class="p">=</span> <span class="n">i</span> <span class="k">in</span> 
-    <span class="k">let</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span> <span class="p">=</span> <span class="n">a</span> <span class="k">in</span> 
-    <span class="k">if</span> <span class="o">((</span><span class="n">i2</span> <span class="p">-</span> <span class="n">i1</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="n">a2</span> <span class="p">-</span> <span class="n">a1</span><span class="o">))</span> <span class="k">then</span>
-      <span class="n">i</span> <span class="p">::</span> <span class="n">l</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="o">((</span><span class="n">i2</span> <span class="p">-</span> <span class="n">i1</span><span class="p">)</span> <span class="p">&lt;</span> <span class="p">(</span><span class="n">a2</span> <span class="p">-</span> <span class="n">a1</span><span class="o">))</span> <span class="k">then</span> 
+  <span class="o">|</span> <span class="nc">None</span> <span class="o">-&gt;</span> <span class="p">[</span> <span class="n">i</span> <span class="p">]</span>
+  <span class="o">|</span> <span class="nc">Some</span> <span class="n">a</span> <span class="o">-&gt;</span> 
+    <span class="k">let</span> <span class="n">i1</span><span class="o">,</span> <span class="n">i2</span> <span class="o">=</span> <span class="n">i</span> <span class="k">in</span> 
+    <span class="k">let</span> <span class="n">a1</span><span class="o">,</span> <span class="n">a2</span> <span class="o">=</span> <span class="n">a</span> <span class="k">in</span> 
+    <span class="k">if</span> <span class="p">((</span><span class="n">i2</span> <span class="o">-</span> <span class="n">i1</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">a2</span> <span class="o">-</span> <span class="n">a1</span><span class="p">))</span> <span class="k">then</span>
+      <span class="n">i</span> <span class="o">::</span> <span class="n">l</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n">i2</span> <span class="o">-</span> <span class="n">i1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">a2</span> <span class="o">-</span> <span class="n">a1</span><span class="p">))</span> <span class="k">then</span> 
       <span class="p">[</span> <span class="n">i</span> <span class="p">]</span>
     <span class="k">else</span> <span class="n">l</span>
 
@@ -333,17 +334,17 @@ language OCaml. All other utility functions can be downloaded <a href="https://g
  * lstr = ["This"; "a"]
  * return = (0, 8)
  *)</span>
-<span class="k">let</span> <span class="n">sub_lstr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="n">sub_lstr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="o">=</span> 
   <span class="k">try</span> 
-    <span class="k">let</span> <span class="n">length_list</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">lstr</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="k">in</span> 
+    <span class="k">let</span> <span class="n">length_list</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">lstr</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="k">in</span> 
     <span class="c">(* list of first occurrence indices of all strings in lstr *)</span>
-    <span class="k">let</span> <span class="n">findex_list</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">lstr</span> <span class="p">(</span><span class="n">find_sub</span> <span class="n">str</span> <span class="mi">0</span><span class="p">)</span> <span class="k">in</span> 
+    <span class="k">let</span> <span class="n">findex_list</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">lstr</span> <span class="p">(</span><span class="n">find_sub</span> <span class="n">str</span> <span class="mi">0</span><span class="p">)</span> <span class="k">in</span> 
     <span class="c">(* return the first occurence of substring containing all strings in lstr *)</span>
-    <span class="k">let</span> <span class="n">lindex_list</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map2_exn</span> <span class="n">findex_list</span> <span class="n">length_list</span> <span class="o">(+)</span> <span class="k">in</span> 
-    <span class="o">((</span><span class="n">min_element</span> <span class="n">findex_list</span><span class="o">),</span> <span class="o">((</span><span class="n">max_element</span> <span class="n">lindex_list</span><span class="p">)</span> <span class="p">-</span> <span class="mi">1</span><span class="o">))</span>					
+    <span class="k">let</span> <span class="n">lindex_list</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map2_exn</span> <span class="n">findex_list</span> <span class="n">length_list</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="k">in</span> 
+    <span class="p">((</span><span class="n">min_element</span> <span class="n">findex_list</span><span class="p">)</span><span class="o">,</span> <span class="p">((</span><span class="n">max_element</span> <span class="n">lindex_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>					
   <span class="k">with</span> 
-    <span class="p">|</span> <span class="nc">Invalid_argument</span> <span class="n">e</span> <span class="p">-&gt;</span> <span class="o">(-</span><span class="mi">1</span><span class="p">,</span> <span class="p">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="p">|</span> <span class="nc">Not_found</span> <span class="p">-&gt;</span> <span class="o">(-</span><span class="mi">1</span><span class="p">,</span> <span class="p">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">|</span> <span class="nc">Invalid_argument</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">|</span> <span class="nc">Not_found</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c">(* 
  * find the last occurence of a substring in str that 
@@ -354,17 +355,17 @@ language OCaml. All other utility functions can be downloaded <a href="https://g
  * lstr = ["This"; "a"]
  * return = (8, 13)
  *)</span>
-<span class="k">let</span> <span class="n">rsub_lstr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="n">rsub_lstr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="o">=</span> 
   <span class="k">try</span> 
-    <span class="k">let</span> <span class="n">length_list</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">lstr</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="k">in</span> 
+    <span class="k">let</span> <span class="n">length_list</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">lstr</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="k">in</span> 
     <span class="c">(* list of first occurrence indices of all strings in lstr *)</span>
-    <span class="k">let</span> <span class="n">findex_list</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">lstr</span> <span class="p">(</span><span class="n">rfind_sub</span> <span class="n">str</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span> <span class="n">str</span> <span class="p">-</span> <span class="mi">1</span><span class="o">))</span> <span class="k">in</span> 
+    <span class="k">let</span> <span class="n">findex_list</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="n">lstr</span> <span class="p">(</span><span class="n">rfind_sub</span> <span class="n">str</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span> <span class="n">str</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="k">in</span> 
     <span class="c">(* return the last occurrence of substring containing all strings in lstr *)</span>
-    <span class="k">let</span> <span class="n">lindex_list</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map2_exn</span> <span class="n">findex_list</span> <span class="n">length_list</span> <span class="o">(+)</span> <span class="k">in</span> 
-    <span class="o">((</span><span class="n">min_element</span> <span class="n">findex_list</span><span class="o">),</span> <span class="o">((</span><span class="n">max_element</span> <span class="n">lindex_list</span><span class="p">)</span> <span class="p">-</span> <span class="mi">1</span><span class="o">))</span>					
+    <span class="k">let</span> <span class="n">lindex_list</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map2_exn</span> <span class="n">findex_list</span> <span class="n">length_list</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="k">in</span> 
+    <span class="p">((</span><span class="n">min_element</span> <span class="n">findex_list</span><span class="p">)</span><span class="o">,</span> <span class="p">((</span><span class="n">max_element</span> <span class="n">lindex_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>					
   <span class="k">with</span> 
-    <span class="p">|</span> <span class="nc">Invalid_argument</span> <span class="n">e</span> <span class="p">-&gt;</span> <span class="o">(-</span><span class="mi">1</span><span class="p">,</span> <span class="p">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="p">|</span> <span class="nc">Not_found</span> <span class="p">-&gt;</span> <span class="o">(-</span><span class="mi">1</span><span class="p">,</span> <span class="p">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">|</span> <span class="nc">Invalid_argument</span> <span class="n">e</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">|</span> <span class="nc">Not_found</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 
 <span class="c">(*
@@ -374,47 +375,46 @@ language OCaml. All other utility functions can be downloaded <a href="https://g
  * n : the number of substrings containing all strings in lstr
  * lshortest_substr : return a list of (findex,lindex) indicate the locations of shortest substrings containing all strings in the lstr
  *)</span>
-<span class="k">let</span> <span class="k">rec</span> <span class="n">find_shortest_substrings_aux</span> <span class="n">n</span> <span class="n">lshortest_substr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="n">offset</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="k">rec</span> <span class="n">find_shortest_substrings_aux</span> <span class="n">n</span> <span class="n">lshortest_substr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="n">offset</span> <span class="o">=</span> 
   <span class="k">if</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">is_empty</span> <span class="n">str</span><span class="p">)</span> <span class="k">then</span>
-    <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">lshortest_substr</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">n</span><span class="o">,</span> <span class="n">lshortest_substr</span><span class="p">)</span>
   <span class="k">else</span>
     <span class="k">begin</span>
       <span class="c">(* find forward a substring containing the strings in lstr *)</span>
-      <span class="k">let</span> <span class="n">substr_index</span> <span class="p">=</span> <span class="n">sub_lstr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="k">in</span> 
-      <span class="k">if</span> <span class="p">(</span><span class="n">substr_index</span> <span class="p">=</span> <span class="o">(-</span><span class="mi">1</span><span class="p">,</span> <span class="p">-</span><span class="mi">1</span><span class="o">))</span> <span class="k">then</span> 
+      <span class="k">let</span> <span class="n">substr_index</span> <span class="o">=</span> <span class="n">sub_lstr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="k">in</span> 
+      <span class="k">if</span> <span class="p">(</span><span class="n">substr_index</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="k">then</span> 
         <span class="c">(* not found return the result *)</span>
-        <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">lshortest_substr</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">n</span><span class="o">,</span> <span class="n">lshortest_substr</span><span class="p">)</span>
       <span class="k">else</span> 
         <span class="c">(* updated lshortest_substr an find the next substring from fi + 1 to the end of str *)</span>
-        <span class="k">let</span> <span class="n">fi</span><span class="p">,</span> <span class="n">li</span> <span class="p">=</span> <span class="n">substr_index</span> <span class="k">in</span> 
-        <span class="n">find_shortest_substrings_aux</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="n">update_lshortest_substr</span> <span class="n">lshortest_substr</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">li</span> <span class="o">+</span> <span class="n">offset</span><span class="o">))</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">sub</span> <span class="n">str</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span> <span class="n">str</span> <span class="p">-</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)))</span> <span class="n">lstr</span> <span class="p">(</span><span class="n">offset</span> <span class="o">+</span> <span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">let</span> <span class="n">fi</span><span class="o">,</span> <span class="n">li</span> <span class="o">=</span> <span class="n">substr_index</span> <span class="k">in</span> 
+        <span class="n">find_shortest_substrings_aux</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="n">update_lshortest_substr</span> <span class="n">lshortest_substr</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="n">offset</span><span class="o">,</span> <span class="n">li</span> <span class="o">+</span> <span class="n">offset</span><span class="p">))</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">sub</span> <span class="n">str</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span> <span class="n">str</span> <span class="o">-</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span> <span class="n">lstr</span> <span class="p">(</span><span class="n">offset</span> <span class="o">+</span> <span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">end</span>
 
-<span class="k">let</span> <span class="n">find_shortest_substrings</span> <span class="n">str</span> <span class="n">list_strings</span> <span class="p">=</span> 
+<span class="k">let</span> <span class="n">find_shortest_substrings</span> <span class="n">str</span> <span class="n">list_strings</span> <span class="o">=</span> 
   <span class="c">(* remove all empty strings in the lstr *)</span>
-  <span class="k">let</span> <span class="n">lstr_tmp</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">filter</span> <span class="n">list_strings</span> <span class="p">(</span><span class="k">fun</span> <span class="n">x</span> <span class="p">-&gt;</span> <span class="n">not</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">is_empty</span> <span class="n">x</span><span class="o">))</span> <span class="k">in</span> 
+  <span class="k">let</span> <span class="n">lstr_tmp</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">filter</span> <span class="n">list_strings</span> <span class="p">(</span><span class="k">fun</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">not</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">is_empty</span> <span class="n">x</span><span class="p">))</span> <span class="k">in</span> 
   <span class="c">(* remove all duplicate strings in lstr_tmp *)</span>
-  <span class="k">let</span> <span class="n">lstr</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">dedup</span> <span class="p">~</span><span class="n">compare</span><span class="o">:(</span><span class="n">compare</span><span class="p">)</span> <span class="n">lstr_tmp</span> <span class="k">in</span> 
+  <span class="k">let</span> <span class="n">lstr</span> <span class="o">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">dedup</span> <span class="o">~</span><span class="n">compare</span><span class="o">:</span><span class="p">(</span><span class="n">compare</span><span class="p">)</span> <span class="n">lstr_tmp</span> <span class="k">in</span> 
   <span class="k">if</span> <span class="p">(</span><span class="nn">List</span><span class="p">.</span><span class="n">is_empty</span> <span class="n">lstr</span><span class="p">)</span> <span class="k">then</span> 
-    <span class="o">(-</span><span class="mi">1</span><span class="p">,</span> <span class="o">[(</span><span class="mi">0</span><span class="o">,-</span><span class="mi">1</span><span class="o">)])</span> <span class="c">(* empty string *)</span>
+    <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="p">[(</span><span class="mi">0</span><span class="o">,-</span><span class="mi">1</span><span class="p">)])</span> <span class="c">(* empty string *)</span>
   <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">is_empty</span> <span class="n">str</span><span class="p">)</span> <span class="k">then</span>
-    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">[(-</span><span class="mi">1</span><span class="o">,-</span><span class="mi">1</span><span class="o">)])</span>
+    <span class="p">(</span><span class="mi">0</span><span class="o">,</span> <span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="o">,-</span><span class="mi">1</span><span class="p">)])</span>
   <span class="k">else</span>
     <span class="k">begin</span>
      <span class="c">(* find the first occurrence of substring containing the strings in lstr *)</span>
-     <span class="k">let</span> <span class="n">substr_index</span> <span class="p">=</span> <span class="n">sub_lstr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="k">in</span> 
-     <span class="k">if</span> <span class="p">(</span><span class="n">substr_index</span> <span class="p">=</span> <span class="o">(-</span><span class="mi">1</span><span class="o">,-</span><span class="mi">1</span><span class="o">))</span> <span class="k">then</span> 
-       <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">[(-</span><span class="mi">1</span><span class="o">,-</span><span class="mi">1</span><span class="o">)])</span>
+     <span class="k">let</span> <span class="n">substr_index</span> <span class="o">=</span> <span class="n">sub_lstr</span> <span class="n">str</span> <span class="n">lstr</span> <span class="k">in</span> 
+     <span class="k">if</span> <span class="p">(</span><span class="n">substr_index</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">,-</span><span class="mi">1</span><span class="p">))</span> <span class="k">then</span> 
+       <span class="p">(</span><span class="mi">0</span><span class="o">,</span> <span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="o">,-</span><span class="mi">1</span><span class="p">)])</span>
      <span class="k">else</span> 
        <span class="k">begin</span>
-         <span class="k">let</span> <span class="n">fi</span><span class="p">,</span> <span class="n">li</span> <span class="p">=</span> <span class="n">substr_index</span> <span class="k">in</span> 
-         <span class="k">let</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">lshortest_substr</span><span class="p">)</span> <span class="p">=</span> <span class="n">find_shortest_substrings_aux</span> <span class="mi">1</span> <span class="p">[</span><span class="n">substr_index</span><span class="p">]</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">sub</span> <span class="n">str</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span> <span class="n">str</span> <span class="p">-</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)))</span> <span class="n">lstr</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">in</span> 
+         <span class="k">let</span> <span class="n">fi</span><span class="o">,</span> <span class="n">li</span> <span class="o">=</span> <span class="n">substr_index</span> <span class="k">in</span> 
+         <span class="k">let</span> <span class="p">(</span><span class="n">n</span><span class="o">,</span> <span class="n">lshortest_substr</span><span class="p">)</span> <span class="o">=</span> <span class="n">find_shortest_substrings_aux</span> <span class="mi">1</span> <span class="p">[</span><span class="n">substr_index</span><span class="p">]</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">sub</span> <span class="n">str</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nn">String</span><span class="p">.</span><span class="n">length</span> <span class="n">str</span> <span class="o">-</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span> <span class="n">lstr</span> <span class="p">(</span><span class="n">fi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">in</span> 
          <span class="c">(* remove all duplicates before return *)</span>
-         <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nn">List</span><span class="p">.</span><span class="n">dedup</span> <span class="p">~</span><span class="n">compare</span><span class="o">:(</span><span class="n">index_compare</span><span class="p">)</span> <span class="n">lshortest_substr</span><span class="p">)</span>
+         <span class="p">(</span><span class="n">n</span><span class="o">,</span> <span class="nn">List</span><span class="p">.</span><span class="n">dedup</span> <span class="o">~</span><span class="n">compare</span><span class="o">:</span><span class="p">(</span><span class="n">index_compare</span><span class="p">)</span> <span class="n">lshortest_substr</span><span class="p">)</span>
        <span class="k">end</span>
     <span class="k">end</span>		
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
   </article>
@@ -424,19 +424,19 @@ language OCaml. All other utility functions can be downloaded <a href="https://g
   <h6>Share on: </h6>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=http://channgo2203.github.io/articles/2016-05/strpuzzle1" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-05/strpuzzle1" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://channgo2203.github.io/articles/2016-05/strpuzzle1" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-05/strpuzzle1" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=http://channgo2203.github.io/articles/2016-05/strpuzzle1" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-05/strpuzzle1" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u=http://channgo2203.github.io/articles/2016-05/strpuzzle1" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u=http://localhost:4000/articles/2016-05/strpuzzle1" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url=http://channgo2203.github.io/articles/2016-05/strpuzzle1" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/articles/2016-05/strpuzzle1" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
   </ul>
 </div>-->
@@ -465,8 +465,8 @@ language OCaml. All other utility functions can be downloaded <a href="https://g
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="http://channgo2203.github.io/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="http://channgo2203.github.io/js/main.js"></script>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
 
 <!-- Asynchronous Google Analytics snippet -->
 <script>
