@@ -8,11 +8,16 @@ published: true
 ---
 According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/), <img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:19px;height:19px;"> denotes that the paper is published at a flagship conference (e.g., rank A*) or a premium journal, while <img src="{{ site.url }}/img/good_q.png" alt="Good conference" style="width:19px;height:19px;"> denotes a good conference (e.g., rank A, B) or a leading journal. Colors <b style="color: #F83E4B;">[Color]</b>, <b style="color: #8d7edc;">[Color]</b>, and <b style="color: #F5A623;">[Color]</b> denote journals, conferences, and workshops, respectively. 
 
-### 2017
+### 2018
+<b style="color: #8d7edc;">[PLDI]</b> V.C. Ngo, Q. Carbonneaux, and J. Hoffmann.  
+<img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:19px;height:19px;"> [Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/cmutr02.pdf).    
+To appear in 2018 Programming Language Design and Implementation (PLDI). ACM,  Philadelphia, PA, USA, June 2018.
+
 * V.C. Ngo, Q. Carbonneaux, and J. Hoffmann.  
 [Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/cmutr02.pdf).  
 In Working Paper, 2017.
 
+### 2017
 * <b style="color: #F83E4B;">[JSEP]</b> V.C. Ngo and A. Legay.   
 <img src="{{ site.url }}/img/good_q.png" alt="Leading journal" style="width:19px;height:19px;"> [Formal Verification of Probabilistic SystemC Models with Statistical Model Checking]({{ site.url }}/pdfs/jsep16.pdf).  
 In Journal of Software: Evolution and Process. Wiley, 2017 (Invited to submit an extended version of [HASE paper]({{ site.url }}/pdfs/hase16.pdf)).  
