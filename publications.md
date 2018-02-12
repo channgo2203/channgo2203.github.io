@@ -19,7 +19,7 @@ To appear in 2018 Programming Language Design and Implementation (PLDI). ACM,  P
 In Journal of Software: Evolution and Process. Wiley, 2017 (Invited to submit an extended version of [HASE paper]({{ site.url }}/pdfs/hase16.pdf)).  
 [[Tool Implementation](https://github.com/channgo2203/PSCV)][Case Studies: [Producer-Consumer]({{ site.url }}/zips/producer_consumer.tar.gz), [Control System]({{ site.url }}/zips/control_system.tar.gz), [Random Scheduler]({{ site.url }}/zips/random_scheduler.tar.gz)][[Tool Website](https://project.inria.fr/pscv/)]
 
-* <b style="color: #8d7edc;">[Oakland]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, J. Hoffmann.  
+* <b style="color: #8d7edc;">[Oakland]</b> V.C. Ngo, M. Dehesa-Azuara, M. Fredrikson, and J. Hoffmann.  
 <img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:19px;height:19px;"> [Verifying and Synthesizing Constant-Resource Implementations with Types]({{ site.url }}/pdfs/oakland17.pdf).    
 To appear in 2017 IEEE Symposium on Security & Privacy (Oakland). IEEE, San Jose, CA, USA, May 2017.  
 [[Long Version]({{ site.url }}/pdfs/oakland17_app.pdf)] [[Formalization]({{ site.url }}/zips/oakland17_formalization.zip)][[Tool Implementation](http://www.raml.co/code.html)]  [[Examples]({{ site.url }}/zips/oakland17_examples.zip)]  
