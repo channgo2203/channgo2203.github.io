@@ -27,6 +27,6 @@ Synchronous Programming 2012, Le Croisic, France, November 2012.
 
 - _Formal Verification of Transformations on Clocks in Synchronous Data-flow Compilers_. Invited Talk at Beihang University (BUAA), Beijing, China, October 2012.
 
-- _Formal Verification of Compiler Transformations on Polychronous Equations_. Talk at IFM 2012, Pisa, Italy, June 2012.
+- _[Formal Verification of Compiler Transformations on Polychronous Equations]({{ site.url }}/pdfs/ifm12_slides.pdf)_. Talk at IFM 2012, Pisa, Italy, June 2012.
 
 - _Formal Indistinguishability Extended to the Random Oracle Model_. Talk at ESORICS 2009, Le Croisic, France, September 2009.
