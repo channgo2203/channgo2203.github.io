@@ -11,7 +11,9 @@ According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/
 ### 2018
 * <b style="color: #8d7edc;">[PLDI]</b> V.C. Ngo, Q. Carbonneaux, and J. Hoffmann.  
 <img src="{{ site.url }}/img/best_q.png" alt="Flagship conference" style="width:36px;height:36px;"> [Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/cmutr02.pdf).    
-To appear in 2018 Programming Language Design and Implementation (PLDI). ACM,  Philadelphia, PA, USA, June 2018.
+To appear in 2018 Programming Language Design and Implementation (PLDI). ACM,  Philadelphia, PA, USA, June 2018.  
+[[Long Version]({{ site.url }}/pdfs/cmutr02.pdf)] [[Tool and benchmark]({{ site.url }}/zips/tool_benchmark.zip)]  
+[Acceptance Rate: 55/275 = 20.0%]
 
 ### 2017
 * <b style="color: #F83E4B;">[JSEP]</b> V.C. Ngo and A. Legay.   
