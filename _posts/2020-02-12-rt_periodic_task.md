@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      Real-time Periodic Task for RTOS
+title:      Implement Real-time Periodic Task for RTOS using Timers
 date:       2020-02-12
-excerpt:    Real-time Periodic Task for RTOS
+excerpt:    Implement Real-time Periodic Task for RTOS using Timers
 categories: [Tutorials, C/C++, Real-time Operation System, Real-time Embedded Programming]
 tags:
  - tutorials
