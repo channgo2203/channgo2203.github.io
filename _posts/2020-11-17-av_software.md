@@ -33,4 +33,4 @@ Its output is:
 
 Basic control and data-flow of the software stack is depicted in the following figure.
 
-![A heap]({{ site.url }}/img/av_software_stack_data-flow.jpg)
+![A heap]({{ site.url }}/img/av_sw_dataflow.jpg)
