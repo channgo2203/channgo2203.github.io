@@ -15,6 +15,7 @@ tags:
  - autopilot
 comments: true
 ---
+[TBD]
 
 In this post, I want to discuss about `autonomous vehicles software stack`: the common software modules, the basic control and data-flow of the software stack, and the basics of the algorithm behind each software module.
 
@@ -34,3 +35,17 @@ Its output is:
 Basic control and data-flow of the software stack is depicted in the following figure.
 
 ![A heap]({{ site.url }}/img/av_sw_dataflow.jpg)
+
+## Common Modules
+
+### Sensor Interfaces
+
+### Mapping
+
+### Localization
+
+### Perception
+
+### Planning
+
+### Drive-by-Wire
