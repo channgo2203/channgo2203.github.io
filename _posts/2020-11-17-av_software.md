@@ -18,6 +18,8 @@ comments: true
 
 In this post, I want to discuss about `autonomous vehicles software stack`: the common software modules, the basic control and data-flow of the software stack, and the basics of the algorithm behind each software module.
 
+## Inputs/Outputs
+
 Roundly speaking, the inputs of an autonomous vehicles software system are:
 * __Point cloud data__: from Lidar, radar, and IMU sensors
 * __3D map data__: from the mapping packages
@@ -26,3 +28,9 @@ Roundly speaking, the inputs of an autonomous vehicles software system are:
 Its output is:
 * __Velocity__: as command to the vehicle drive-by-wire controller
 * __Angle__: as command to the vehicle drive-by-wire controller
+
+## Control and Data-flow
+
+Basic control and data-flow of the software stack is depicted in the following figure.
+
+![A heap]({{ site.url }}/img/av_software_stack_data-flow.jpg)
