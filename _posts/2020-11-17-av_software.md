@@ -21,13 +21,15 @@ In this post, I want to discuss about `autonomous vehicles software stack`: the 
 ## Common Architecture
 
 The diagram below shows a general and common architecture for autonomous vehicles (AV). We can think it as a stack of layers:
+
+![AV architecture]({{ site.url }}/img/av_architecture.jpg)       
+
 * __Hardware__: This layer contains `computing units` such as Nvidia AGX Xavier, `sensor devices` such as Velodyne Lidars
 * __Operating System__: It can be `general-purpose` or `Real-time operating system` (RTOS) such as Ubuntu and QNX OSs
 * __Middleware or Runtime Framework__: This layer provides general and common services, environment, and interfaces for upper layer to run on top of the below OS layer. For example, it provides a general framework for creating application tasks such as perception and planning, and communication mechanism for tasks to communicate. It also provides interfaces between application tasks and hardware such as sensors. Some examples of middleware are `Robotic Operating System (ROS)` used in `Autoware.Auto` and `Cyber RT` used in `Apollo`
 * __Application__: It contains software modules for performing the autonomous driving task such as `localization`, `perception`, and `planning`
 * __Cloud Services__: This layer is optional. It can contain storing log data, vehicle remote command services
 
-![AV architecture]({{ site.url }}/img/av_architecture.jpg)       
 
 ## Inputs/Outputs
 
