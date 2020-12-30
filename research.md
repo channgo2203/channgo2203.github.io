@@ -11,12 +11,12 @@ involves the research and knowledge of principles of programming languages, comp
 and formal methods including model checking, theorem proving, and static analysis for providing
 formal assurances that the specification is fulfilled.
 
-A common theme is constructing correct embedded systems (i.e., control software in 
-safety-critical systems, embedded system hardware designs) by applying formal 
-verification including static analysis, model checking and correctness proof on the 
-source code implementation, or mathematical models of these systems producing by 
-model-based design tool-chains, and formally certifying the correctness of the 
-compilers and code generators in the model-based design tool-chains.
+A common theme is constructing correct Machine Learning-based safety-critical systems such as autonomous 
+vehicles by applying formal verification including static analysis, model checking and correctness proof 
+on the source code implementation, or mathematical models of these systems. One of the application is the 
+correctness and robustness analysis of localization, perception, and motion planning software modules in 
+the autonomous software stack. Another application is providing analysis w.r.t the safety standards 
+such as ISO-26262-6 and SOTIF.
 
 ### Research Projects
 [RAML](http://www.raml.co/ "RAML"), 
@@ -27,6 +27,7 @@ compilers and code generators in the model-based design tool-chains.
 [AVOTE](http://scalp.gforge.inria.fr/)
 
 ### Softwares
+* __TaskFW__: Task framework (TaskFW) is a infrastructure middle-ware layer on top of the Real-time Operating System (RTOS) QNX at [Motional](https://www.motional.com/). It provides a set of fundamental services to enable safe and highly reliable autonomous vehicle software
 * __RTVerifier__: Run-Time Verifier (RTVerifier) is a tool that monitors the middle-ware layer of autonomous vehicle software system at [APTIV Mobility](https://www.aptiv.com/) at run-time to check that the failure recovery mechanism and inter-process communication satisfy their requirements
 * __Absynth__: Automatic Bound Synthesizer (Absynth) is a tool that automatically and statically computes upper bounds on the expected resource usage for imperative probabilistic programs, [Tool and Benchmark]({{ site.url }}/zips/tool_benchmark.zip) 
 * __RAML__: Resource Aware ML (RAML) is a tool that automatically and statically computes resource-use bounds (lower and upper) for OCaml programs. It also can check the constant resource-use programs used in preventing timing side-channel attacks, [RAML](http://www.raml.co/) 
