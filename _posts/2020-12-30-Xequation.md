@@ -24,5 +24,4 @@ In this post, I am excited to introduce __`Xequation`__ (framework)
 
 The objective of __`Xequation`__ is to provide:
 
-* Solutions and tool development for verifying the robustness and reliability from a formal methods perspective for Machine Learning (ML)-based safety-critical applications such as localization, perception, and planning modules in autnomous driving software stack
-
+* <strong><em>Solutions and tool development for verifying the robustness and reliability from a formal methods perspective for Machine Learning (ML)-based safety-critical applications such as localization, perception, and planning modules in autnomous driving software stack</em></strong>
