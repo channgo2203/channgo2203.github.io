@@ -22,5 +22,7 @@ In this post, I am excited to introduce __`Xequation`__
 
 The objective of __`Xequation`__ is to provide:
 * Solutions and tool development for verifying the robustness and reliability of Machine Learning (ML)-based safety-critical applications such as localization, perception, and planning modules in autnomous driving software stack
-* Overall architecture and design solutions for autonomous driving technology such as the software infrastructure and the middleware
+  
 * Solutions for integrating autnomous driving software modules such as perception module integration
+
+* Overall architecture and design solutions for autonomous driving technology such as the software infrastructure and the middleware
