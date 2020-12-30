@@ -18,7 +18,7 @@ comments: true
 
 In this post, I am excited to introduce __`Xequation`__
 
-![Xequation]({{ site.url }}/img/Xequation.png=600x600)
+![Xequation]({{ site.url }}/img/Xequation.png){:height="30%" width="30%"}
 
 The objective of __`Xequation`__ is to provide:
 * Overall architecture and design solutions for autonomous vehicle technology such as the software infrastructure and the middleware
