@@ -34,7 +34,7 @@ kramdown:
 #
 owner:
   name: Van Chan Ngo
-  avatar: avatar.jpg
+  avatar: avatar.png
   job: "Computer Scientist and Software Engineer"
   bio: "Research interests are in formal methods, programming languages, compilers, and language-based security. I am a member of the Principles of Programming Group, School of Computer Science, Carnegie Mellon University."
   quote: "Do one thing, and do it well."
