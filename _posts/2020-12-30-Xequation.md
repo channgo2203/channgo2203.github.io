@@ -16,13 +16,13 @@ tags:
 comments: true
 ---
 
-In this post, I am excited to introduce __`Xequation`__
+In this post, I am excited to introduce __`Xequation`__ (framework)
 
 {:refdef: style="text-align: center;"}
 ![Xequation]({{ site.url }}/img/Xequation.png){:height="36%" width="36%"}
 {: refdef}
 
-The objective of __`Xequation`__ is to provide:
+The objective of __`Xequation`__ (framework) is to provide:
 * Solutions and tool development for verifying the robustness and reliability of Machine Learning (ML)-based safety-critical applications such as localization, perception, and planning modules in autnomous driving software stack
   
 * Solutions for integrating autnomous driving software modules such as perception module integration
