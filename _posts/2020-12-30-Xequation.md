@@ -31,10 +31,8 @@ the `robustness of ML-based safety-critical applications`. The analysis is fully
 automatic and derives the estimated probability of how robust a model is w.r.t 
 perturbations, called `statistical robustness`.
 
-The new technique combines the `model checking techniques with temporal logics` for 
-probabilistic programs with an adaptation of `multi-level splitting`, a method for 
-estimating the probability of rare events to the statistical robustness. 
-As a result, the framework provides a unifying `formalization of the perturbation` 
+The new technique combines the `temporal logics with time bounds`, a method for formalizing program specifications, with an adaptation of `multi-level splitting`, a method for estimating the probability of rare events to 
+the statistical robustness. As a result, the framework provides a unifying `formalization of the perturbation` 
 generation process and a definition of robustness from a formal methods perspective. 
 An advantage of the technique is that it has an ability to scale to `much larger ML models`, e.g. deep neutral networks used in autonomous driving software stack, than 
 formal methods approaches such as using an automated theorem prover. 
