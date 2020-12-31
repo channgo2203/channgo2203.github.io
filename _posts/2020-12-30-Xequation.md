@@ -29,15 +29,14 @@ perception tasks, have been shown to lack `robustness to small changes of inputs
 known as `perturbations`. __`Xequation`__ is a new framework for verifying 
 the `robustness of ML-based safety-critical applications`. The analysis is fully 
 automatic and derives the estimated probability of how robust a model is w.r.t 
-perturbations, called statistical robustness.
+perturbations, called `statistical robustness`.
 
-The new technique combines the model checking techniques with temporal logics for 
-probabilistic programs with an adaptation of multi-level splitting, a method for 
+The new technique combines the `model checking techniques with temporal logics` for 
+probabilistic programs with an adaptation of `multi-level splitting`, a method for 
 estimating the probability of rare events to the statistical robustness. 
-As a result, the framework provides a unifying formalization of the perturbation 
+As a result, the framework provides a unifying `formalization of the perturbation` 
 generation process and a definition of robustness from a formal methods perspective. 
-An advantage of the technique is that it has an ability to scale to much larger ML 
-models, e.g. deep neutral networks used in autonomous driving software stack, than 
+An advantage of the technique is that it has an ability to scale to `much larger ML models`, e.g. deep neutral networks used in autonomous driving software stack, than 
 formal methods approaches such as using an automated theorem prover. 
 The effectiveness of the technique is demonstrated with a prototype implementation 
 that is able to automatically verify on benchmark problems, while scaling to larger 
