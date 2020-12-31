@@ -41,4 +41,4 @@ that is able to automatically verify on benchmark problems, while scaling to lar
 deep neutral networks. Experimental results indicate that the derived probability 
 is reliable and accurate.
 
-The objective of __`Xequation`__ is to provide <strong><em>Solutions and tool development for verifying the robustness and reliability from a formal methods perspective for Machine Learning (ML)-based safety-critical applications such as localization, perception, and planning modules in autnomous driving software stack</em></strong>
+The objective of __`Xequation`__ is to provide <strong><em>solutions and tool development for verifying the robustness and reliability from a formal methods perspective for machine learning (ML)-based safety-critical applications such as localization, perception, and planning modules in autnomous driving software stack</em></strong>
