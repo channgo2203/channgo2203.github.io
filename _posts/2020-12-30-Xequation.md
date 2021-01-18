@@ -19,7 +19,7 @@ comments: true
 In this post, I am excited to introduce __`Xequation`__.
 
 {:refdef: style="text-align: center;"}
-![Xequation]({{ site.url }}/img/Xequation.png){:height="36%" width="36%"}
+![Xequation]({{ site.url }}/images/XequationFW.png){:height="36%" width="36%"}
 {: refdef}
 
 Generally, machine learning (ML) based applications are required to be 
