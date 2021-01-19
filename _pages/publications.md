@@ -124,16 +124,12 @@ In HAL-INRIA, **Technical Report RR-7921**, April 2012.
 ### Thesis
 * V.C. Ngo. 
 [Formal Verification of a Synchronous Data-flow Compiler: from Signal to C](https://ecm.univ-rennes1.fr/nuxeo/site/esupversions/e10492b5-206a-42fa-b643-e752dac5a750). 
-[[Slide]]({{ site.url }}/pdfs/phd-slides.pdf) 
-
+[[Slide]]({{ site.url }}/pdfs/phd-slides.pdf)   
 Supervisor: [Jean-Pierre Talpin](http://www.irisa.fr/prive/talpin/), 
-Jury: [Sandrine Blazy](http://www.irisa.fr/celtique/blazy/), [Jean-Paul Bodeveix](https://www.irit.fr/~Jean-Paul.Bodeveix/), [Laure Gonnord](http://laure.gonnord.org/pro/), [Abdoulaye Gamatie](http://www.lirmm.fr/~gamatie/), and [Dumitru Potop-Butucaru](https://who.rocq.inria.fr/Dumitru.Potop_Butucaru/). 
-
+Jury: [Sandrine Blazy](http://www.irisa.fr/celtique/blazy/), [Jean-Paul Bodeveix](https://www.irit.fr/~Jean-Paul.Bodeveix/), [Laure Gonnord](http://laure.gonnord.org/pro/), [Abdoulaye Gamatie](http://www.lirmm.fr/~gamatie/), and [Dumitru Potop-Butucaru](https://who.rocq.inria.fr/Dumitru.Potop_Butucaru/).   
 **In Ph.D Thesis in Computer Science**, [INRIA](http://www.inria.fr/en/), [University of Rennes 1](https://www.univ-rennes1.fr/english/), France, July 2014.
 
 * V.C. Ngo. 
-[Automated Verification of Asymmetric Encryption]({{ site.url }}/pdfs/ujf.pdf). 
-
-Supervisors: Cristian Ene and Yasine Lakhnech. 
-
+[Automated Verification of Asymmetric Encryption]({{ site.url }}/pdfs/ujf.pdf).   
+Supervisors: Cristian Ene and Yasine Lakhnech.   
 **In M.Sc Thesis in Computer Science and Applied Mathematics**, [IMAG-VERIMAG](http://www-verimag.imag.fr), [University of Grenoble 1](https://www.ujf-grenoble.fr/?language=en), France, June 2008.
