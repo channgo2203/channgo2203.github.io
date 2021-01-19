@@ -37,5 +37,30 @@ The allocator is responsible for managing raw memory storage and also for constr
 template <class T> class allocator;
 ```
 
+The most advantage of using allocator is:
 
+> Allocator allow us to have control over which constructors are called so the allocation and constructor are seperated
 
+The most importants methods of `std::allocator` are:
+* `allocate`: Used for allocation of memory
+* `deallocate`: Used for deallocation of memory
+
+## Example
+
+```cpp
+#include <memory>
+#include <iostream>
+#include <string>
+ 
+int main()
+{
+    std::allocator<int> intAlloc;
+    // Allocate memory area for 100 integers
+    int* intArray = intAlloc.allocate(100);
+    // Construct the 5th element
+    intArray[4] = 2011;
+    std::cout << "intArray[4]: " << intArray[4] << std::endl;
+    // Deallocate the memory area
+    intAlloc.deallocate(intArray, 100);
+}
+```
