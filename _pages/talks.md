@@ -6,6 +6,10 @@ permalink: /talks/
 
 * _[Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/pldi18_slides.pdf)_. Talk at PLDI 2018, Philadelphia, PA, USA, June 2018.
 
+* _[Quantitative Ananlysis for Reliable and Secure Software]({{ site.url }}/pdfs/qanalysis_slides.pdf)_. Talk at National University of Singapore, Singapore, April 2018.
+
+* _[Quantitative Ananlysis for Reliable and Secure Software]({{ site.url }}/pdfs/qanalysis_slides.pdf)_. Talk at UMass, MA, USA, March 2018.
+
 * _[Bounded Expectations: Resource Analysis for Probabilistic Programs - Tool Demonstration]({{ site.url }}/pdfs/absynth_slides.pdf)_. Present at Dagtuhl Seminar 17291, Wadern, Germany, July 2017. 
 
 * _[Verifying and Synthesizing Constant-Resource Implementations with Types]({{ site.url }}/pdfs/oakland17_slides.pdf)_. Talk at S&P Oakland 2017, San Jose, CA, USA, May 2017.
