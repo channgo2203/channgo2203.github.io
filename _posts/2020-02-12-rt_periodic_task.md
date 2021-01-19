@@ -27,7 +27,7 @@ A real-time periodic task as depicted in the following figure, denoted by a tupl
 `D` is the relative deadline of the task
 Relative deadline means the desired time duration counted from the beginning of the current cycle or period to the time of job completion. For the current period, given `P` and  the absolute deadline `d`, the relative deadline `D = d - P`. In practice, we need to ensure that the (worst-case) execution time (by measuring) `E` is smaller than the relative deadline `D` in order to guarantee the hard real-time deadline properties.
 
-![Thumper]({{ site.url }}/img/periodic-task.png)
+![Thumper]({{ site.url }}/images//periodic-task.png)
 
 For example, consider a task with period `P = 10ms`, the (worst-case) execution time `E = 3ms`, and the relative deadline `D = 9ms`. Thus, the job of this task is released first at `t = 0`, then it executes for `8ms` and then the next job is released at `t1 = 10ms` and so on. The jobs are released at `t = 10k` where `k = 0, 1,...`
 
@@ -230,6 +230,6 @@ if (periodicTimer_.startTimer(period) == true)
 
 The thread data-flow is depicted by the following figure.
 
-![Thumper]({{ site.url }}/img/rtpt-dataflow.png)
+![Thumper]({{ site.url }}/images//rtpt-dataflow.png)
 
 [1]: http://www.qnx.com/developers/docs/7.0.0/#com.qnx.doc.neutrino.getting_started/topic/s1_timer.html

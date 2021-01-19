@@ -22,7 +22,7 @@ In this post, I want to discuss about `autonomous vehicles software stack`: the 
 
 The diagram below shows a general and common architecture for autonomous vehicles (AV).
 
-![AV architecture]({{ site.url }}/img/av_architecture.jpg)       
+![AV architecture]({{ site.url }}/images/av_architecture.jpg)       
 
 We can think it as a stack of layers:
 * __Hardware__: This layer contains `computing units` such as Nvidia AGX Xavier, `sensor devices` such as Velodyne Lidars
@@ -47,7 +47,7 @@ Its output are:
 
 Basic control and data-flow of the (application) software stack is depicted in the following figure. Note that we loosely denote the sensor data from 3D lidar, monocular cameras, GPS/IMU, and radar by `3D point cloud and image data`. 
 
-![Application software stack]({{ site.url }}/img/av_sw_dataflow.jpg)
+![Application software stack]({{ site.url }}/images/av_sw_dataflow.jpg)
 
 ## Common Modules
 As depicted in the above figure, roundly speaking, an AV software stack includes:
