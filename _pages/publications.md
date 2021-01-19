@@ -4,7 +4,11 @@ title: Publications
 permalink: /publications/
 ---
 
-According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/), <img style="float: left;" src="{{ site.url }}/images/best_q.png" alt="Flagship conference" style="width:36px;height:36px;"> denotes a paper published at a flagship conference or a premium journal (e.g., rank A*), while <img style="float: left;" src="{{ site.url }}/images/good_q.png" alt="Good conference" style="width:36px;height:36px;"> denotes a good conference or a leading journal (e.g., rank A, B).
+According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/), 
+
+<img style="float: right;" src="{{ site.url }}/images/best_q.png" alt="Flagship conference" style="width:36px;height:36px;"> denotes a paper published at a flagship conference or a premium journal (e.g., rank A*), 
+
+<img style="float: right;" src="{{ site.url }}/images/good_q.png" alt="Good conference" style="width:36px;height:36px;"> denotes a good conference or a leading journal (e.g., rank A, B).
 
 ### 2021
 * V.C. Ngo.  
