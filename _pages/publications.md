@@ -4,7 +4,10 @@ title: Publications
 permalink: /publications/
 ---
 
-According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/), a flagship conference or a premium journal (e.g., rank A*) is denoted by <img style="float: left;" src="{{ site.url }}/images/best_q.png" alt="Flagship conference" style="width:27px;height:27px;">, while <img style="float: right;" src="{{ site.url }}/images/good_q.png" alt="Good conference" style="width:27px;height:27px;"> denotes a good conference or a leading journal (e.g., rank A, B).
+According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/),
+
+* <img style="float: left;" src="{{ site.url }}/images/best_q.png" alt="Flagship conference" style="width:30px;height:30px;"> : a flagship conference or a premium journal (e.g., rank A*)
+* <img style="float: right;" src="{{ site.url }}/images/good_q.png" alt="Good conference" style="width:30px;height:30px;"> :a good conference or a leading journal (e.g., rank A, B)
 
 ### 2021
 * V.C. Ngo.  
@@ -18,11 +21,10 @@ According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/
 [Mean Square Bounds Derivation for Probabilistic Programs]({{ site.url }}/pdfs/mean_square.pdf). Working paper
 
 ### 2018
-* <b style="color: #8d7edc;">[PLDI]</b><img style="float: right;" src="{{ site.url }}/images/best_q.png" alt="Flagship conference" style="width:27px;height:27px;"><br /> V.C. Ngo, Q. Carbonneaux, and J. Hoffmann.  
-[Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/pldi18.pdf).    
-In 2018 Programming Language Design and Implementation (PLDI). ACM,  Philadelphia, PA, USA, June 2018.  
-[[Long Version]({{ site.url }}/pdfs/cmutr02.pdf)] [[Tool and benchmark]({{ site.url }}/zips/tool_benchmark.zip)]  
-[Acceptance Rate: 55/275 = 20.0%]
+<p>
+* <b style="color: #8d7edc;">[PLDI]</b> V.C. Ngo, Q. Carbonneaux, and J. Hoffmann. [Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/pldi18.pdf). In 2018 Programming Language Design and Implementation (PLDI). ACM,  Philadelphia, PA, USA, June 2018. [[Long Version]({{ site.url }}/pdfs/cmutr02.pdf)] [[Tool and benchmark]({{ site.url }}/zips/tool_benchmark.zip)] [Acceptance Rate: 55/275 = 20.0%]
+<img style="float: right;" src="{{ site.url }}/images/best_q.png" alt="Flagship conference" style="width:30px;height:30px;">
+</p>
 
 ### 2017
 * <b style="color: #F83E4B;">[JSEP]</b> V.C. Ngo and A. Legay.   
