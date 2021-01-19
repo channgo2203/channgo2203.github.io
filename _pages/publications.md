@@ -4,14 +4,14 @@ title: Publications
 permalink: /publications/
 ---
 
-According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/), <img src="{{ site.url }}/images/best_q.png" alt="Flagship conference" style="width:36px;height:36px;"> denotes that the paper is published at a flagship conference (e.g., rank A*) or a premium journal, while <img src="{{ site.url }}/images/good_q.png" alt="Good conference" style="width:36px;height:36px;"> denotes a good conference (e.g., rank A, B) or a leading journal.
+According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/), papers published at flagship conferences or premium journals are ranked A*, while ones published at good conferences or leading journals are ranked A or B.
 
 ### 2018
 * <b style="color: #8d7edc;">[PLDI]</b> V.C. Ngo, Q. Carbonneaux, and J. Hoffmann.  
-<img src="{{ site.url }}/images/best_q.png" alt="Flagship conference" style="width:37px;height:36px;"> [Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/pldi18.pdf).    
+[Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/pldi18.pdf).    
 To appear in 2018 Programming Language Design and Implementation (PLDI). ACM,  Philadelphia, PA, USA, June 2018.  
 [[Long Version]({{ site.url }}/pdfs/cmutr02.pdf)] [[Tool and benchmark]({{ site.url }}/zips/tool_benchmark.zip)]  
-[Acceptance Rate: 55/275 = 20.0%]
+[Acceptance Rate: 55/275 = 20.0%] [Rank A*]
 
 ### 2017
 * <b style="color: #F83E4B;">[JSEP]</b> V.C. Ngo and A. Legay.   
