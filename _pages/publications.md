@@ -7,8 +7,8 @@ permalink: /publications/
 According to the [core conference ranking](http://portal.core.edu.au/conf-ranks/), papers published at flagship conferences or premium journals are ranked A*, while ones published at good conferences or leading journals are ranked A or B.
 
 ### 2018
-* <b style="color: #8d7edc;">[PLDI]</b>[Rank A*] V.C. Ngo, Q. Carbonneaux, and J. Hoffmann.  
-[Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/pldi18.pdf).    
+* <b style="color: #8d7edc;">[PLDI]</b> V.C. Ngo, Q. Carbonneaux, and J. Hoffmann.  
+<img style="float: right;" src="{{ site.url }}/images/best_q.png" alt="Flagship conference" style="width:37px;height:36px;"> [Bounded Expectations: Resource Analysis for Probabilistic Programs]({{ site.url }}/pdfs/pldi18.pdf).    
 To appear in 2018 Programming Language Design and Implementation (PLDI). ACM,  Philadelphia, PA, USA, June 2018.  
 [[Long Version]({{ site.url }}/pdfs/cmutr02.pdf)] [[Tool and benchmark]({{ site.url }}/zips/tool_benchmark.zip)]  
 [Acceptance Rate: 55/275 = 20.0%]
