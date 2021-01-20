@@ -24,7 +24,7 @@ By definition, allocators are objects responsible for encapsulating memory manag
 So what does this mean? For example, consider the following code:
 
 ```cpp
-std::vector<int>* vPtr = new std::vector<int>[3];
+int* vPtr = new int[3];
 ```
 
 With `new` operator, it forces us to allocate and construct all objects, `3` integer values, at the same time. Let's say we only want to allocate (or preserve) `3` integer size memory areas and construct these integer values later, for instance we only want to construct the first integer value. `std::allocator` can help us to do that.
