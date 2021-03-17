@@ -27,7 +27,7 @@ The following are some examples of robustness:
 
 ![Confusing object detection]({{ site.url }}/images/ConfusingML.jpg)
 
-To compute those probabilities, we need to have at least one billion hours of operation or around thirty billion miles of driving. Obviously, it is absolutely impossible in practices even in simulation mode.
+Note that $$10^{-9}$$ is the required failure rate of the ISO-26262 ASIL D. To compute those probabilities, we need to have at least one billion hours of operation or around thirty billion miles of driving. Obviously, it is absolutely impossible in practices even in simulation mode.
 
 In our new research project, we provide a framework for automatically estimating these very small probabilities (rare events).
 * It reasons about how robust a software module is w.r.t uncertainty, called statistical robustness
