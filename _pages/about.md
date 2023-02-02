@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-My research interests are in safety critical software, especially ML-based safety-critical applications such as autonomous driving software, programming languages, compilers, and language-based security.
+My research interests are in embedded safety-critical systems, especially ML-based safety-critical applications such as autonomous driving software, programming languages, compilers, and language-based security.
 
 I received my Engineer degree (equivalent to Diplôme d'Ingénieur) from 
 [Hanoi University of Technology](http://en.hust.edu.vn/home) with excellent ranking, 
