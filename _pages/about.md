@@ -4,14 +4,13 @@ title: About
 permalink: /about/
 ---
 
-My research interests are in embedded safety-critical systems, especially ML-based safety-critical applications such as autonomous driving software, programming languages, compilers, and language-based security.
-
 I received my Engineer degree (equivalent to Diplôme d'Ingénieur) from 
 [Hanoi University of Technology](http://en.hust.edu.vn/home) with excellent ranking, 
 my M.Sc in Computer Science (under a French government scholarship, Évariste Galois program) 
 from [Joseph Fourier University](https://www.ujf-grenoble.fr/?language=en) 
 (Université de Grenoble), and my Ph.D from [Inria](http://www.inria.fr/en/) 
-France under the supervision of [Dr. Jean-Pierre Talpin](http://www.irisa.fr/prive/talpin/).
+France under the supervision of [Dr. Jean-Pierre Talpin](http://www.irisa.fr/prive/talpin/). 
+I was research fellow in Computer Science at Carnegie Mellon University.
 
 I am interested in building reliable and secure computer systems by developing formal frameworks
 which guarantee that software satisfies formally its specification, especially embedded safety-critical
