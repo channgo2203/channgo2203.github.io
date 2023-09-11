@@ -11,7 +11,12 @@ author: Van Chan Ngo
 # Short bio or description (displayed in the header)
 description: Research interests are in embedded safety-critical systems, especially ML-based safety-critical 
 applications such as autonomous driving software, programming languages, compilers, and language-based security. 
-I am a member of the Principles of Programming Group, School of Computer Science, CMU.
+Hands-on architecture design and coding of embedded safety-critical firmware and software from bare-metal, OS abstraction,
+middleware, to applications layers for SoC with both microcontrollers (MCU) and microprocessors (MPU). They can be machine 
+learning-based software in robotics, automotive, medical, and aerospace industries. 
+Deep knowledge and strong experience with HW bring-up, FreeRTOS, Zephyr RTOS, embedded Linux, kernel module development, 
+communication protocols such as Ethernet TCP/IP, Bluetooth, CAN, LIN, peripherals like UART, GPIO, USB, I2C, SPI, HSM, 
+middleware frameworks like ROS2, DDS, RPC, SOA, and QEMU emulation.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /images/xequation.png
