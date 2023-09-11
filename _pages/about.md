@@ -20,9 +20,8 @@ involves the research and knowledge of principles of programming languages, comp
 and formal methods including model checking, theorem proving, and static analysis for providing
 formal assurances that the specification is fulfilled.
 
-A common theme is constructing correct Machine Learning-based safety-critical systems such as autonomous 
-vehicles by applying formal verification including static analysis, model checking and correctness proof 
-on the source code implementation, or mathematical models of these systems. One of the application is the 
-correctness and robustness analysis of localization, perception, and motion planning software modules in 
-the autonomous software stack. Another application is providing analysis w.r.t the safety standards 
-such as ISO-26262-6 and SOTIF.
+Hands-on architecture design and coding of embedded safety-critical firmware and software from bare-metal, OS abstraction,
+middleware, to applications layers for SoC with both microcontrollers (MCU) and microprocessors (MPU). They can be machine 
+learning-based software in robotics, automotive, medical, and aerospace industries
+
+Deep knowledge and strong experience with HW bring-up, FreeRTOS, Zephyr RTOS, embedded Linux, kernel module development, communication protocols such as Ethernet TCP/IP, Bluetooth, CAN, LIN, peripherals like UART, GPIO, USB, I2C, SPI, HSM, middleware frameworks like ROS2, DDS, RPC, SOA, and QEMU emulation
