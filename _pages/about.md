@@ -19,8 +19,9 @@ involves the research and knowledge of principles of programming languages, comp
 and formal methods including model checking, theorem proving, and static analysis for providing
 formal assurances that the specification is fulfilled.
 
-Hands-on architecture design and coding of embedded safety-critical firmware and software from bare-metal, OS abstraction,
-middleware, to applications layers for SoC with both microcontrollers (MCU) and microprocessors (MPU). They can be machine 
-learning-based software in robotics, automotive, medical, and aerospace industries
-
-Deep knowledge and strong experience with HW bring-up, FreeRTOS, Zephyr RTOS, embedded Linux, kernel module development, communication protocols such as Ethernet TCP/IP, Bluetooth, CAN, LIN, peripherals like UART, GPIO, USB, I2C, SPI, HSM, middleware frameworks like ROS2, DDS, RPC, SOA, and QEMU emulation
+Hands-on architecture design and coding of embedded software and embedded Linux from bare-metal, OS abstraction,
+middleware, to applications layers. They can be machine learning-based SW in robotics, automotive, medical, and aerospace industries. 
+Knowledge and experience with HW bring-up, RTOS, communication protocols such as Ethernet, CAN, BLE, peripherals like I2C, SPI, HSM, 
+and middleware frameworks like DDS, ROS2
+  
+Deep knowledge and strong experience with design and development of compiler, programming language static analysis from scratch or using infrastructures such as LLVM, MLIR
