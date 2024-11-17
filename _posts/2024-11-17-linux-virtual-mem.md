@@ -102,7 +102,7 @@ The following program in `C` demonstrates Linux lazy allocation for user space p
 #include <string.h>
 #include <sys/resource.h>
 
-#define BUFFER_SIZE (1024 * 1024)
+#define BUFFER_SIZE (1024 * 1024) // 1MB
 
 void print_pgfaults(void)
 {
@@ -153,7 +153,7 @@ Minor page faults 442
 ```
 
 The important part is the increase when filling the memory with data: `442 - 186 = 256`. 
-The buffer is 1 MiB, which is `256` pages (`4KB` size), or there were `256 page faults`. 
+The buffer is `1MB`, which is `256` pages (`4KB` size), or there were `256 page faults`. 
 The second call to `memset` makes no difference because all the pages are now mapped.
 
 [1]: https://en.wikipedia.org/wiki/Page_table
