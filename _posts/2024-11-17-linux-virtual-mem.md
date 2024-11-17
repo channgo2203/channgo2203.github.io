@@ -96,7 +96,7 @@ The kernel can protect certain memory regions from being accessed by unauthorize
 
 The following program in `C` demonstrates Linux lazy allocation for user space programs and page fault.
 
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -156,4 +156,4 @@ The important part is the increase when filling the memory with data: `442 - 186
 The buffer is 1 MiB, which is `256` pages (`4KB` size), or there were `256 page faults`. 
 The second call to `memset` makes no difference because all the pages are now mapped.
 
-[1] https://en.wikipedia.org/wiki/Page_table
+[1]: https://en.wikipedia.org/wiki/Page_table
