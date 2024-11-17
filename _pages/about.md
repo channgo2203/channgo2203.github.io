@@ -21,7 +21,6 @@ formal assurances that the specification is fulfilled.
 
 Hands-on architecture design and coding of embedded software and embedded Linux from bare-metal, OS abstraction,
 middleware, to applications layers. They can be machine learning-based SW in robotics, automotive, medical, and aerospace industries. 
-Knowledge and experience with HW bring-up, RTOS, communication protocols such as Ethernet, CAN, BLE, peripherals like I2C, SPI, HSM, 
-and middleware frameworks like DDS, ROS2
+Knowledge and experience with HW bring-up, RTOS, communication protocols such as TCP/IP, CAN, BLE, peripherals like PCIe, I2C, SPI, HSM, middleware frameworks like DDS, ROS2, and QEMU-based emulators.
   
-Deep knowledge and strong experience with design and development of compiler, programming language static analysis from scratch or using infrastructures such as LLVM, MLIR
+Deep knowledge and strong experience with design and development of compiler, programming language static analysis from scratch or using infrastructures such as LLVM, MLIR.
