@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      File Copy using DirectIO 
-date:       2026-06-06
+date:       2026-06-05
 excerpt:    Linux Kernel Virtual Memory DirectIO
 categories: [Research, Embedded Linux, Linux Kernel, Programming]
 tags:
