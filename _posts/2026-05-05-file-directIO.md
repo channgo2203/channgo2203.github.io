@@ -27,9 +27,7 @@ If your file size isn't a perfect multiple of this size, you must "over-write" t
 
 - Final Truncation: After closing the O_DIRECT file descriptor, we use `truncate` (or `ftruncate` on a non-direct handle) to strip away those extra padding bytes, ensuring the destination file is an identical byte-for-byte copy. 
 
-
-```C
-#define _GNU_SOURCE
+```c
 #include <iostream>
 #include <fcntl.h>
 #include <unistd.h>
@@ -38,9 +36,9 @@ If your file size isn't a perfect multiple of this size, you must "over-write" t
 #include <sys/stat.h>
 #include <algorithm>
 
-int main() {
-    const char* src_path = "source.bin";
-    const char* dest_path = "flash_dest.bin";
+bool directIO_copy(const char *src_path, const char *dest_path) {
+    bool ret = true;
+
     const size_t CHUNK_SIZE = 1024 * 1024; // 1MB
     const size_t ALIGNMENT = 4096;         // Use 4096 for modern flash/NVMe
 
@@ -71,6 +69,7 @@ int main() {
 
         if (write(dest_fd, buffer, write_size) < 0) {
             perror("Aligned write failed");
+            ret = false;
             break;
         }
 
@@ -88,8 +87,9 @@ int main() {
         std::cout << "Transfer complete. Final size: " << total_original_size << " bytes." << std::endl;
     } else {
         perror("Truncate failed");
+        ret = false;
     }
 
-    return 0;
+    return ret;
 }
 ```
