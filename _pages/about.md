@@ -18,4 +18,10 @@ involves the research and knowledge of principles of programming languages, comp
 and formal methods including model checking, theorem proving, and static analysis for providing
 formal assurances that the specification is fulfilled.
 
-Hands-on architecture design and implementation of embedded SW, embedded Linux from bare-metal, drivers, OS kernel, to middleware frameworks. They are SW platforms for AI, robotics, automotive, and aerospace. Knowledge and experience with Linux kernel including process management, memory management, synchronization methods, device driver development, and virtualization. Knowledge and experience with SoC bring-up, RTOS, KVM/QEMU-based hypervisor and emulation, peripherals and communication protocols such as TCP/IP, CAN, I2C, SPI, PCIe, and DDS, ROS2 middleware frameworks. Strong research and industry experience with design and development of compilers, code generators, and static analysis from scratch or using frameworks such as LLVM and MLIR.
+Hands-on architecture design and implementation of embedded SW, embedded Linux from bare-metal, drivers, OS kernel, to middleware frameworks.
+
+Knowledge and experience with Linux kernel including process management, memory management, synchronization methods, device driver development, and virtualization. 
+
+Knowledge and experience with SoC bring-up, RTOS, KVM/QEMU-based hypervisor and emulation, peripherals and communication protocols such as TCP/IP, CAN, I2C, SPI, PCIe, and DDS, ROS2 middleware frameworks.
+
+Strong research and industry experience with design and development of compilers, code generators, and static analysis from scratch or using frameworks such as LLVM and MLIR.
