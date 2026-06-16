@@ -9,8 +9,7 @@ I received my Engineer degree (equivalent to Diplôme d'Ingénieur) from
 my M.Sc in Computer Science (under a French government scholarship, Évariste Galois program) 
 from [Joseph Fourier University](https://www.ujf-grenoble.fr/?language=en) 
 (Université de Grenoble), and my Ph.D from [Inria](http://www.inria.fr/en/) 
-France under the supervision of [Dr. Jean-Pierre Talpin](http://www.irisa.fr/prive/talpin/). 
-I was research fellow in Computer Science at Carnegie Mellon University.
+France. I was research fellow in Computer Science at Carnegie Mellon University.
 
 I am interested in building reliable and secure computer systems by developing formal frameworks
 which guarantee that software satisfies formally its specification, especially embedded safety-critical
@@ -19,8 +18,4 @@ involves the research and knowledge of principles of programming languages, comp
 and formal methods including model checking, theorem proving, and static analysis for providing
 formal assurances that the specification is fulfilled.
 
-Hands-on architecture design and coding of embedded software and embedded Linux from bare-metal, OS abstraction,
-middleware, to applications layers. They can be machine learning-based SW in robotics, automotive, medical, and aerospace industries. 
-Knowledge and experience with HW bring-up, RTOS, communication protocols such as TCP/IP, CAN, BLE, peripherals like PCIe, I2C, SPI, HSM, middleware frameworks like DDS, ROS2, and QEMU-based emulators.
-  
-Deep knowledge and strong experience with design and development of compiler, programming language static analysis from scratch or using infrastructures such as LLVM, MLIR.
+Hands-on architecture design and implementation of embedded SW, embedded Linux from bare-metal, drivers, OS kernel, to middleware frameworks. They are SW platforms for AI, robotics, automotive, and aerospace. Knowledge and experience with Linux kernel including process management, memory management, synchronization methods, device driver development, and virtualization. Knowledge and experience with SoC bring-up, RTOS, KVM/QEMU-based hypervisor and emulation, peripherals and communication protocols such as TCP/IP, CAN, I2C, SPI, PCIe, and DDS, ROS2 middleware frameworks. Strong research and industry experience with design and development of compilers, code generators, and static analysis from scratch or using frameworks such as LLVM and MLIR.

@@ -9,7 +9,7 @@ name: Hyperlexia
 author: Van C. Ngo
 
 # Short bio or description (displayed in the header)
-description: Research interests are in embedded safety-critical systems and embedded Linux, development and deploying ML models on embedded systems, programming languages, compilers, and language-based security using infrastructures LLVM, MLIR.
+description: Embedded real-time safety-critical SW, embedded Linux, OS kernel and hypervisor development, deploying ML models on embedded systems, programming languages and compilers development with LLVM, MLIR.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /images/xequation.png
