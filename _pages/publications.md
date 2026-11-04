@@ -4,16 +4,11 @@ title: Publications
 permalink: /publications/
 ---
 
-### 2021
+### 2026
 * V.C. Ngo. 
-[Statistical Robustness: Safety Analysis for Machine Learning Based Safety Critical Applications]({{ site.url }}/pdfs/stas_robustness.pdf). Working paper
-
-### 2020
-* V.C. Ngo. 
-[Towards Model Checking Timing Properties of Fault-Tolerant Distributed Algorithms in Autonomous Vehicles]({{ site.url }}/pdfs/fault_tolerance_mc.pdf). Working paper
-
-* V.C. Ngo. 
-[Mean Square Bounds Derivation for Probabilistic Programs]({{ site.url }}/pdfs/mean_square.pdf). Working paper
+[te-comp: A Complete MLIR Compiler Generating Self-Contained C Inference Engines for MCUs](https://arxiv.org/abs/2611.03710). 
+In arXiv, October, 2026.
+[[Tool and benchmark](https://github.com/tecomp-ai/te-comp-benchmarks)]
 
 ### 2018
 * <b style="color: #8d7edc;">[PLDI]</b> V.C. Ngo, Q. Carbonneaux, and J. Hoffmann. 
